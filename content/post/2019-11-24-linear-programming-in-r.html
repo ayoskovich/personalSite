@@ -6,9 +6,29 @@ slug: linear-programming-in-r
 categories: []
 tags:
   - operations research
+editor_options: 
+  chunk_output_type: console
 ---
 
 
 
-<pre class="r"><code>writeLines(&#39;hello&#39;)</code></pre>
-<pre><code>## hello</code></pre>
+<div id="basic-operations-research-models" class="section level1">
+<h1>Basic Operations Research Models</h1>
+<p>I’m going to use the <code>lpSolve</code> package in order to solve 3 basic OR problems. The notation shows the problems in standard form.</p>
+<div id="allocation" class="section level3">
+<h3>1. Allocation</h3>
+<p>In an allocation problem, the amount of resources available to the decision variables is fixed.
+<span class="math display">\[
+\sum_{k=1}^{n}\sum_{j=1}^{p}\sum_{i=1}^{m} x_{i,j,k} f_{j}
+\]</span></p>
+<pre class="r"><code>coeff &lt;- c(30, 40, 80)</code></pre>
+</div>
+<div id="blending-models" class="section level3">
+<h3>2. Blending Models</h3>
+<p>In a blending model, the amount of resources available to the decision variables is unlimited, but we normally want to minimize cost.</p>
+</div>
+<div id="shift-scheduling" class="section level3">
+<h3>3. Shift Scheduling</h3>
+<p>These models are arguably the most easily seen as the most relevant.</p>
+</div>
+</div>

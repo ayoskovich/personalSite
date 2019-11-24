@@ -26,16 +26,18 @@
       <pubDate>Sun, 24 Nov 2019 00:00:00 +0000</pubDate>
       
       <guid>/2019/11/24/linear-programming-in-r/</guid>
-      <description> writeLines(&amp;#39;hello&amp;#39;) ## hello </description>
+      <description>Basic Operations Research Models I’m going to use the lpSolve package in order to solve 3 basic OR problems. The notation shows the problems in standard form.
+1. Allocation In an allocation problem, the amount of resources available to the decision variables is fixed. \[ \sum_{k=1}^{n}\sum_{j=1}^{p}\sum_{i=1}^{m} x_{i,j,k} f_{j} \]
+coeff &amp;lt;- c(30, 40, 80)  2. Blending Models In a blending model, the amount of resources available to the decision variables is unlimited, but we normally want to minimize cost.</description>
     </item>
     
     <item>
-      <title>About</title>
+      <title>About Me</title>
       <link>/about/</link>
       <pubDate>Thu, 05 May 2016 21:48:51 -0700</pubDate>
       
       <guid>/about/</guid>
-      <description>This is the page that talks about me.</description>
+      <description>Hello! My name is Anthony Yoskovich and I am currently a senior at Grand Valley State University. I plan to receive a Bachelor&amp;rsquo;s of Science in both Statistics and Economics in April of 2020.</description>
     </item>
     
   </channel>

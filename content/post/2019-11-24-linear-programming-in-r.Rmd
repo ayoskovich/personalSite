@@ -6,9 +6,36 @@ slug: linear-programming-in-r
 categories: []
 tags:
   - operations research
+editor_options: 
+  chunk_output_type: console
 ---
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+require(lpSolve)
+```
+
+# Basic Operations Research Models
+
+I'm going to use the `lpSolve` package in order to solve 3 basic OR problems. The notation shows the problems in standard form. 
+
+### 1. Allocation 
+
+In an allocation problem, the amount of resources available to the decision variables is fixed.
+$$
+\sum_{k=1}^{n}\sum_{j=1}^{p}\sum_{i=1}^{m} x_{i,j,k} f_{j}
+$$
 
 
 ```{r}
-writeLines('hello')
+coeff <- c(30, 40, 80)
 ```
+
+
+### 2. Blending Models
+
+In a blending model, the amount of resources available to the decision variables is unlimited, but we normally want to minimize cost.
+
+
+### 3. Shift Scheduling
+
+These models are arguably the most easily seen as the most relevant.
