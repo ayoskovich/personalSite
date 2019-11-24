@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>A Hugo website</title>
+    <title>Anthony Yoskovich</title>
     <link>/</link>
-    <description>Recent content on A Hugo website</description>
+    <description>Recent content on Anthony Yoskovich</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 24 Nov 2019 00:00:00 +0000</lastBuildDate>
@@ -18,6 +18,15 @@
       
       <guid>/2019/11/24/first-post/</guid>
       <description>This is the title of my first post Here is the first sentence for my post.</description>
+    </item>
+    
+    <item>
+      <title>Linear Programming in R</title>
+      <link>/2019/11/24/linear-programming-in-r/</link>
+      <pubDate>Sun, 24 Nov 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/2019/11/24/linear-programming-in-r/</guid>
+      <description> writeLines(&amp;#39;hello&amp;#39;) ## hello </description>
     </item>
     
     <item>
