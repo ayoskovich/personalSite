@@ -9,5 +9,4 @@ title: About Me
 </p>
 
 
-Hello! My name is Anthony Yoskovich and I am currently a senior at Grand Valley State University. I plan to receive a Bachelor's of Science in both Statistics and Economics in April of 2020. 
-
+Hello! My name is Anthony Yoskovich and I am currently a senior at Grand Valley State University. I plan to receive a Bachelor's of Science in Statistics and Economics in April of 2020.
