@@ -6,10 +6,19 @@
     <description>Recent content on Anthony Yoskovich</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 24 Nov 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 05 Dec 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Test Post</title>
+      <link>/2019/12/05/test-post/</link>
+      <pubDate>Thu, 05 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/2019/12/05/test-post/</guid>
+      <description>This is a test post Here is the first sentence of the test post.</description>
+    </item>
     
     <item>
       <title>Allocation Model in R</title>
@@ -17,16 +26,7 @@
       <pubDate>Sun, 24 Nov 2019 00:00:00 +0000</pubDate>
       
       <guid>/2019/11/24/linear-programming-in-r/</guid>
-      <description>Summary In this post I demonstrate how to solve an allocation problem using the lpSolve package in R. I would probably prefer using AMPL to solve LP problems due to its readable syntax and ease of scalability. When using R, it’s easy to forget the underlying mathematical models that are being translated. However, with AMPL my brain feels more in the “math mode” (if that makes any sense lol). For unfamiliar readers, here is a good explanation of the allocation model.</description>
-    </item>
-    
-    <item>
-      <title>First post</title>
-      <link>/2019/11/24/first-post/</link>
-      <pubDate>Sun, 24 Nov 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/2019/11/24/first-post/</guid>
-      <description>This is the title of my first post Here is the first sentence for my post.</description>
+      <description>SummaryIn this post I demonstrate how to solve an allocation problem using the lpSolve package in R. I would probably prefer using AMPL to solve LP problems due to its readable syntax and ease of scalability. When using R, it’s easy to forget the underlying mathematical models that are being translated. However, with AMPL my brain feels more in the “math mode” (if that makes any sense lol). For unfamiliar readers, here is a good explanation of the allocation model.</description>
     </item>
     
     <item>
@@ -35,7 +35,7 @@
       <pubDate>Thu, 05 May 2016 21:48:51 -0700</pubDate>
       
       <guid>/about/</guid>
-      <description>Hello! My name is Anthony Yoskovich and I am currently a senior at Grand Valley State University. I plan to receive a Bachelor&amp;rsquo;s of Science in Statistics and Economics in April of 2020.</description>
+      <description>Hello! My name is Anthony Yoskovich and I am currently a senior at Grand Valley State University. I plan to receive a Bachelor&#39;s of Science in Statistics and Economics in April of 2020.</description>
     </item>
     
   </channel>

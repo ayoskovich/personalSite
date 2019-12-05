@@ -17,7 +17,7 @@
       <pubDate>Sun, 24 Nov 2019 00:00:00 +0000</pubDate>
       
       <guid>/2019/11/24/linear-programming-in-r/</guid>
-      <description>Summary In this post I demonstrate how to solve an allocation problem using the lpSolve package in R. I would probably prefer using AMPL to solve LP problems due to its readable syntax and ease of scalability. When using R, it’s easy to forget the underlying mathematical models that are being translated. However, with AMPL my brain feels more in the “math mode” (if that makes any sense lol). For unfamiliar readers, here is a good explanation of the allocation model.</description>
+      <description>SummaryIn this post I demonstrate how to solve an allocation problem using the lpSolve package in R. I would probably prefer using AMPL to solve LP problems due to its readable syntax and ease of scalability. When using R, it’s easy to forget the underlying mathematical models that are being translated. However, with AMPL my brain feels more in the “math mode” (if that makes any sense lol). For unfamiliar readers, here is a good explanation of the allocation model.</description>
     </item>
     
   </channel>
