@@ -6,19 +6,10 @@
     <description>Recent content on Anthony Yoskovich</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 05 Dec 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 24 Nov 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Test Post</title>
-      <link>/2019/12/05/test-post/</link>
-      <pubDate>Thu, 05 Dec 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/2019/12/05/test-post/</guid>
-      <description>This is a test post Here is the first sentence of the test post.</description>
-    </item>
     
     <item>
       <title>Allocation Model in R</title>
