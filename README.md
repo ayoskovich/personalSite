@@ -1,3 +1,3 @@
 # Anthony Yoskovich
 
-This repository contains the stuff that creates my website.
+Hello! This repository contains the stuff that creates my personal website.
