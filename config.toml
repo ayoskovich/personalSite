@@ -35,11 +35,15 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
     MathJaxCDN = "//cdnjs.cloudflare.com/ajax/libs"
     MathJaxVersion = "2.7.5"
 
-    # path to the favicon, under "static"
-    favicon = "favicon.ico"
+    # This shows up in the browser tab
+    # personalSite/public/...
+    favicon = "gr.ico"
 
     [params.logo]
-    url = "logo.png"
+    # This is what shows up actually on the web page
+    # personalSite/public/images/...
+    url = "gr.jpg"
+    
     width = 50
     height = 50
     alt = "Logo"
