@@ -38,7 +38,7 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
     # This shows up in the browser tab
     # personalSite/public/...
     favicon = "gr.ico"
-
+ 
     [params.logo]
     # This is what shows up actually on the web page
     # personalSite/public/images/...
