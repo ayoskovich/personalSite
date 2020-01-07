@@ -5,7 +5,7 @@ title: About Me
 
 
 <p align="center">
-  <img src="/./about_files/me1" alt="" width="50%"/>
+  <img src="/./about_files/me1.jpg" alt="kjhg" width="50%"/>
 </p>
 
 
