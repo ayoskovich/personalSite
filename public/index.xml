@@ -17,7 +17,7 @@
       <pubDate>Tue, 07 Jan 2020 00:00:00 +0000</pubDate>
       
       <guid>/2020/01/07/what-s-floor-should-an-introvert-get-on-the-elevator/</guid>
-      <description>While waiting to hop on the elevator today I had a thought, and allow me to be incredibly dramatic about something. Elevators can lend themselves to awkward encounters. For example, imagine you&#39;re on the 3rd floor (out of 10) waiting to go to the 1st floor. The elevator opens up but you see the dreaded &amp;ldquo;up&amp;rdquo; arrow, meaning you have to just stand there while the doors close after an excrutiating amount of time.</description>
+      <description>While waiting to hop on the elevator today I had a thought, and allow me to be incredibly dramatic about something. Elevators can lend themselves to awkward encounters. For example, imagine you&amp;rsquo;re on the 3rd floor (out of 10) waiting to go to the 1st floor. The elevator opens up but you see the dreaded &amp;ldquo;up&amp;rdquo; arrow, meaning you have to just stand there while the doors close after an excrutiating amount of time.</description>
     </item>
     
     <item>
@@ -26,7 +26,7 @@
       <pubDate>Sat, 04 Jan 2020 00:00:00 +0000</pubDate>
       
       <guid>/2020/01/04/resume-wrestling/</guid>
-      <description>Over my time in college I&#39;ve used many different types of word processing software in order to create resumes / cover letters. I&#39;ve used local installs of Microsoft Word (bleh), Google Docs (bleh bleh), Overleaf (not very bleh), and even Powerpoint (BLEH). Recently I&#39;ve been getting more in to the command line and have been using latex. I&#39;m thinking of creating a git repo in order to track changes I make to the document, that way I can access it from both my laptop and desktop.</description>
+      <description>Over my time in college I&amp;rsquo;ve used many different types of word processing software in order to create resumes / cover letters. I&amp;rsquo;ve used local installs of Microsoft Word (bleh), Google Docs (bleh bleh), Overleaf (not very bleh), and even Powerpoint (BLEH). Recently I&amp;rsquo;ve been getting more in to the command line and have been using latex. I&amp;rsquo;m thinking of creating a git repo in order to track changes I make to the document, that way I can access it from both my laptop and desktop.</description>
     </item>
     
     <item>
@@ -35,7 +35,7 @@
       <pubDate>Thu, 02 Jan 2020 00:00:00 +0000</pubDate>
       
       <guid>/2020/01/02/rethinking-my-music-methods/</guid>
-      <description>I think I&#39;ve done a pretty good job expanding my personal music listening this past year. I listen primarily on spotify and occasionally go to YouTube, but I&#39;d like to start taking a more structured approach to finding and learning about new music. I&#39;m not sure exactly what that looks like but I have some ideas. I&#39;ll circle back once I&#39;ve done some thinking&amp;hellip;</description>
+      <description>I think I&amp;rsquo;ve done a pretty good job expanding my personal music listening this past year. I listen primarily on spotify and occasionally go to YouTube, but I&amp;rsquo;d like to start taking a more structured approach to finding and learning about new music. I&amp;rsquo;m not sure exactly what that looks like but I have some ideas. I&amp;rsquo;ll circle back once I&amp;rsquo;ve done some thinking&amp;hellip;</description>
     </item>
     
     <item>
@@ -44,7 +44,7 @@
       <pubDate>Sun, 24 Nov 2019 00:00:00 +0000</pubDate>
       
       <guid>/2019/11/24/linear-programming-in-r/</guid>
-      <description>SummaryIn this post I demonstrate how to solve an allocation problem using the lpSolve package in R. I would probably prefer using AMPL to solve LP problems due to its readable syntax and ease of scalability. When using R, it’s easy to forget the underlying mathematical models that are being translated. However, with AMPL my brain feels more in the “math mode” (if that makes any sense lol). For unfamiliar readers, here is a good explanation of the allocation model.</description>
+      <description>Summary In this post I demonstrate how to solve an allocation problem using the lpSolve package in R. I would probably prefer using AMPL to solve LP problems due to its readable syntax and ease of scalability. When using R, it’s easy to forget the underlying mathematical models that are being translated. However, with AMPL my brain feels more in the “math mode” (if that makes any sense lol). For unfamiliar readers, here is a good explanation of the allocation model.</description>
     </item>
     
     <item>
@@ -53,7 +53,7 @@
       <pubDate>Thu, 05 May 2016 21:48:51 -0700</pubDate>
       
       <guid>/about/</guid>
-      <description>Hello! My name is Anthony Yoskovich and I am currently a senior at Grand Valley State University. I plan to receive a Bachelor&#39;s of Science in Statistics and Economics in April of 2020.</description>
+      <description>Hello! My name is Anthony Yoskovich and I am currently a senior at Grand Valley State University. I plan to receive a Bachelor&amp;rsquo;s of Science in Statistics and Economics in April of 2020.</description>
     </item>
     
   </channel>
