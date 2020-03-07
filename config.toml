@@ -2,10 +2,6 @@ baseurl = "/"
 languageCode = "en-us"
 title = "Anthony Yoskovich"
 theme = "hugo-xmin"
-googleAnalytics = ""
-disqusShortname = ""
-ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
-footnotereturnlinkcontents = "↩"
 
 
 [permalinks]
