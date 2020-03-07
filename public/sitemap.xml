@@ -4,56 +4,55 @@
   
   <url>
     <loc>/</loc>
-    <lastmod>2020-01-07T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2020/01/07/what-s-floor-should-an-introvert-get-on-the-elevator/</loc>
-    <lastmod>2020-01-07T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/post/</loc>
-    <lastmod>2020-01-07T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2020/01/04/resume-wrestling/</loc>
-    <lastmod>2020-01-04T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/music/</loc>
-    <lastmod>2020-01-02T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2020/01/02/rethinking-my-music-methods/</loc>
-    <lastmod>2020-01-02T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/</loc>
-    <lastmod>2020-01-02T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2019/11/24/linear-programming-in-r/</loc>
-    <lastmod>2019-11-24T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/operations-research/</loc>
-    <lastmod>2019-11-24T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/about/</loc>
-    <lastmod>2016-05-05T21:48:51-07:00</lastmod>
+    <lastmod>2020-03-06T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>/categories/</loc>
+    <lastmod>2020-03-06T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/</loc>
+    <lastmod>2020-03-06T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/python/</loc>
+    <lastmod>2020-03-06T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/2020/03/06/the-beauty-of-transform/</loc>
+    <lastmod>2020-03-06T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/2020/03/05/applying-complicated-conditionals-to-pandas-dataframes/</loc>
+    <lastmod>2020-03-05T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/2020/03/05/generating-points-with-a-specific-correlation/</loc>
+    <lastmod>2020-03-05T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/2020/03/04/something-cool-in-python/</loc>
+    <lastmod>2020-03-04T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/2020/03/03/peter-kennedy-doesn-t-think-undergraduates-understand-sampling-distributions/</loc>
+    <lastmod>2020-03-03T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/</loc>
+  </url>
+  
+  <url>
+    <loc>/about/</loc>
   </url>
   
 </urlset>

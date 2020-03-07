@@ -1,49 +1,30 @@
 baseurl = "/"
 languageCode = "en-us"
 title = "Anthony Yoskovich"
-theme = "hugo-lithium"
+theme = "hugo-xmin"
 googleAnalytics = ""
 disqusShortname = ""
 ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
+footnotereturnlinkcontents = "↩"
+
 
 [permalinks]
-    post = "/:year/:month/:day/:slug/"
+    post = "/post/:year/:month/:day/:slug/"
+    note = "/note/:year/:month/:day/:slug/"
 
 [[menu.main]]
-    name = "About Me (Anthony)"
-    url = "/about/"
+    name = "Home"
+    url = "/"
     weight = 1
 [[menu.main]]
-    name = "GitHub"
-    url = "https://github.com/ayoskovich"
+    name = "About Me"
+    url = "/about/"
     weight = 2
 [[menu.main]]
-    name = "LinkedIn"
-    url = "https://www.linkedin.com/in/ayoskovich/"
+    name = "Categories"
+    url = "/categories/"
     weight = 3
-
 
 [params]
     description = "A website built through Hugo and blogdown."
-
-    # options for highlight.js (version, additional languages, and theme)
-    highlightjsVersion = "9.12.0"
-    highlightjsCDN = "//cdnjs.cloudflare.com/ajax/libs"
-    highlightjsLang = ["r", "yaml"]
-    highlightjsTheme = "github"
-
-    MathJaxCDN = "//cdnjs.cloudflare.com/ajax/libs"
-    MathJaxVersion = "2.7.5"
-
-    # This shows up in the browser tab
-    # personalSite/public/...
-    favicon = "gr.ico"
- 
-    [params.logo]
-    # This is what shows up actually on the web page
-    # personalSite/public/images/...
-    url = "gr.jpg"
-    
-    width = 50
-    height = 50
-    alt = "Logo"
+    footer = "Anthony Yoskovich 2020 | [Github](https://github.com/ayoskovich) | [LinkedIn](https://www.linkedin.com/in/ayoskovich/)"

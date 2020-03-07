@@ -6,55 +6,71 @@
     <description>Recent content on Anthony Yoskovich</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 07 Jan 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 06 Mar 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>On the optimal elevator entry floor</title>
-      <link>/2020/01/07/what-s-floor-should-an-introvert-get-on-the-elevator/</link>
-      <pubDate>Tue, 07 Jan 2020 00:00:00 +0000</pubDate>
+      <title>The Beauty of `.transform()`</title>
+      <link>/post/2020/03/06/the-beauty-of-transform/</link>
+      <pubDate>Fri, 06 Mar 2020 00:00:00 +0000</pubDate>
       
-      <guid>/2020/01/07/what-s-floor-should-an-introvert-get-on-the-elevator/</guid>
-      <description>While waiting to hop on the elevator today I had a thought, and allow me to be incredibly dramatic about something. Elevators can lend themselves to awkward encounters. For example, imagine you&#39;re on the 3rd floor (out of 10) waiting to go to the 1st floor. The elevator opens up but you see the dreaded &amp;ldquo;up&amp;rdquo; arrow, meaning you have to just stand there while the doors close after an excrutiating amount of time.</description>
+      <guid>/post/2020/03/06/the-beauty-of-transform/</guid>
+      <description>Suppose I have a dataframe, and I&#39;d like to compute the sum of a variable by group, but I&#39;d like to keep this sum in the original table. I could solve this by computing the sum and then merging this table back into the original, but I have to either create a new dataset or overload pd.merge with a horrible block of code.
+ Luckily, there is a function in pandas called .</description>
     </item>
     
     <item>
-      <title>Resume Wrestling</title>
-      <link>/2020/01/04/resume-wrestling/</link>
-      <pubDate>Sat, 04 Jan 2020 00:00:00 +0000</pubDate>
+      <title>A Match Made In Heaven</title>
+      <link>/post/2020/03/05/applying-complicated-conditionals-to-pandas-dataframes/</link>
+      <pubDate>Thu, 05 Mar 2020 00:00:00 +0000</pubDate>
       
-      <guid>/2020/01/04/resume-wrestling/</guid>
-      <description>Over my time in college I&#39;ve used many different types of word processing software in order to create resumes / cover letters. I&#39;ve used local installs of Microsoft Word (bleh), Google Docs (bleh bleh), Overleaf (not very bleh), and even Powerpoint (BLEH). Recently I&#39;ve been getting more in to the command line and have been using latex. I&#39;m thinking of creating a git repo in order to track changes I make to the document, that way I can access it from both my laptop and desktop.</description>
+      <guid>/post/2020/03/05/applying-complicated-conditionals-to-pandas-dataframes/</guid>
+      <description>Custom logging can be done in python using 2 main things, decorators and the .pipe() function in pandas. I recently worked on a project where there was a large amount of investigation happening. I needed an easy way to toggle filters on and off, post-process in different ways, and change the output format of a dataframe quickly.
+The main chain of events is shown below:
+final = (readDat().</description>
     </item>
     
     <item>
-      <title>Rethinking my music methods</title>
-      <link>/2020/01/02/rethinking-my-music-methods/</link>
-      <pubDate>Thu, 02 Jan 2020 00:00:00 +0000</pubDate>
+      <title>Generating points with a specific correlation</title>
+      <link>/post/2020/03/05/generating-points-with-a-specific-correlation/</link>
+      <pubDate>Thu, 05 Mar 2020 00:00:00 +0000</pubDate>
       
-      <guid>/2020/01/02/rethinking-my-music-methods/</guid>
-      <description>I think I&#39;ve done a pretty good job expanding my personal music listening this past year. I listen primarily on spotify and occasionally go to YouTube, but I&#39;d like to start taking a more structured approach to finding and learning about new music. I&#39;m not sure exactly what that looks like but I have some ideas. I&#39;ll circle back once I&#39;ve done some thinking&amp;hellip;</description>
+      <guid>/post/2020/03/05/generating-points-with-a-specific-correlation/</guid>
+      <description>See here:
+http://www.acooke.org/random.pdf</description>
     </item>
     
     <item>
-      <title>Allocation Model in R</title>
-      <link>/2019/11/24/linear-programming-in-r/</link>
-      <pubDate>Sun, 24 Nov 2019 00:00:00 +0000</pubDate>
+      <title>A Handy Use of Python Decorators</title>
+      <link>/post/2020/03/04/something-cool-in-python/</link>
+      <pubDate>Wed, 04 Mar 2020 00:00:00 +0000</pubDate>
       
-      <guid>/2019/11/24/linear-programming-in-r/</guid>
-      <description>SummaryIn this post I demonstrate how to solve an allocation problem using the lpSolve package in R. I would probably prefer using AMPL to solve LP problems due to its readable syntax and ease of scalability. When using R, it’s easy to forget the underlying mathematical models that are being translated. However, with AMPL my brain feels more in the “math mode” (if that makes any sense lol). For unfamiliar readers, here is a good explanation of the allocation model.</description>
+      <guid>/post/2020/03/04/something-cool-in-python/</guid>
+      <description>Lets say I have the following function, and for some weird reason I want it to be called twice every time I call it.
+def foo():print(&#39;hello&#39;)I could solve this in a couple of different ways.
+def foo():print(&#39;hello&#39;)print(&#39;hello&#39;)def foo()print(&#39;hello&#39;)foo()foo()So&amp;hellip;the first way is bad because if I want to extend this functionality to other funtions, I would have to copy and paste the code everywhere.</description>
     </item>
     
     <item>
-      <title>About Me</title>
+      <title>Peter Kennedy Doesn&#39;t Think Undergraduates Understand Sampling Distributions</title>
+      <link>/post/2020/03/03/peter-kennedy-doesn-t-think-undergraduates-understand-sampling-distributions/</link>
+      <pubDate>Tue, 03 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2020/03/03/peter-kennedy-doesn-t-think-undergraduates-understand-sampling-distributions/</guid>
+      <description>In May of 1998, Peter Kennedy wrote a paper in the American Economic Review discussing teaching undergraduate econometrics. In it, he claims that most students don’t understand sampling distributions and puts forth reasons for this thought. In the paper he emphasizes the importance of simulations and suggests a simple one. I’ll be working through his example using R. Here is his suggested example:
+  Draw 50 x values from a uniform distribution between 3 and 12.</description>
+    </item>
+    
+    <item>
+      <title>Who Am I?</title>
       <link>/about/</link>
-      <pubDate>Thu, 05 May 2016 21:48:51 -0700</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/about/</guid>
-      <description>Hello! My name is Anthony Yoskovich and I am currently a senior at Grand Valley State University. I plan to receive a Bachelor&#39;s of Science in Statistics and Economics in April of 2020. Outside of the classroom I&#39;m an Advanced Analytics intern at Steelcase, and here I wrangle and analyze data using R, python, SQL, and many more technologies.
-Why make a website? I first created a personal website in February 2018.</description>
+      <description>Hello! My name is Anthony and you’ve landed on my personal site. In April 2020 I will be graduating from Grand Valley State University with a Bachelor of Science in Statistics and Economics, with a math minor as well.
+ I am currently an Advanced Analytics intern at Steelcase, one of the largest office furniture manufacters on the planet. Here I leverage python, R, SQL, databricks, and Microsoft Azure products to build data science models that provide the company value.</description>
     </item>
     
   </channel>
