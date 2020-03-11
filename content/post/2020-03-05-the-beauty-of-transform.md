@@ -17,4 +17,4 @@ tags: []
 df['sum'] = df.groupby('state').transform(lambda x: sum(x))
 ```
 
-Read more [here](https://nbviewer.jupyter.org/github/ayoskovich/personalSite/blob/master/pyNotebooks/testing.ipynb)
+Read more [here](https://nbviewer.jupyter.org/github/ayoskovich/personalSite/blob/master/pyNotebooks/beautyTransform.ipynb)
