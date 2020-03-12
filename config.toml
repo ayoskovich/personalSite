@@ -3,7 +3,11 @@ languageCode = "en-us"
 title = "Anthony Yoskovich"
 theme = "hugo-xmin"
 
-
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+      
 [permalinks]
     post = "/post/:year/:month/:day/:slug/"
     note = "/note/:year/:month/:day/:slug/"

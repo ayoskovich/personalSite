@@ -13,4 +13,4 @@ tags: []
 
 &emsp; Luckily, there is a function in `pandas` called `.transform()`, and here's an example of it in action.
 
-A downloadable notebook can be found <a href="https://nbviewer.jupyter.org/github/ayoskovich/personalSite/blob/master/pyNotebooks/beautyTransform.ipynb" target="_blank">here</a>.
+A downloadable notebook can be found <a href="https://nbviewer.jupyter.org/github/ayoskovich/personalSite/blob/master/pyNotebooks/beautyTransform.ipynb?flush_cache=True" target="_blank">here</a>.
