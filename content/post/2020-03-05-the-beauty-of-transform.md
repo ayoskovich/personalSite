@@ -1,5 +1,5 @@
 ---
-title: The Beauty of `.transform()`
+title: Using pandas' `.transform()`
 author: ''
 date: '2020-03-06'
 slug: the-beauty-of-transform
@@ -13,8 +13,4 @@ tags: []
 
 &emsp; Luckily, there is a function in `pandas` called `.transform()`, and here's an example of it in action.
 
-```
-df['sum'] = df.groupby('state').transform(lambda x: sum(x))
-```
-
-Read more [here](https://nbviewer.jupyter.org/github/ayoskovich/personalSite/blob/master/pyNotebooks/beautyTransform.ipynb)
+A downloadable notebook can be found <a href="https://nbviewer.jupyter.org/github/ayoskovich/personalSite/blob/master/pyNotebooks/beautyTransform.ipynb" target="_blank">here</a>.

@@ -24,13 +24,14 @@
     </nav>
 
 <div class="article-meta">
-<h1><span class="title">Peter Kennedy Doesn't Think Undergraduates Understand Sampling Distributions</span></h1>
+<h1><span class="title">Peter Kennedy Doesn&rsquo;t Think Undergraduates Understand Sampling Distributions</span></h1>
 
 <h2 class="date">2020/03/03</h2>
 </div>
 
 <main>
-<p>  In May of 1998, Peter Kennedy wrote a paper in the American Economic Review discussing teaching undergraduate econometrics. In it, he claims that most students don’t understand sampling distributions and puts forth reasons for this thought. In the paper he emphasizes the importance of simulations and suggests a simple one. I’ll be working through his example using R. Here is his suggested example:</p>
+<p>&emsp; In May of 1998, Peter Kennedy wrote a paper in the American Economic Review discussing teaching undergraduate econometrics. In it, he claims that most students don’t understand sampling distributions and puts forth reasons for this thought. In the paper he emphasizes the importance of simulations and suggests a simple one. I’ll be working through his example using R. Here is his suggested example:</p>
+
 <blockquote>
 <ul>
 <li>Draw 50 x values from a uniform distribution between 3 and 12.</li>
@@ -44,11 +45,12 @@
 <li>Compute the averages of these sets of 1,000 values to get B and BB, respectively.</li>
 <li>Compute the variances of these sets of 1,000 values to get VB and VBB, respectively.</li>
 </ul>
-</blockquote>
-<blockquote>
+
 <p>Should B or BB be closer to 3? Should VB or VBB be closer to 0?</p>
 </blockquote>
-<p>  Clearly B is going to be closer to 3 and have a lower variance. By only regressing y on x, we aren’t capturing the effect w has on it. We’re missing a variable and our estimates will be all over the place. I also performed this simulation in R, the results are summarized below:</p>
+
+<p>&emsp; Clearly B is going to be closer to 3 and have a lower variance. By only regressing y on x, we aren’t capturing the effect w has on it. We’re missing a variable and our estimates will be all over the place. I also performed this simulation in R, the results are summarized below:</p>
+
 <table>
 <thead>
 <tr>
@@ -57,12 +59,14 @@
 <th><em>Variance</em></th>
 </tr>
 </thead>
+
 <tbody>
 <tr>
 <td>A</td>
 <td>-9.02</td>
 <td>4.19</td>
 </tr>
+
 <tr>
 <td>B</td>
 <td>3</td>

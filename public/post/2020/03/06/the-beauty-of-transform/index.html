@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>The Beauty of `.transform()` | Anthony Yoskovich</title>
+    <title>Using pandas&#39; `.transform()` | Anthony Yoskovich</title>
     <link rel="stylesheet" href="/css/style.css" />
     <link rel="stylesheet" href="/css/fonts.css" />
     
@@ -24,16 +24,17 @@
     </nav>
 
 <div class="article-meta">
-<h1><span class="title">The Beauty of <code>.transform()</code></span></h1>
+<h1><span class="title">Using pandas&rsquo; <code>.transform()</code></span></h1>
 
 <h2 class="date">2020/03/06</h2>
 </div>
 
 <main>
-<p>  Suppose I have a dataframe, and I'd like to compute the sum of a variable by group, but I'd like to keep this sum in the original table. I could solve this by computing the sum and then merging this table back into the original, but I have to either create a new dataset or overload <code>pd.merge</code> with a horrible block of code.</p>
-<p>  Luckily, there is a function in <code>pandas</code> called <code>.transform()</code>, and here's an example of it in action.</p>
-<pre><code>df['sum'] = df.groupby('state').transform(lambda x: sum(x))
-</code></pre><p>Read more <a href="https://nbviewer.jupyter.org/github/ayoskovich/personalSite/blob/master/pyNotebooks/beautyTransform.ipynb">here</a></p>
+<p>&emsp; Suppose I have a dataframe, and I&rsquo;d like to compute the sum of a variable by group, but I&rsquo;d like to keep this sum in the original table. I could solve this by computing the sum and then merging this table back into the original, but I have to either create a new dataset or overload <code>pd.merge</code> with a horrible block of code.</p>
+
+<p>&emsp; Luckily, there is a function in <code>pandas</code> called <code>.transform()</code>, and here&rsquo;s an example of it in action.</p>
+
+<p>A downloadable notebook can be found <a href="https://nbviewer.jupyter.org/github/ayoskovich/personalSite/blob/master/pyNotebooks/beautyTransform.ipynb" target="_blank">here</a>.</p>
 
 </main>
 
