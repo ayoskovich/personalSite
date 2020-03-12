@@ -11,6 +11,6 @@ tags: []
 
 &emsp; Suppose I have a dataframe, and I'd like to compute the sum of a variable by group, but I'd like to keep this sum in the original table. I could solve this by computing the sum and then merging this table back into the original, but I have to either create a new dataset or overload `pd.merge` with a horrible block of code.
 
-&emsp; Luckily, there is a function in `pandas` called `.transform()`, and here's an example of it in action.
+&emsp; Luckily, there is a function in `pandas` called `.transform()`, and the link below will show you an example of it in action.
 
-A downloadable notebook can be found <a href="https://nbviewer.jupyter.org/github/ayoskovich/personalSite/blob/master/pyNotebooks/beautyTransform.ipynb?flush_cache=True" target="_blank">here</a>.
+The downloadable notebook can be found <a href="https://nbviewer.jupyter.org/github/ayoskovich/personalSite/blob/master/pyNotebooks/beautyTransform.ipynb?flush_cache=True" target="_blank">here</a>.
