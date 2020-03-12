@@ -25,6 +25,7 @@ theme = "hugo-xmin"
     url = "/categories/"
     weight = 3
 
+
 [params]
     description = "A website built through Hugo and blogdown."
     footer = "Anthony Yoskovich 2020 | [Github](https://github.com/ayoskovich) | [LinkedIn](https://www.linkedin.com/in/ayoskovich/)"

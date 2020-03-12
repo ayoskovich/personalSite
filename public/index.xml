@@ -81,8 +81,8 @@ def foo(): print(&#39;hello&#39;) print(&#39;hello&#39;)  def foo() print(&#39;h
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/about/</guid>
-      <description>Hello!  My name is Anthony and you’ve landed on my personal site. In April 2020 I will be graduating from Grand Valley State University with a Bachelor of Science in Statistics and Economics, with a math minor as well.
- I am currently an Advanced Analytics intern at Steelcase, one of the largest office furniture manufacters on the planet. Here I leverage python, R, SQL, databricks, and Microsoft Azure products to build data science models that provide the company value.</description>
+      <description>Hello!  My name is Anthony and you’ve found my own corner of the internet. In April 2020 I will be graduating from Grand Valley State University with a Bachelor of Science in Statistics and Economics. I also have a math minor.
+ I am currently an Advanced Analytics intern at Steelcase, one of the largest office furniture manufacters on the planet. Here I leverage python, R, SQL, databricks, and other Microsoft Azure products to analyze data and build models advancing the firm’s strategic objects.</description>
     </item>
     
   </channel>
