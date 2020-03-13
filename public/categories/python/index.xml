@@ -22,14 +22,13 @@
     </item>
     
     <item>
-      <title>A Match Made In Heaven</title>
+      <title>Custom Logging in Python</title>
       <link>/post/2020/03/05/applying-complicated-conditionals-to-pandas-dataframes/</link>
       <pubDate>Thu, 05 Mar 2020 00:00:00 +0000</pubDate>
       
       <guid>/post/2020/03/05/applying-complicated-conditionals-to-pandas-dataframes/</guid>
-      <description>&amp;emsp; Custom logging can be done in python using 2 main things, decorators and the .pipe() function in pandas. I recently worked on a project where there was a large amount of investigation happening. I needed an easy way to toggle filters on and off, post-process in different ways, and change the output format of a dataframe quickly.
-The main chain of events is shown below:
-final = ( readDat() .</description>
+      <description>&amp;emsp; When working with data, there are a lot of things I need to keep track of in my head.
+ How many observations do I have in total? I just filtered some out, how many did I throw out? Am I aggregating before or after I filter? Where should I add this chunk of code?  &amp;emsp; In order to keep track of these questions when working in a jupyter notebook I end up having tons of cells that look like this:</description>
     </item>
     
     <item>
