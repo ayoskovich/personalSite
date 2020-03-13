@@ -6,10 +6,19 @@
     <description>Recent content on Anthony Yoskovich</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 07 Mar 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 13 Mar 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>How statistics has ruined my ability to have opinions...</title>
+      <link>/post/2020/03/13/how-statistics-has-ruined-my-ability-to-have-opinions/</link>
+      <pubDate>Fri, 13 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2020/03/13/how-statistics-has-ruined-my-ability-to-have-opinions/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>HUGO_VERSION problems</title>
