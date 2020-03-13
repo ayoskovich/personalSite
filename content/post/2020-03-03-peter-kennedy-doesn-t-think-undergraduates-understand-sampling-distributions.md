@@ -1,5 +1,5 @@
 ---
-title: Peter Kennedy Doesn't Think Undergraduates Understand Sampling Distributions
+title: Understanding Sampling Distributions
 author: ''
 date: '2020-03-03'
 slug: peter-kennedy-doesn-t-think-undergraduates-understand-sampling-distributions

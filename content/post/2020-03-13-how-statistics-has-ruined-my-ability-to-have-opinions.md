@@ -1,5 +1,5 @@
 ---
-title: How statistics has ruined my ability to have opinions...
+title: I can't have opinions anymore...
 author: ''
 date: '2020-03-13'
 slug: how-statistics-has-ruined-my-ability-to-have-opinions
@@ -8,3 +8,15 @@ categories:
 tags: []
 draft: true
 ---
+
+&emsp; For the past 4 years I have been studying statistics. Doing lots of practice problems, playing around with data, and reading textbooks. I've become a bit more familiar with the statistical way of thinking, how to analyze problems in terms of distributions rather than single numbers, and how to work with uncertainty. As much as I've loved this, it has had quite the unexpected consequence in my personal life.
+
+### &emsp; I find it hard to have an opinion about anything.
+
+&emsp; Thinking about events as single shot ocurrences isn't a good way to frame problems. We must think, "What would happen if we did this thing a bunch of times". When attempting to evaluate hypotheses we want to gather as much data as possible. You don't hear about clinical trials with 1 patient, a fertilizer test using 1 plot of land, a brake pad company testing on 1 car. We want a large sample, because it gives us the clearest picture of the population.
+
+&emsp; Go out to a restaurant and have a bad experience? Well, I've only been there once so maybe it was just an off night. Take a new route home from work? Wow that was quick! But wait, I'm not taking into account the time of day or day of the week. I can't help but be reminded of these scenes from Silicon Valley (NSFW language).
+
+<iframe width="300" height="300" src="https://www.youtube.com/embed/OaFTpWYCzUk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<iframe width="300" height="300" src="https://www.youtube.com/embed/VmOd27UwTsg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>

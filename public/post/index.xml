@@ -12,12 +12,21 @@
     
     
     <item>
-      <title>How statistics has ruined my ability to have opinions...</title>
+      <title>Boston House Price Analysis</title>
+      <link>/post/2020/03/13/boston-house-price-analysis/</link>
+      <pubDate>Fri, 13 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2020/03/13/boston-house-price-analysis/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>I can&#39;t have opinions anymore...</title>
       <link>/post/2020/03/13/how-statistics-has-ruined-my-ability-to-have-opinions/</link>
       <pubDate>Fri, 13 Mar 2020 00:00:00 +0000</pubDate>
       
       <guid>/post/2020/03/13/how-statistics-has-ruined-my-ability-to-have-opinions/</guid>
-      <description></description>
+      <description>&amp;emsp; For the past 4 years I have been studying statistics. Doing lots of practice problems, playing around with data, and reading textbooks. I&amp;rsquo;ve become a bit more familiar with the statistical way of thinking, how to analyze problems in terms of distributions rather than single numbers, and how to work with uncertainty. As much as I&amp;rsquo;ve loved this, it has had quite the unexpected consequence in my personal life.</description>
     </item>
     
     <item>
@@ -74,7 +83,7 @@ def foo(): print(&#39;hello&#39;) print(&#39;hello&#39;)  def foo() print(&#39;h
     </item>
     
     <item>
-      <title>Peter Kennedy Doesn&#39;t Think Undergraduates Understand Sampling Distributions</title>
+      <title>Understanding Sampling Distributions</title>
       <link>/post/2020/03/03/peter-kennedy-doesn-t-think-undergraduates-understand-sampling-distributions/</link>
       <pubDate>Tue, 03 Mar 2020 00:00:00 +0000</pubDate>
       
