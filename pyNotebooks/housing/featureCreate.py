@@ -13,3 +13,8 @@ def logVars(df, varList):
         df.drop(labels=[var], axis=1)
         
     return df
+
+
+def normalize(df):
+    """ Normalize a dataframe"""
+    return df.apply(lambda x: (x-x.mean())/ x.std(), axis=0)

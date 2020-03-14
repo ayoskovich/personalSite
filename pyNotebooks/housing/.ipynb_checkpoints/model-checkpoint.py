@@ -3,8 +3,10 @@ Modeling for boston house prices
 """
 
 import statsmodels.api as sm
+import pandas as pd
 
 from statsmodels.stats.outliers_influence import OLSInfluence
+from statsmodels.stats.outliers_influence import variance_inflation_factor
 
 from housing import featureCreate
 
@@ -18,8 +20,32 @@ def getDFB(mod):
     """Return dfbetas for model object. """
     return OLSInfluence(mod).summary_frame()
 
+
 def getPlot(mod):
     """Plot influence. 
     2 / sqrt(n) as cutoff
     """
     sm.graphics.influence_plot(mod)
+    
+    
+def getCoefs(mod):
+    """Return clean model coefficients."""
+    return (
+        pd.DataFrame(mod.params)
+        .reset_index()
+        .rename(columns={'index':'var', 0:'coef'})
+    )
+
+
+def getVIF(df):
+    """Returns dataframe containing the VIF. 
+    
+    df should contain only x variables."""
+    X = df
+    X['Intercept'] = 1
+
+    vif = pd.DataFrame()
+    vif["var"] = X.columns
+    vif["VIF"] = [variance_inflation_factor(X.values, i) for i in range(X.shape[1])]
+
+    return vif.query('var != "Intercept"')
