@@ -1,3 +1,7 @@
+"""
+Load data for the boston house price dataset.
+"""
+
 import os
 import pandas as pd
 import matplotlib.pyplot as plt

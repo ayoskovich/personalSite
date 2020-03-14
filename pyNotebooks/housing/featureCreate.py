@@ -1,5 +1,5 @@
 """
-Create features
+Create features used for modeling.
 """
 
 import pandas as pd

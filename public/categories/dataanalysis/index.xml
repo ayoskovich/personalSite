@@ -17,7 +17,9 @@
       <pubDate>Fri, 13 Mar 2020 00:00:00 +0000</pubDate>
       
       <guid>/post/2020/03/13/boston-house-price-analysis/</guid>
-      <description></description>
+      <description>I used a jupyter notebook to do this analysis. I separated the very technical code into modules that can be found
+Notebook can be found here.
+Extra modules can be found here.</description>
     </item>
     
   </channel>
