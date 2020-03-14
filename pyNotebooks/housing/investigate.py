@@ -10,7 +10,6 @@ from housing import decorators
 importlib.reload(decorators);
 
 
-@decorators.pDoc
 def taxPratio(df):
     """Investigate the weird scatter plot between tax and ptratio."""
     return (

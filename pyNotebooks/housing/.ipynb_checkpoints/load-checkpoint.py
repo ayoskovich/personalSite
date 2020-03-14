@@ -2,12 +2,13 @@
 Load data for the boston house price dataset.
 """
 
+import importlib
 import os
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-from housing import decorators
+from housing import load, investigate, featureCreate, model, decorators
 
 from pandas.plotting import scatter_matrix
 from sklearn.datasets import load_boston
@@ -18,7 +19,12 @@ def importDat(cols):
     
     cols (list): List of columns to use
     """
-
+    importlib.reload(load);
+    importlib.reload(featureCreate);
+    importlib.reload(investigate);
+    importlib.reload(model);
+    
+    
     x = pd.DataFrame(load_boston()['data'])
     y = pd.DataFrame(load_boston()['target'])
 
