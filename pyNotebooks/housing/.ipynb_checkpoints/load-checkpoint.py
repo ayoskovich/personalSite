@@ -41,5 +41,5 @@ def importDat(cols):
 
 @decorators.showChange
 def filterDat(df):
-    """Filter out records of the dataframe."""
-    return df.query('AGE < 100')
+    """Filter out weird taxes and Pratios."""
+    return df.query('TAX != 666 & TAX != 711 & PTRATIO != 20.2 & PTRATIO != 20.1')

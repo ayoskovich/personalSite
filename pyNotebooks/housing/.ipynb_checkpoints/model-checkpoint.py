@@ -24,7 +24,7 @@ def getDFB(mod):
 
 def getPlot(mod):
     """Plot influence. 
-    2 / sqrt(n) as cutoff
+    2 / sqrt(n) as cutoff for dfbeta
     """
     sm.graphics.influence_plot(mod)
     
