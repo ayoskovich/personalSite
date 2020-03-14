@@ -4,6 +4,7 @@ Modeling for boston house prices
 
 import statsmodels.api as sm
 import pandas as pd
+import seaborn as sns
 
 from statsmodels.stats.outliers_influence import OLSInfluence
 from statsmodels.stats.outliers_influence import variance_inflation_factor
@@ -37,7 +38,7 @@ def getCoefs(mod):
     )
 
 
-def getVIF(df):
+def getVIF(df, plot=True):
     """Returns dataframe containing the VIF. 
     
     df should contain only x variables."""
@@ -47,5 +48,9 @@ def getVIF(df):
     vif = pd.DataFrame()
     vif["var"] = X.columns
     vif["VIF"] = [variance_inflation_factor(X.values, i) for i in range(X.shape[1])]
-
-    return vif.query('var != "Intercept"')
+    vif = vif.query('var != "Intercept"')
+    
+    if plot:
+        sns.barplot(x='var', y='VIF', data=vif);
+    else:
+        return vif
