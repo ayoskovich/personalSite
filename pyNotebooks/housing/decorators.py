@@ -28,3 +28,13 @@ def pShape(func):
         print('{}()\n\t{}: {}'.format(func.__name__, func.__doc__, rv.shape))
         return rv
     return wrapper
+
+
+def pDoc(func):
+    """ Print the docstring of a function"""
+    @functools.wraps(func)
+    def wrapper(*args, **kwargs):
+        rv = func(*args, **kwargs)
+        print('{}'.format(func.__doc__))
+        return rv
+    return wrapper
