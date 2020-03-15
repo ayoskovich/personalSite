@@ -9,7 +9,10 @@ import numpy as np
 import decorators
 
 def taxPratio(df):
-    """Investigate the weird scatter plot between tax and ptratio."""
+    """
+    Investigate the weird scatter plot between tax 
+    and ptratio.
+    """
     return (
         pd.DataFrame(
             df[df['TAX'] > 600][['TAX', 'PTRATIO']]\
@@ -19,4 +22,3 @@ def taxPratio(df):
             .rename(columns={0:'count'})
         )
     )
-

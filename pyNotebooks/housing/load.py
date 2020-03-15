@@ -1,5 +1,7 @@
 """
 Load data for the boston house price dataset.
+
+- Also contains filtering functions.
 """
 
 import importlib
