@@ -12,14 +12,13 @@
     
     
     <item>
-      <title>Boston House Price Analysis</title>
+      <title>A Hybrid Jupyter Notebook Workflow</title>
       <link>/post/2020/03/13/boston-house-price-analysis/</link>
       <pubDate>Fri, 13 Mar 2020 00:00:00 +0000</pubDate>
       
       <guid>/post/2020/03/13/boston-house-price-analysis/</guid>
-      <description>I used a jupyter notebook to do this analysis. I separated the very technical code into modules that can be found
-Notebook can be found here.
-Extra modules can be found here.</description>
+      <description>&amp;emsp; I use jupyter notebooks quite a bit and have developed a workflow that allows me to leverage python modules in order to give the notebook more structure. This talk does a great job describing some problems and pain points I have also encountered when working in a notebook environment.
+&amp;emsp; Most times if I work exclusively in a notebook I tend to not be very smart with the program architecture due to the ability to execute cells in an arbitrary order that I forget about.</description>
     </item>
     
   </channel>
