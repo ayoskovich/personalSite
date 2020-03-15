@@ -6,9 +6,7 @@ import importlib
 import pandas as pd
 import numpy as np
 
-from housing import decorators
-importlib.reload(decorators);
-
+import decorators
 
 def taxPratio(df):
     """Investigate the weird scatter plot between tax and ptratio."""

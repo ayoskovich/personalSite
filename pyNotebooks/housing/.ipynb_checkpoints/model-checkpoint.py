@@ -9,7 +9,7 @@ import seaborn as sns
 from statsmodels.stats.outliers_influence import OLSInfluence
 from statsmodels.stats.outliers_influence import variance_inflation_factor
 
-from housing import featureCreate
+import featureCreate
 
 
 def slr(df, xVars, yVar):
