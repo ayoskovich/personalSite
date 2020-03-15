@@ -4,14 +4,14 @@ output: html_document
 ---
 
 ## Hello!
-&emsp; My name is Anthony and you've found my own corner of the internet. In April 2020 I will be graduating from Grand Valley State University with a Bachelor of Science in Statistics and Economics. I also have a math minor.
+&emsp; My name is Anthony and you've found my corner of the internet. In April 2020 I will be graduating from Grand Valley State University with a Bachelor of Science in Statistics and Economics. I also have a math minor.
 
 <p align="center">
 ![](/about_files/me1.jpg){width=50% height=50%}
 </p>
 
-&emsp; I am currently an Advanced Analytics intern at Steelcase, one of the largest office furniture manufacters on the planet. Here I leverage python, R, SQL, databricks, and other Microsoft Azure products to analyze data and build models advancing the firm's strategic objects. I work closely with business professionals to interpret and share these models, and have learned an enormous amount about how to be an ambassador for good data & analytics.
+&emsp; I am currently an Advanced Analytics intern at Steelcase, one of the largest office furniture manufacters on the planet. Here I leverage python, R, SQL, and a suite of Microsoft Azure products to analyze data and build models advancing the firm's strategic objects. I work closely with business professionals to interpret and share these models, and I have learned an enormous amount about how to be an ambassador for effective analytics.
 
-&emsp; My programming skills have improved a TON since I've been working in the real world. I understand the importance of modular and testable code, especially when writing code that will be used a long time.
+&emsp; There is an art to translating the business pain point into a mathematical model. There is also an art in translating that business pain point into a representation using a programming language. The problem may change, or the deliverable may change formats. I try my best to write modular and testable code that can rapidly be pivoted or used in other ways.
 
 &emsp; This site hosts my random thoughts, programmy things, statisticy things, and economics things. I enjoy riding bikes, taking pictures with film cameras, and good office furniture!
