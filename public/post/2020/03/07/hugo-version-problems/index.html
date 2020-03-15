@@ -30,10 +30,14 @@
 </div>
 
 <main>
-<p>  In order to build this site, I use <a href="https://bookdown.org/yihui/blogdown/">blogdown</a> and then I deploy it with <a href="https://www.netlify.com/">Netlify</a>. The nice thing about netlify is that I can have the site as a repo on GitHub, and every time I push changes, the site will update. However, the other day one of my site builds kept failing. This was due to the Hugo version being different on my local machine than the one that is on Netlify.</p>
-<p>  Luckily, and probably for the first time in my entire life, I found the answer in the first place I looked! If you are ever <a href="https://docs.netlify.com/configure-builds/common-configurations/#hugo">getting an error with exit code: 255</a>, set the <code>HUGO_VERSION</code> environment variable (on Netlify) to the Hugo version you have installed locally. It's pretty easy to check, in Rstudio just:</p>
+<p>&emsp; In order to build this site, I use <a href="https://bookdown.org/yihui/blogdown/">blogdown</a> and then I deploy it with <a href="https://www.netlify.com/">Netlify</a>. The nice thing about netlify is that I can have the site as a repo on GitHub, and every time I push changes, the site will update. However, the other day one of my site builds kept failing. This was due to the Hugo version being different on my local machine than the one that is on Netlify.</p>
+
+<p>&emsp; Luckily, and probably for the first time in my entire life, I found the answer in the first place I looked! If you are ever <a href="https://docs.netlify.com/configure-builds/common-configurations/#hugo">getting an error with exit code: 255</a>, set the <code>HUGO_VERSION</code> environment variable (on Netlify) to the Hugo version you have installed locally. It&rsquo;s pretty easy to check, in Rstudio just:</p>
+
 <pre><code>blogdown::hugo_version()
-</code></pre><p>  This should output a string (mine was ‘0.60.1’), and that string should be the environment variable. More info on setting the evironment variable <a href="https://docs.netlify.com/configure-builds/environment-variables/">here</a></p>
+</code></pre>
+
+<p>&emsp; This should output a string (mine was ‘0.60.1’), and that string should be the environment variable. More info on setting the evironment variable <a href="https://docs.netlify.com/configure-builds/environment-variables/">here</a></p>
 
 </main>
 

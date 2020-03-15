@@ -31,40 +31,61 @@
 
 <main>
 <p>Lets say I have the following function, and for some weird reason I want it to be called twice every time I call it.</p>
+
 <pre><code>def foo():
   print('hello')
-</code></pre><p>I could solve this in a couple of different ways.</p>
+</code></pre>
+
+<p>I could solve this in a couple of different ways.</p>
+
 <pre><code>def foo():
   print('hello')
   print('hello')
-</code></pre><pre><code>def foo()
+</code></pre>
+
+<pre><code>def foo()
   print('hello')
   
 foo()
 foo()
-</code></pre><p>So&hellip;the first way is bad because if I want to extend this functionality to other funtions, I would have to copy and paste the code everywhere. Also, to switch it on and off would be a mess. The second way is even clunkier.</p>
-<p>This is where decorators come in handy. I can write a function, that takes in a function as an argument, and then modify that function. Here's what it looks like:</p>
+</code></pre>
+
+<p>So&hellip;the first way is bad because if I want to extend this functionality to other funtions, I would have to copy and paste the code everywhere. Also, to switch it on and off would be a mess. The second way is even clunkier.</p>
+
+<p>This is where decorators come in handy. I can write a function, that takes in a function as an argument, and then modify that function. Here&rsquo;s what it looks like:</p>
+
 <pre><code>def doTwice(function):
   def wrapper(*args, **args):
     function()
     function()
     
   return wrapper
-</code></pre><p>Let's break down what's going on here.</p>
+</code></pre>
+
+<p>Let&rsquo;s break down what&rsquo;s going on here.</p>
+
 <ol>
 <li>The <code>doTwice</code> function first takes in another function as an argument.</li>
 <li>There is a function inside of it, called <code>wrapper</code>, that simply calls <code>function</code> twice.</li>
 <li><code>doTwice</code> returns <code>wrapper</code>, which is actually a function.</li>
 </ol>
-<p>Now that we have the <code>doTwice</code> function, we'll need to use it to &ldquo;decorate&rdquo; the <code>foo</code> function. The syntax in python is simple.</p>
+
+<p>Now that we have the <code>doTwice</code> function, we&rsquo;ll need to use it to &ldquo;decorate&rdquo; the <code>foo</code> function. The syntax in python is simple.</p>
+
 <pre><code>@doTwice
 def foo():
   print('hello')
-</code></pre><p>Now, every time I call <code>foo</code>, &lsquo;hello&rsquo; will be printed twice, mission accomplished. The beauty of this solution is that I can now use <code>doTwice</code> on as many functions as I'd like. I would simply add <code>@doTwice</code> above each function definition.</p>
-<p>There are tons more helpful things you can do with decorators, and I think in the future I'll write some more posts about them. Thanks for reading!</p>
-<br>
-<hr>
-<p><strong>Note</strong>: The @ syntax isn't the only way to decorate functions, the python documentation lays out another way that requires a bit more explaining.</p>
+</code></pre>
+
+<p>Now, every time I call <code>foo</code>, &lsquo;hello&rsquo; will be printed twice, mission accomplished. The beauty of this solution is that I can now use <code>doTwice</code> on as many functions as I&rsquo;d like. I would simply add <code>@doTwice</code> above each function definition.</p>
+
+<p>There are tons more helpful things you can do with decorators, and I think in the future I&rsquo;ll write some more posts about them. Thanks for reading!</p>
+
+<p><br></p>
+
+<hr />
+
+<p><strong>Note</strong>: The @ syntax isn&rsquo;t the only way to decorate functions, the python documentation lays out another way that requires a bit more explaining.</p>
 
 </main>
 

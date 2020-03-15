@@ -17,8 +17,8 @@
       <pubDate>Fri, 13 Mar 2020 00:00:00 +0000</pubDate>
       
       <guid>/post/2020/03/13/boston-house-price-analysis/</guid>
-      <description>I use jupyter notebooks quite a bit and have developed a workflow that allows me to leverage python modules in order to give the notebook more structure. This talk does a great job describing some problems and pain points I have also encountered when working in a notebook environment.
- Most times if I work exclusively in a notebook I tend to not be very smart with the program architecture due to the ability to execute cells in an arbitrary order that I forget about.</description>
+      <description>&amp;emsp; I use jupyter notebooks quite a bit and have developed a workflow that allows me to leverage python modules in order to give the notebook more structure. This talk does a great job describing some problems and pain points I have also encountered when working in a notebook environment.
+&amp;emsp; Most times if I work exclusively in a notebook I tend to not be very smart with the program architecture due to the ability to execute cells in an arbitrary order that I forget about.</description>
     </item>
     
     <item>
@@ -27,7 +27,7 @@
       <pubDate>Fri, 13 Mar 2020 00:00:00 +0000</pubDate>
       
       <guid>/post/2020/03/13/how-statistics-has-ruined-my-ability-to-have-opinions/</guid>
-      <description>For the past 4 years I have been studying statistics. Doing lots of practice problems, playing around with data, and reading textbooks. I&#39;ve become a bit more familiar with the statistical way of thinking, how to analyze problems in terms of distributions rather than single numbers, and how to work with uncertainty. As much as I&#39;ve loved this, it has had quite the unexpected consequence in my personal life.</description>
+      <description>&amp;emsp; For the past 4 years I have been studying statistics. Doing lots of practice problems, playing around with data, and reading textbooks. I&amp;rsquo;ve become a bit more familiar with the statistical way of thinking, how to analyze problems in terms of distributions rather than single numbers, and how to work with uncertainty. As much as I&amp;rsquo;ve loved this, it has had quite the unexpected consequence in my personal life.</description>
     </item>
     
     <item>
@@ -36,7 +36,7 @@
       <pubDate>Sat, 07 Mar 2020 00:00:00 +0000</pubDate>
       
       <guid>/post/2020/03/07/hugo-version-problems/</guid>
-      <description>In order to build this site, I use blogdown and then I deploy it with Netlify. The nice thing about netlify is that I can have the site as a repo on GitHub, and every time I push changes, the site will update. However, the other day one of my site builds kept failing. This was due to the Hugo version being different on my local machine than the one that is on Netlify.</description>
+      <description>&amp;emsp; In order to build this site, I use blogdown and then I deploy it with Netlify. The nice thing about netlify is that I can have the site as a repo on GitHub, and every time I push changes, the site will update. However, the other day one of my site builds kept failing. This was due to the Hugo version being different on my local machine than the one that is on Netlify.</description>
     </item>
     
     <item>
@@ -45,8 +45,8 @@
       <pubDate>Fri, 06 Mar 2020 00:00:00 +0000</pubDate>
       
       <guid>/post/2020/03/06/the-beauty-of-transform/</guid>
-      <description>Suppose I have a dataframe, and I&#39;d like to compute the sum of a variable by group, but I&#39;d like to keep this sum in the original table. I could solve this by computing the sum and then merging this table back into the original, but I have to either create a new dataset or overload pd.merge with a horrible block of code.
- Luckily, there is a function in pandas called .</description>
+      <description>&amp;emsp; Suppose I have a dataframe, and I&amp;rsquo;d like to compute the sum of a variable by group, but I&amp;rsquo;d like to keep this sum in the original table. I could solve this by computing the sum and then merging this table back into the original, but I have to either create a new dataset or overload pd.merge with a horrible block of code.
+&amp;emsp; Luckily, there is a function in pandas called .</description>
     </item>
     
     <item>
@@ -55,8 +55,8 @@
       <pubDate>Thu, 05 Mar 2020 00:00:00 +0000</pubDate>
       
       <guid>/post/2020/03/05/applying-complicated-conditionals-to-pandas-dataframes/</guid>
-      <description>When working with data, there are a lot of things I need to keep track of in my head.
- How many observations do I have in total? I just filtered some out, how many did I throw out? Am I aggregating before or after I filter? Where should I add this chunk of code?   In order to keep track of these questions when working in a jupyter notebook I end up having tons of cells that look like this:</description>
+      <description>&amp;emsp; When working with data, there are a lot of things I need to keep track of in my head.
+ How many observations do I have in total? I just filtered some out, how many did I throw out? Am I aggregating before or after I filter? Where should I add this chunk of code?  &amp;emsp; In order to keep track of these questions when working in a jupyter notebook I end up having tons of cells that look like this:</description>
     </item>
     
     <item>
@@ -65,9 +65,9 @@
       <pubDate>Thu, 05 Mar 2020 00:00:00 +0000</pubDate>
       
       <guid>/post/2020/03/05/generating-points-with-a-specific-correlation/</guid>
-      <description>Sometimes when playing around with statistical techniques, I&#39;d like to generate some data that is correlated. How might I do this? The answer is relatively simple but requires a tad bit of linear algebra.
-First, we&#39;ll sample from a bivariate normal distribution.
-Then, we&#39;ll rotate the data points to our specified correlation.
+      <description>Sometimes when playing around with statistical techniques, I&amp;rsquo;d like to generate some data that is correlated. How might I do this? The answer is relatively simple but requires a tad bit of linear algebra.
+First, we&amp;rsquo;ll sample from a bivariate normal distribution.
+Then, we&amp;rsquo;ll rotate the data points to our specified correlation.
 See here:
 http://www.acooke.org/random.pdf</description>
     </item>
@@ -79,8 +79,8 @@ http://www.acooke.org/random.pdf</description>
       
       <guid>/post/2020/03/04/something-cool-in-python/</guid>
       <description>Lets say I have the following function, and for some weird reason I want it to be called twice every time I call it.
-def foo():print(&#39;hello&#39;)I could solve this in a couple of different ways.
-def foo():print(&#39;hello&#39;)print(&#39;hello&#39;)def foo()print(&#39;hello&#39;)foo()foo()So&amp;hellip;the first way is bad because if I want to extend this functionality to other funtions, I would have to copy and paste the code everywhere.</description>
+def foo(): print(&#39;hello&#39;)  I could solve this in a couple of different ways.
+def foo(): print(&#39;hello&#39;) print(&#39;hello&#39;)  def foo() print(&#39;hello&#39;) foo() foo()  So&amp;hellip;the first way is bad because if I want to extend this functionality to other funtions, I would have to copy and paste the code everywhere.</description>
     </item>
     
     <item>
@@ -89,7 +89,7 @@ def foo():print(&#39;hello&#39;)print(&#39;hello&#39;)def foo()print(&#39;he
       <pubDate>Tue, 03 Mar 2020 00:00:00 +0000</pubDate>
       
       <guid>/post/2020/03/03/peter-kennedy-doesn-t-think-undergraduates-understand-sampling-distributions/</guid>
-      <description>In May of 1998, Peter Kennedy wrote a paper in the American Economic Review discussing teaching undergraduate econometrics. In it, he claims that most students don’t understand sampling distributions and puts forth reasons for this thought. In the paper he emphasizes the importance of simulations and suggests a simple one. I’ll be working through his example using R. Here is his suggested example:
+      <description>&amp;emsp; In May of 1998, Peter Kennedy wrote a paper in the American Economic Review discussing teaching undergraduate econometrics. In it, he claims that most students don’t understand sampling distributions and puts forth reasons for this thought. In the paper he emphasizes the importance of simulations and suggests a simple one. I’ll be working through his example using R. Here is his suggested example:
   Draw 50 x values from a uniform distribution between 3 and 12.</description>
     </item>
     
@@ -99,8 +99,8 @@ def foo():print(&#39;hello&#39;)print(&#39;hello&#39;)def foo()print(&#39;he
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/about/</guid>
-      <description>Hello! My name is Anthony and you’ve found my corner of the internet. In April 2020 I will be graduating from Grand Valley State University with a Bachelor of Science in Statistics and Economics. I also have a math minor.
- I am currently an Advanced Analytics intern at Steelcase, one of the largest office furniture manufacters on the planet. Here I leverage python, R, SQL, and a suite of Microsoft Azure products to analyze data and build models advancing the firm’s strategic objects.</description>
+      <description>Hello!  My name is Anthony and you’ve found my corner of the internet. In April 2020 I will be graduating from Grand Valley State University with a Bachelor of Science in Statistics and Economics. I also have a math minor.
+ I am currently an Advanced Analytics intern at Steelcase, one of the largest office furniture manufacters on the planet. Here I leverage python, R, SQL, and a suite of Microsoft Azure products to analyze data in a way that advances the firm’s strategic objects.</description>
     </item>
     
   </channel>
