@@ -6,7 +6,6 @@ slug: boston-house-price-analysis
 categories:
   - dataAnalysis
 tags: []
-draft: true
 ---
 
 &emsp; I use jupyter notebooks quite a bit and have developed a workflow that allows me to leverage python modules in order to give the notebook more structure. <a href="https://www.youtube.com/watch?v=7jiPeIFXb6U" target="_blank">This</a> talk does a great job describing some problems and pain points I have also encountered when working in a notebook environment.
