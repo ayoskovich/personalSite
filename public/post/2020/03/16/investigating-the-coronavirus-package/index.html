@@ -31,47 +31,112 @@
 
 <main>
 
-<script src="/rmarkdown-libs/kePrint/kePrint.js"></script>
 
 
-<table class="table table-striped table-hover" style="margin-left: auto; margin-right: auto;">
+<p>  Here is an example table.</p>
+<table>
 <thead>
 <tr>
+<th style="text-align:left;">
+Province.State
+</th>
 <th style="text-align:left;">
 Country.Region
 </th>
 <th style="text-align:right;">
-n
+Lat
+</th>
+<th style="text-align:right;">
+Long
+</th>
+<th style="text-align:left;">
+date
+</th>
+<th style="text-align:right;">
+cases
+</th>
+<th style="text-align:left;">
+type
 </th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td style="text-align:left;">
-Mainland China
+</td>
+<td style="text-align:left;">
+Japan
 </td>
 <td style="text-align:right;">
-1243
+35.6762
+</td>
+<td style="text-align:right;">
+139.6503
+</td>
+<td style="text-align:left;">
+2020-01-22
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:left;">
+confirmed
 </td>
 </tr>
 <tr>
 <td style="text-align:left;">
-Singapore
+</td>
+<td style="text-align:left;">
+South Korea
 </td>
 <td style="text-align:right;">
-26
+37.5665
+</td>
+<td style="text-align:right;">
+126.9780
+</td>
+<td style="text-align:left;">
+2020-01-22
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+confirmed
 </td>
 </tr>
 <tr>
 <td style="text-align:left;">
-Hong Kong
+</td>
+<td style="text-align:left;">
+Thailand
 </td>
 <td style="text-align:right;">
-22
+13.7563
+</td>
+<td style="text-align:right;">
+100.5018
+</td>
+<td style="text-align:left;">
+2020-01-22
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:left;">
+confirmed
 </td>
 </tr>
 </tbody>
 </table>
+<p>  Let’s draw a plot.
+<img src="/post/2020-03-16-investigating-the-coronavirus-package_files/figure-html/unnamed-chunk-2-1.png" width="960" /></p>
+<pre class="r"><code>coronavirus %&gt;%
+  filter(Country.Region %in% c(&#39;Singapore&#39;, &#39;Japan&#39;, &#39;Hong Kong&#39;)) %&gt;%
+  ggplot() +
+    geom_point(aes(x=date, y=cases)) +
+    facet_grid(Country.Region ~ .)</code></pre>
+<p><img src="/post/2020-03-16-investigating-the-coronavirus-package_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
 
 </main>
 

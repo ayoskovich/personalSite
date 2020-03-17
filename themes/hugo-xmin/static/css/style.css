@@ -5,6 +5,8 @@ body {
   line-height: 1.5em;
 }
 
+
+
 /* header and footer areas */
 .menu { padding: 0; }
 .menu li { display: inline-block; }
@@ -22,6 +24,8 @@ hr {
   color: #ddd;
 }
 
+
+
 /* code */
 pre {
   border: 1px solid #ddd;
@@ -29,11 +33,17 @@ pre {
   padding: 1em;
   overflow-x: auto;
 }
-code { background: #f9f9f9; }
-pre code { background: none; }
+code {
+  background: #f9f9f9;
+}
+pre code {
+  background: none;
+}
+
+
 
 /* misc elements */
-img, iframe, video { max-width: 100%; }
+img, iframe, video {max-width: 100%;}
 main { hyphens: auto; }
 blockquote {
   background: #f9f9f9;
@@ -41,16 +51,20 @@ blockquote {
   padding: 3px 1em 3px;
 }
 
+
+
+/* tables */
 table {
   margin: auto;
-  border-top: 1px solid #666;
   border-bottom: 1px solid #666;
+  border-spacing: 0;
+  font-size: 85%;
 }
 table thead th {
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid #666;
 }
 th, td {
-  padding: 5px;
+  padding: 10px;
 }
 thead, tfoot, tr:nth-child(even) {
   background: #eee;
