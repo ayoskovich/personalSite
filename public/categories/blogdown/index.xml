@@ -17,7 +17,7 @@
       <pubDate>Sat, 07 Mar 2020 00:00:00 +0000</pubDate>
       
       <guid>/post/2020/03/07/hugo-version-problems/</guid>
-      <description>&amp;emsp; In order to build this site, I use blogdown and then I deploy it with Netlify. The nice thing about netlify is that I can have the site as a repo on GitHub, and every time I push changes, the site will update. However, the other day one of my site builds kept failing. This was due to the Hugo version being different on my local machine than the one that is on Netlify.</description>
+      <description>In order to build this site, I use blogdown and then I deploy it with Netlify. The nice thing about netlify is that I can have the site as a repo on GitHub, and every time I push changes, the site will update. However, the other day one of my site builds kept failing. This was due to the Hugo version being different on my local machine than the one that is on Netlify.</description>
     </item>
     
   </channel>

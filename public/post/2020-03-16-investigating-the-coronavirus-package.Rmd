@@ -1,0 +1,28 @@
+---
+title: Investigating the coronavirus package
+author: ''
+date: '2020-03-16'
+slug: investigating-the-coronavirus-package
+categories:
+  - r
+tags: []
+draft: true
+---
+
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+require(coronavirus)
+require(tidyverse)
+require(knitr)
+require(kableExtra)
+
+data("coronavirus")
+
+coronavirus %>%
+  group_by(Country.Region) %>%
+  tally(sort=TRUE) %>%
+  head(3) %>%
+  kable() %>%
+  kable_styling(bootstrap_options = c("striped", "hover"))
+```
+
