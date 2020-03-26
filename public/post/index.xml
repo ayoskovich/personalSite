@@ -1,96 +1,635 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on Anthony Yoskovich</title>
+    <title>Posts | About Me (Anthony)</title>
     <link>/post/</link>
-    <description>Recent content in Posts on Anthony Yoskovich</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Fri, 13 Mar 2020 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-    <item>
-      <title>A Hybrid Jupyter Notebook Workflow</title>
-      <link>/post/2020/03/13/boston-house-price-analysis/</link>
-      <pubDate>Fri, 13 Mar 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/post/2020/03/13/boston-house-price-analysis/</guid>
-      <description>I use jupyter notebooks quite a bit and have developed a workflow that allows me to leverage python modules in order to give the notebook more structure. This talk does a great job describing some problems and pain points I have also encountered when working in a notebook environment.
- Most times if I work exclusively in a notebook I tend to not be very smart with the program architecture due to the ability to execute cells in an arbitrary order that I forget about.</description>
-    </item>
+      <atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
+    <description>Posts</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Thu, 26 Mar 2020 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
+      <title>Posts</title>
+      <link>/post/</link>
+    </image>
     
     <item>
-      <title>I can&#39;t have opinions anymore...</title>
-      <link>/post/2020/03/13/how-statistics-has-ruined-my-ability-to-have-opinions/</link>
-      <pubDate>Fri, 13 Mar 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/post/2020/03/13/how-statistics-has-ruined-my-ability-to-have-opinions/</guid>
-      <description>For the past 4 years I have been studying statistics. Doing lots of practice problems, playing around with data, and reading textbooks. I&#39;ve become a bit more familiar with the statistical way of thinking, how to analyze problems in terms of distributions rather than single numbers, and how to work with uncertainty. As much as I&#39;ve loved this, it has had quite the unexpected consequence in my personal life.</description>
+      <title>How Statistics Has Ruined My Ability To Have Opinions</title>
+      <link>/post/how-statistics-has-ruined-my-ability-to-have-opinions/</link>
+      <pubDate>Thu, 26 Mar 2020 00:00:00 +0000</pubDate>
+      <guid>/post/how-statistics-has-ruined-my-ability-to-have-opinions/</guid>
+      <description>
+
+
+&lt;p&gt;  For the past 4 years I have been studying statistics. Doing lots of practice problems, playing around with data, and reading textbooks. I’ve become a bit more familiar with the statistical way of thinking, how to analyze problems in terms of distributions rather than single numbers, and how to work with uncertainty. As much as I’ve loved this, it has had quite the unexpected consequence in my personal life.&lt;/p&gt;
+&lt;div id=&#34;i-find-it-hard-to-have-an-opinion-about-anything.&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;I find it hard to have an opinion about anything.&lt;/h3&gt;
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;  Thinking about a data generating process as single shot ocurrences isn’t a good way to frame problems. A better way would be to ask, “What would happen if we did this thing a bunch of times”. When attempting to effectively evaluate hypotheses, thinking about the distribution of events is often more helpful than looking at single occurrences. You don’t hear about clinical trials with 1 patient or a brake pad company testing on 1 car. We want the largest sample possible because it gives us the clearest picture of the population and reduces variability.&lt;/p&gt;
+&lt;p&gt;  Now back to my life (it is my website after all). Go out to a restaurant and have a bad experience? Well, I’ve only been there once so maybe it was just an off night. Take a new route home from work? Wow that was quick! But wait, I’m not taking into account the time of day or day of the week.&lt;/p&gt;
+&lt;p&gt;  I can’t help but be reminded of these scenes from Silicon Valley (NSFW language).&lt;/p&gt;
+&lt;iframe width=&#34;300&#34; height=&#34;300&#34; src=&#34;https://www.youtube.com/embed/OaFTpWYCzUk&#34; frameborder=&#34;0&#34; allow=&#34;accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture&#34; allowfullscreen&gt;
+&lt;/iframe&gt;
+&lt;iframe width=&#34;300&#34; height=&#34;300&#34; src=&#34;https://www.youtube.com/embed/VmOd27UwTsg&#34; frameborder=&#34;0&#34; allow=&#34;accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture&#34; allowfullscreen&gt;
+&lt;/iframe&gt;
+&lt;/div&gt;
+</description>
     </item>
     
     <item>
       <title>HUGO_VERSION problems</title>
-      <link>/post/2020/03/07/hugo-version-problems/</link>
+      <link>/post/hugo-version-problems/</link>
       <pubDate>Sat, 07 Mar 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/post/2020/03/07/hugo-version-problems/</guid>
-      <description>In order to build this site, I use blogdown and then I deploy it with Netlify. The nice thing about netlify is that I can have the site as a repo on GitHub, and every time I push changes, the site will update. However, the other day one of my site builds kept failing. This was due to the Hugo version being different on my local machine than the one that is on Netlify.</description>
+      <guid>/post/hugo-version-problems/</guid>
+      <description>
+
+
+&lt;p&gt;In order to build this site, I use blogdown and then I deploy it with Netlify. The nice thing about netlify is that I can have the site as a repo on GitHub, and every time I push changes, the site will update. However, the other day one of my site builds kept failing. This was due to the Hugo version being different on my local machine than the one that is on Netlify.&lt;/p&gt;
+&lt;p&gt;Luckily, and probably for the first time in my entire life, I found the answer in the first place I looked! If you are ever getting an error with &lt;a href=&#34;https://docs.netlify.com/configure-builds/common-configurations/#hugo&#34;&gt;exit code: 255&lt;/a&gt;, set the HUGO_VERSION environment variable (on Netlify) to the Hugo version you have installed locally. It’s pretty easy to check, in Rstudio just:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;blogdown::hugo_version()&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This should output a string (mine was ‘0.60.1’) and that string should be the environment variable. More info on setting the evironment variable &lt;a href=&#34;https://docs.netlify.com/configure-builds/environment-variables/#netlify-configuration-variables&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+</description>
     </item>
     
     <item>
-      <title>Using pandas&#39; `.transform()`</title>
-      <link>/post/2020/03/06/the-beauty-of-transform/</link>
-      <pubDate>Fri, 06 Mar 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/post/2020/03/06/the-beauty-of-transform/</guid>
-      <description>Suppose I have a dataframe, and I&#39;d like to compute the sum of a variable by group, but I&#39;d like to keep this sum in the original table. I could solve this by computing the sum and then merging this table back into the original, but I have to either create a new dataset or overload pd.merge with a horrible block of code.
- Luckily, there is a function in pandas called .</description>
-    </item>
-    
-    <item>
-      <title>Custom Logging in Python</title>
-      <link>/post/2020/03/05/applying-complicated-conditionals-to-pandas-dataframes/</link>
-      <pubDate>Thu, 05 Mar 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/post/2020/03/05/applying-complicated-conditionals-to-pandas-dataframes/</guid>
-      <description>When working with data, there are a lot of things I need to keep track of in my head.
- How many observations do I have in total? I just filtered some out, how many did I throw out? Am I aggregating before or after I filter? Where should I add this chunk of code?   In order to keep track of these questions when working in a jupyter notebook I end up having tons of cells that look like this:</description>
-    </item>
-    
-    <item>
-      <title>Generating points with a specific correlation</title>
-      <link>/post/2020/03/05/generating-points-with-a-specific-correlation/</link>
-      <pubDate>Thu, 05 Mar 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/post/2020/03/05/generating-points-with-a-specific-correlation/</guid>
-      <description>Sometimes when playing around with statistical techniques, I&#39;d like to generate some data that is correlated. How might I do this? The answer is relatively simple but requires a tad bit of linear algebra.
-First, we&#39;ll sample from a bivariate normal distribution.
-Then, we&#39;ll rotate the data points to our specified correlation.
-See here:
-http://www.acooke.org/random.pdf</description>
-    </item>
-    
-    <item>
-      <title>A Handy Use of Python Decorators</title>
-      <link>/post/2020/03/04/something-cool-in-python/</link>
+      <title>A handy use of decorators in python</title>
+      <link>/post/a-handy-use-of-decorators-in-python/</link>
       <pubDate>Wed, 04 Mar 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/post/2020/03/04/something-cool-in-python/</guid>
-      <description>Lets say I have the following function, and for some weird reason I want it to be called twice every time I call it.
-def foo():print(&#39;hello&#39;)I could solve this in a couple of different ways.
-def foo():print(&#39;hello&#39;)print(&#39;hello&#39;)def foo()print(&#39;hello&#39;)foo()foo()So&amp;hellip;the first way is bad because if I want to extend this functionality to other funtions, I would have to copy and paste the code everywhere.</description>
+      <guid>/post/a-handy-use-of-decorators-in-python/</guid>
+      <description>&lt;p&gt;  Lets say I have the following function, and for some weird reason I want it to be called twice every time I call it.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;def foo():
+  print(&#39;hello&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;  I could solve this in a couple of different ways.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;def foo():
+  print(&#39;hello&#39;)
+  print(&#39;hello&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;def foo()
+  print(&#39;hello&#39;)
+  
+foo()
+foo()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;  So&amp;hellip;the first way is bad because if I want to extend this functionality to other funtions, I would have to copy and paste the code everywhere. Also, to switch it on and off would be a mess. The second way is even clunkier.&lt;/p&gt;
+&lt;p&gt;  This is where decorators come in handy. I can write a function, that takes in a function as an argument, and then modify that function. Here&amp;rsquo;s what it looks like:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;def doTwice(function):
+  def wrapper(*args, **args):
+    function()
+    function()
+    
+  return wrapper
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;  Let&amp;rsquo;s break down what&amp;rsquo;s going on here.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;The &lt;code&gt;doTwice&lt;/code&gt; function first takes in another function as an argument.&lt;/li&gt;
+&lt;li&gt;There is a function inside of it, called &lt;code&gt;wrapper&lt;/code&gt;, that simply calls &lt;code&gt;function&lt;/code&gt; twice.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;doTwice&lt;/code&gt; returns &lt;code&gt;wrapper&lt;/code&gt;, which is actually a function.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;  Now that we have the &lt;code&gt;doTwice&lt;/code&gt; function, we&amp;rsquo;ll need to use it to &amp;ldquo;decorate&amp;rdquo; the &lt;code&gt;foo&lt;/code&gt; function. The syntax in python is simple.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;@doTwice
+def foo():
+  print(&#39;hello&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;  Now, every time I call &lt;code&gt;foo&lt;/code&gt;, &amp;lsquo;hello&amp;rsquo; will be printed twice, mission accomplished. The beauty of this solution is that I can now use &lt;code&gt;doTwice&lt;/code&gt; on as many functions as I&amp;rsquo;d like. I would simply add &lt;code&gt;@doTwice&lt;/code&gt; above each function definition.&lt;/p&gt;
+&lt;p&gt;  There are tons more helpful things you can do with decorators, and I think in the future I&amp;rsquo;ll write some more posts about them. Thanks for reading!&lt;/p&gt;
+&lt;br&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: The @ syntax isn&amp;rsquo;t the only way to decorate functions, the python documentation lays out another way that requires a bit more explaining.&lt;/p&gt;
+</description>
     </item>
     
     <item>
-      <title>Understanding Sampling Distributions</title>
-      <link>/post/2020/03/03/peter-kennedy-doesn-t-think-undergraduates-understand-sampling-distributions/</link>
-      <pubDate>Tue, 03 Mar 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/post/2020/03/03/peter-kennedy-doesn-t-think-undergraduates-understand-sampling-distributions/</guid>
-      <description>In May of 1998, Peter Kennedy wrote a paper in the American Economic Review discussing teaching undergraduate econometrics. In it, he claims that most students don’t understand sampling distributions and puts forth reasons for this thought. In the paper he emphasizes the importance of simulations and suggests a simple one. I’ll be working through his example using R. Here is his suggested example:
-  Draw 50 x values from a uniform distribution between 3 and 12.</description>
+      <title>Custom logging in python</title>
+      <link>/post/custom-logging/</link>
+      <pubDate>Sun, 01 Sep 2019 00:00:00 +0000</pubDate>
+      <guid>/post/custom-logging/</guid>
+      <description>&lt;p&gt;  When working with data, there are a lot of things I need to keep track of in my head.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;How many observations do I have in total?&lt;/li&gt;
+&lt;li&gt;I just filtered some out, how many did I throw out?&lt;/li&gt;
+&lt;li&gt;Am I aggregating before or after I filter?&lt;/li&gt;
+&lt;li&gt;Where should I add this chunk of code?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;  In order to keep track of these questions when working in a jupyter notebook I end up having &lt;em&gt;tons&lt;/em&gt; of cells that look like this:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;df.head()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;or&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;df.shape
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;  By using decorators and the &lt;code&gt;.pipe&lt;/code&gt; method I can develop an analysis path that will give me customized output and automate this tedious cycle of &lt;code&gt;.head()&lt;/code&gt; and &lt;code&gt;.shape&lt;/code&gt;. Let&amp;rsquo;s take a look.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import pandas as pd
+import numpy as np
+import functools
+
+np.random.seed(5)
+df = pd.DataFrame({
+    &#39;group&#39;:np.random.choice([&#39;a&#39;, &#39;b&#39;, &#39;c&#39;], 10),
+    &#39;x&#39;:np.random.randint(0, 10, 10),
+    &#39;y&#39;:np.random.normal(0, 10, 10)
+}); df.head()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;div&gt;
+&lt;style scoped&gt;
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+&lt;pre&gt;&lt;code&gt;.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;/style&gt;&lt;/p&gt;
+&lt;table border=&#34;1&#34; class=&#34;dataframe&#34;&gt;
+  &lt;thead&gt;
+    &lt;tr style=&#34;text-align: right;&#34;&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;group&lt;/th&gt;
+      &lt;th&gt;x&lt;/th&gt;
+      &lt;th&gt;y&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;0&lt;/th&gt;
+      &lt;td&gt;c&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;9.118736&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1&lt;/th&gt;
+      &lt;td&gt;b&lt;/td&gt;
+      &lt;td&gt;7&lt;/td&gt;
+      &lt;td&gt;-14.438416&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2&lt;/th&gt;
+      &lt;td&gt;c&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;18.244402&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;3&lt;/th&gt;
+      &lt;td&gt;c&lt;/td&gt;
+      &lt;td&gt;5&lt;/td&gt;
+      &lt;td&gt;14.576251&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;4&lt;/th&gt;
+      &lt;td&gt;a&lt;/td&gt;
+      &lt;td&gt;7&lt;/td&gt;
+      &lt;td&gt;-9.102582&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;h3 id=&#34;now-ill-define-some-processing-functions&#34;&gt;Now I&amp;rsquo;ll define some processing functions.&lt;/h3&gt;
+&lt;p&gt;  These functions all take the dataframe as an argument and pass the dataframe back. A few notes:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;The &lt;code&gt;pDoc&lt;/code&gt; decorator is what allows me to print out the docstring and the shapes of the df at each step of the process.&lt;/li&gt;
+&lt;li&gt;The &lt;code&gt;startPipe&lt;/code&gt; function may seem useless, but I&amp;rsquo;m just using it the get the size of the dataframe at the beginning of the analysis path.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;def pDoc(func):
+    &amp;quot;&amp;quot;&amp;quot;Print the docstring of a function.&amp;quot;&amp;quot;&amp;quot;
+    @functools.wraps(func)
+    def wrapper(*args, **kwargs):
+        rv = func(*args, **kwargs)
+        print(&amp;quot;{}(): \n\t{} -&amp;gt; {}&amp;quot;.format(func.__name__, func.__doc__, rv.shape))
+        return rv
+    return wrapper
+
+@pDoc
+def startPipe(df):
+    &amp;quot;&amp;quot;&amp;quot;Begin pipeline&amp;quot;&amp;quot;&amp;quot;
+    return df
+
+@pDoc
+def filterGroups(df):
+    &amp;quot;&amp;quot;&amp;quot;Remove group b from the analysis.&amp;quot;&amp;quot;&amp;quot;
+    return df.query(&#39;group != &amp;quot;b&amp;quot;&#39;)
+
+@pDoc
+def capVal(df):
+    &amp;quot;&amp;quot;&amp;quot;Cap the value of y at 10.&amp;quot;&amp;quot;&amp;quot;
+    dat = df.copy()
+    dat[&#39;y&#39;] = dat[&#39;y&#39;].apply(lambda x: 10 if x &amp;gt; 10 else x)
+    return dat
+
+@pDoc
+def getMean(df):
+    &amp;quot;&amp;quot;&amp;quot;Add column as mean value of x by group.&amp;quot;&amp;quot;&amp;quot;
+    dat = df.copy()
+    dat[&#39;g_mean&#39;] = dat.groupby(&#39;group&#39;)[&#39;x&#39;].transform(np.mean)
+    return dat
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;  Now I&amp;rsquo;ll tie all these functions together using &lt;code&gt;.pipe&lt;/code&gt;.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;(df
+    .pipe(startPipe)
+    .pipe(filterGroups)
+    .pipe(getMean)
+    .pipe(capVal)).head()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;startPipe(): 
+    Begin pipeline -&amp;gt; (10, 3)
+filterGroups(): 
+    Remove group b from the analysis. -&amp;gt; (8, 3)
+getMean(): 
+    Add column as mean value of x by group. -&amp;gt; (8, 4)
+capVal(): 
+    Cap the value of y at 10. -&amp;gt; (8, 4)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;div&gt;
+&lt;style scoped&gt;
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+&lt;pre&gt;&lt;code&gt;.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;/style&gt;&lt;/p&gt;
+&lt;table border=&#34;1&#34; class=&#34;dataframe&#34;&gt;
+  &lt;thead&gt;
+    &lt;tr style=&#34;text-align: right;&#34;&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;group&lt;/th&gt;
+      &lt;th&gt;x&lt;/th&gt;
+      &lt;th&gt;y&lt;/th&gt;
+      &lt;th&gt;g_mean&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;0&lt;/th&gt;
+      &lt;td&gt;c&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;9.118736&lt;/td&gt;
+      &lt;td&gt;3.0&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2&lt;/th&gt;
+      &lt;td&gt;c&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;10.000000&lt;/td&gt;
+      &lt;td&gt;3.0&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;3&lt;/th&gt;
+      &lt;td&gt;c&lt;/td&gt;
+      &lt;td&gt;5&lt;/td&gt;
+      &lt;td&gt;10.000000&lt;/td&gt;
+      &lt;td&gt;3.0&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;4&lt;/th&gt;
+      &lt;td&gt;a&lt;/td&gt;
+      &lt;td&gt;7&lt;/td&gt;
+      &lt;td&gt;-9.102582&lt;/td&gt;
+      &lt;td&gt;3.5&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;6&lt;/th&gt;
+      &lt;td&gt;a&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;-8.175481&lt;/td&gt;
+      &lt;td&gt;3.5&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;p&gt;  As you can see, I get a really nice log output that shows the function name, docstring, and the shape of its output. I like this solution because it automates the really tedious process of having to ask myself &amp;ldquo;how many records did I just throw out&amp;rdquo;. By using decorators, the function will always show me the shape of the output.&lt;/p&gt;
+&lt;p&gt;  Also, this solution can be really easily extended / modified. Don&amp;rsquo;t like what my &lt;code&gt;pDoc&lt;/code&gt; decorator is doing? It&amp;rsquo;s really easy to change and customize. You&amp;rsquo;re really only limited by your imagination (and python).&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Effective .transform in python</title>
+      <link>/post/transform/</link>
+      <pubDate>Sun, 01 Sep 2019 00:00:00 +0000</pubDate>
+      <guid>/post/transform/</guid>
+      <description>&lt;p&gt;Merging summary statistics back into a table is quite a common thing to do. At first glance, a solution to this problem is to simply compute the statistics in a new table and merge the table back in. However, with &lt;code&gt;pandas&lt;/code&gt; we don&amp;rsquo;t have to do that.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import pandas as pd
+import numpy as np
+
+np.random.seed(124)
+df = pd.DataFrame({
+    &#39;group&#39;:np.random.choice([&#39;a&#39;, &#39;b&#39;], 5),
+    &#39;x&#39;:np.random.randint(100, 200, 5)
+}).sort_values(by=&#39;group&#39;); df
+&lt;/code&gt;&lt;/pre&gt;
+&lt;div&gt;
+&lt;style scoped&gt;
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+&lt;pre&gt;&lt;code&gt;.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;/style&gt;&lt;/p&gt;
+&lt;table border=&#34;1&#34; class=&#34;dataframe&#34;&gt;
+  &lt;thead&gt;
+    &lt;tr style=&#34;text-align: right;&#34;&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;group&lt;/th&gt;
+      &lt;th&gt;x&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;0&lt;/th&gt;
+      &lt;td&gt;a&lt;/td&gt;
+      &lt;td&gt;141&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1&lt;/th&gt;
+      &lt;td&gt;a&lt;/td&gt;
+      &lt;td&gt;164&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;4&lt;/th&gt;
+      &lt;td&gt;a&lt;/td&gt;
+      &lt;td&gt;178&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2&lt;/th&gt;
+      &lt;td&gt;b&lt;/td&gt;
+      &lt;td&gt;120&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;3&lt;/th&gt;
+      &lt;td&gt;b&lt;/td&gt;
+      &lt;td&gt;128&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;p&gt;Here I&amp;rsquo;ve got some rows that having a grouping column called &lt;code&gt;group&lt;/code&gt;, and I&amp;rsquo;d like to calculate the sum of &lt;code&gt;x&lt;/code&gt; within each group and integrate it into my table.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;df[&#39;g_sum&#39;] = df.groupby(&#39;group&#39;)[&#39;x&#39;].transform(np.sum); df
+&lt;/code&gt;&lt;/pre&gt;
+&lt;div&gt;
+&lt;style scoped&gt;
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+&lt;pre&gt;&lt;code&gt;.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;/style&gt;&lt;/p&gt;
+&lt;table border=&#34;1&#34; class=&#34;dataframe&#34;&gt;
+  &lt;thead&gt;
+    &lt;tr style=&#34;text-align: right;&#34;&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;group&lt;/th&gt;
+      &lt;th&gt;x&lt;/th&gt;
+      &lt;th&gt;g_sum&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;0&lt;/th&gt;
+      &lt;td&gt;a&lt;/td&gt;
+      &lt;td&gt;141&lt;/td&gt;
+      &lt;td&gt;483&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1&lt;/th&gt;
+      &lt;td&gt;a&lt;/td&gt;
+      &lt;td&gt;164&lt;/td&gt;
+      &lt;td&gt;483&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;4&lt;/th&gt;
+      &lt;td&gt;a&lt;/td&gt;
+      &lt;td&gt;178&lt;/td&gt;
+      &lt;td&gt;483&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2&lt;/th&gt;
+      &lt;td&gt;b&lt;/td&gt;
+      &lt;td&gt;120&lt;/td&gt;
+      &lt;td&gt;248&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;3&lt;/th&gt;
+      &lt;td&gt;b&lt;/td&gt;
+      &lt;td&gt;128&lt;/td&gt;
+      &lt;td&gt;248&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;p&gt;A key idea is that &lt;code&gt;.transform&lt;/code&gt; will apply its function argument to the dataframe and &lt;strong&gt;return a result that is the same size as the input frame.&lt;/strong&gt;&lt;/p&gt;
+&lt;h3 id=&#34;we-can-also-use-transform-with-a-user-defined-function&#34;&gt;We can also use &lt;code&gt;.transform&lt;/code&gt; with a user defined function&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;def max_minus_one(col):
+    &amp;quot;&amp;quot;&amp;quot; Get the max - 1 of a list&amp;quot;&amp;quot;&amp;quot;
+    return np.max(col) - 1
+
+df[&#39;udf&#39;] = df.groupby(&#39;group&#39;)[&#39;x&#39;].transform(max_minus_one); df
+&lt;/code&gt;&lt;/pre&gt;
+&lt;div&gt;
+&lt;style scoped&gt;
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+&lt;pre&gt;&lt;code&gt;.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;/style&gt;&lt;/p&gt;
+&lt;table border=&#34;1&#34; class=&#34;dataframe&#34;&gt;
+  &lt;thead&gt;
+    &lt;tr style=&#34;text-align: right;&#34;&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;group&lt;/th&gt;
+      &lt;th&gt;x&lt;/th&gt;
+      &lt;th&gt;g_sum&lt;/th&gt;
+      &lt;th&gt;udf&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;0&lt;/th&gt;
+      &lt;td&gt;a&lt;/td&gt;
+      &lt;td&gt;141&lt;/td&gt;
+      &lt;td&gt;483&lt;/td&gt;
+      &lt;td&gt;177&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1&lt;/th&gt;
+      &lt;td&gt;a&lt;/td&gt;
+      &lt;td&gt;164&lt;/td&gt;
+      &lt;td&gt;483&lt;/td&gt;
+      &lt;td&gt;177&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;4&lt;/th&gt;
+      &lt;td&gt;a&lt;/td&gt;
+      &lt;td&gt;178&lt;/td&gt;
+      &lt;td&gt;483&lt;/td&gt;
+      &lt;td&gt;177&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2&lt;/th&gt;
+      &lt;td&gt;b&lt;/td&gt;
+      &lt;td&gt;120&lt;/td&gt;
+      &lt;td&gt;248&lt;/td&gt;
+      &lt;td&gt;127&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;3&lt;/th&gt;
+      &lt;td&gt;b&lt;/td&gt;
+      &lt;td&gt;128&lt;/td&gt;
+      &lt;td&gt;248&lt;/td&gt;
+      &lt;td&gt;127&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;h3 id=&#34;and-even-lambda-functions&#34;&gt;&amp;hellip;and even lambda functions&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;df[&#39;use_lam&#39;] = df.groupby(&#39;group&#39;)[&#39;x&#39;].transform(lambda x: np.max(x) - 1); df
+&lt;/code&gt;&lt;/pre&gt;
+&lt;div&gt;
+&lt;style scoped&gt;
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+&lt;pre&gt;&lt;code&gt;.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;/style&gt;&lt;/p&gt;
+&lt;table border=&#34;1&#34; class=&#34;dataframe&#34;&gt;
+  &lt;thead&gt;
+    &lt;tr style=&#34;text-align: right;&#34;&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;group&lt;/th&gt;
+      &lt;th&gt;x&lt;/th&gt;
+      &lt;th&gt;g_sum&lt;/th&gt;
+      &lt;th&gt;udf&lt;/th&gt;
+      &lt;th&gt;use_lam&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;0&lt;/th&gt;
+      &lt;td&gt;a&lt;/td&gt;
+      &lt;td&gt;141&lt;/td&gt;
+      &lt;td&gt;483&lt;/td&gt;
+      &lt;td&gt;177&lt;/td&gt;
+      &lt;td&gt;177&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1&lt;/th&gt;
+      &lt;td&gt;a&lt;/td&gt;
+      &lt;td&gt;164&lt;/td&gt;
+      &lt;td&gt;483&lt;/td&gt;
+      &lt;td&gt;177&lt;/td&gt;
+      &lt;td&gt;177&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;4&lt;/th&gt;
+      &lt;td&gt;a&lt;/td&gt;
+      &lt;td&gt;178&lt;/td&gt;
+      &lt;td&gt;483&lt;/td&gt;
+      &lt;td&gt;177&lt;/td&gt;
+      &lt;td&gt;177&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2&lt;/th&gt;
+      &lt;td&gt;b&lt;/td&gt;
+      &lt;td&gt;120&lt;/td&gt;
+      &lt;td&gt;248&lt;/td&gt;
+      &lt;td&gt;127&lt;/td&gt;
+      &lt;td&gt;127&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;3&lt;/th&gt;
+      &lt;td&gt;b&lt;/td&gt;
+      &lt;td&gt;128&lt;/td&gt;
+      &lt;td&gt;248&lt;/td&gt;
+      &lt;td&gt;127&lt;/td&gt;
+      &lt;td&gt;127&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Hello R Markdown</title>
+      <link>/post/2015-07-23-r-rmarkdown/</link>
+      <pubDate>Thu, 23 Jul 2015 21:13:14 -0500</pubDate>
+      <guid>/post/2015-07-23-r-rmarkdown/</guid>
+      <description>
+
+
+&lt;div id=&#34;r-markdown&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;R Markdown&lt;/h1&gt;
+&lt;p&gt;This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see &lt;a href=&#34;http://rmarkdown.rstudio.com&#34; class=&#34;uri&#34;&gt;http://rmarkdown.rstudio.com&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;You can embed an R code chunk like this:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;summary(cars)
+##      speed           dist       
+##  Min.   : 4.0   Min.   :  2.00  
+##  1st Qu.:12.0   1st Qu.: 26.00  
+##  Median :15.0   Median : 36.00  
+##  Mean   :15.4   Mean   : 42.98  
+##  3rd Qu.:19.0   3rd Qu.: 56.00  
+##  Max.   :25.0   Max.   :120.00
+fit &amp;lt;- lm(dist ~ speed, data = cars)
+fit
+## 
+## Call:
+## lm(formula = dist ~ speed, data = cars)
+## 
+## Coefficients:
+## (Intercept)        speed  
+##     -17.579        3.932&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;including-plots&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Including Plots&lt;/h1&gt;
+&lt;p&gt;You can also embed plots. See Figure &lt;a href=&#34;#fig:pie&#34;&gt;1&lt;/a&gt; for example:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;par(mar = c(0, 1, 0, 1))
+pie(
+  c(280, 60, 20),
+  c(&amp;#39;Sky&amp;#39;, &amp;#39;Sunny side of pyramid&amp;#39;, &amp;#39;Shady side of pyramid&amp;#39;),
+  col = c(&amp;#39;#0292D8&amp;#39;, &amp;#39;#F7EA39&amp;#39;, &amp;#39;#C4B632&amp;#39;),
+  init.angle = -50, border = NA
+)&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&#34;figure&#34;&gt;&lt;span id=&#34;fig:pie&#34;&gt;&lt;/span&gt;
+&lt;img src=&#34;/post/2015-07-23-r-rmarkdown_files/figure-html/pie-1.png&#34; alt=&#34;A fancy pie chart.&#34; width=&#34;672&#34; /&gt;
+&lt;p class=&#34;caption&#34;&gt;
+Figure 1: A fancy pie chart.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</description>
     </item>
     
   </channel>

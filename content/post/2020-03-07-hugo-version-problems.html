@@ -1,0 +1,25 @@
+---
+title: HUGO_VERSION problems
+author: ''
+date: '2020-03-07'
+slug: hugo-version-problems
+categories: []
+tags: []
+subtitle: 'and a quick fix.'
+summary: 'Failing netlify builds? Make sure to check the HUGO_VERSION environment variable.'
+authors: []
+lastmod: '2020-03-26T13:28:15-04:00'
+featured: no
+image:
+  caption: ''
+  focal_point: ''
+  preview_only: no
+projects: []
+---
+
+
+
+<p>In order to build this site, I use blogdown and then I deploy it with Netlify. The nice thing about netlify is that I can have the site as a repo on GitHub, and every time I push changes, the site will update. However, the other day one of my site builds kept failing. This was due to the Hugo version being different on my local machine than the one that is on Netlify.</p>
+<p>Luckily, and probably for the first time in my entire life, I found the answer in the first place I looked! If you are ever getting an error with <a href="https://docs.netlify.com/configure-builds/common-configurations/#hugo">exit code: 255</a>, set the HUGO_VERSION environment variable (on Netlify) to the Hugo version you have installed locally. It’s pretty easy to check, in Rstudio just:</p>
+<pre class="r"><code>blogdown::hugo_version()</code></pre>
+<p>This should output a string (mine was ‘0.60.1’) and that string should be the environment variable. More info on setting the evironment variable <a href="https://docs.netlify.com/configure-builds/environment-variables/#netlify-configuration-variables">here</a>.</p>
