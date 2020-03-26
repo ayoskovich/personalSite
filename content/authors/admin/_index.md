@@ -7,7 +7,7 @@ education:
   - course: BSc in Statistics & Economics
     institution: Grand Valley State University
     year: 2020
-email: ""
+email: "yoskovia@mail.gvsu.edu"
 interests:
 - Statistics
 - Economics
@@ -28,4 +28,4 @@ user_groups:
 - Visitors
 ---
 
-I plan to graduate in April of 2020 and have have developed both theoretical and practical skills during my time as an undergraduate student. When consulting in an analytics context, I strive to be a thought partner rather than an analytics giver.
+I plan to graduate in April of 2020 and have have developed both theoretical and practical skills during my time as an undergraduate student. When consulting in an analytics context, I strive to be an effective thought partner to deliver relevant and actionable insights.
