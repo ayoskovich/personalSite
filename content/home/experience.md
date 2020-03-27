@@ -27,9 +27,19 @@ date_format = "Jan 2006"
   description = """
   Working closely with business professionals on projects related to:
   
-  * Strategic employee deployment
-  * Floor plan optimization
   * Market potential forecasting
+  
+    * Developed and translated predictive models from a 10k+ line codebase from SAS into python.
+    * Drastically increased scalability, readability, and modularity of code.
+    
+  * Strategic employee deployment
+  
+    * Estimated incremental sales across geographies utilitizing python and advanced techniques such as clustering, regression, and imputation.
+    
+  * Floor plan optimization
+  
+    * Built and deployed a linear program with a small team to reconfigure seating assignments to maximize key metrics.
+
   """
 
 [[experience]]
@@ -42,10 +52,15 @@ date_format = "Jan 2006"
   description = """
   Helping students gain a deeper understanding of statistical tools and methods such as:
   
-  * ANOVA
+  * Analysis of Variance
+  
+     * One way, two way, and non-parametric approaches
   * Regression
-  * Sampling techniques
-  * R, python, SAS, and SPSS
+  
+     * Single-variable, multi-variable, linear, non-linear, logistic, and quantile
+  * Common packages
+  
+     * R, python, SAS, SPSS, Excel, and JMP
   """
 
 +++
