@@ -5,8 +5,8 @@ headless = true  # This file represents a page section.
 active = true  # Activate this widget? true/false
 weight = 40  # Order that this section will appear.
 
-title = "Technical Skills"
-subtitle = ""
+title = "Skills"
+subtitle = "Proven capabilities in the following"
 
 # Showcase personal skills or business features.
 # 
@@ -15,39 +15,26 @@ subtitle = ""
 # For available icons, see: https://sourcethemes.com/academic/docs/page-builder/#icons
 
 [[feature]]
-  icon = "r-project"
-  icon_pack = "fab"
-  name = "R"
-  description = "Building interactive visualizations"
-  
-[[feature]]
-  icon = "python"
-  icon_pack = "fab"
-  name = "Python"
-  description = "Proficient"
-  
-[[feature]]
-  icon = "table"
+  icon = "laptop-code"
   icon_pack = "fas"
-  name = "Messy Data"
-  description = "Wrangling it"
-  
-[[feature]]
-  icon = "calculator"
-  icon_pack = "fas"
-  name = "Mathematics"
-  description = "Abstracting problems"
-  
-[[feature]]
-  icon = "camera-retro"
-  icon_pack = "fas"
-  name = "Photography"
-  description = "Takin pics"
-  
-[[feature]]
-  icon = "chess"
-  icon_pack = "fas"
-  name = "Chess"
-  description = "Strategizing"
+  name = "Programming"
+  description = """
+  R, Python, SQL, SAS
+  """
 
+[[feature]]
+  icon = "chart-pie"
+  icon_pack = "fas"
+  name = "Visualization"
+  description = """
+  bokeh, matplotlib, RShiny, ggplot
+  """
+  
+[[feature]]
+  icon = "chalkboard-teacher"
+  icon_pack = "fas"
+  name = "Communicating Results"
+  description = """
+  jupyter slides, powerpoint
+  """
 +++

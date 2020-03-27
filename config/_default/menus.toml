@@ -26,6 +26,11 @@
    weight = 40
 
 [[main]]
+   name = "Coursework"
+   url = "files/coursework.pdf"
+   weight = 50
+   
+[[main]]
    name = "Contact me"
    url = "#contact"
-   weight = 50
+   weight = 60
