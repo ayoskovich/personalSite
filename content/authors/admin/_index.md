@@ -19,6 +19,12 @@ organizations:
   url: ""
 role: Soon to be college graduate and fan of delimited files.
 social:
+- icon: envelope
+  icon_pack: fas
+  link: '#contact'
+- icon: linkedin
+  icon_pack: fab
+  link: https://www.linkedin.com/in/ayoskovich/
 - icon: github
   icon_pack: fab
   link: https://github.com/ayoskovich
@@ -28,4 +34,4 @@ user_groups:
 - Visitors
 ---
 
-&emsp; I plan to graduate in April of 2020 and have have developed both theoretical and practical skills during my time as an undergraduate student. When consulting in an analytics context, I strive to be an effective thought partner to deliver relevant and actionable insights.
+I strive to be an effective thought partner to deliver actionable insights using technologies like Python, R, SAS, and many others. I am just as comfortable inverting a matrix as I am communicating complex analyses to non-technical stakeholders and am always on the lookout for opportunities to intertwine analytical models with business processes.
