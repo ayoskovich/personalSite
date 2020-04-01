@@ -1,8 +1,8 @@
 {
-    "path" : "C:/Users/Anthony/Desktop/personalSite/themes/hugo-academic/assets/images",
+    "path" : "C:/Users/Anthony/Desktop/personalSite/content/post",
     "sortOrder" : [
         {
-            "ascending" : true,
+            "ascending" : false,
             "columnIndex" : 2
         }
     ]

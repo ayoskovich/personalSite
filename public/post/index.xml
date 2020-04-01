@@ -5,12 +5,21 @@
     <link>/post/</link>
       <atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     <description>Posts</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Thu, 26 Mar 2020 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 01 Apr 2020 00:00:00 +0000</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>Posts</title>
       <link>/post/</link>
     </image>
+    
+    <item>
+      <title>Self Isolation Projects</title>
+      <link>/post/self-isolation-projects/</link>
+      <pubDate>Wed, 01 Apr 2020 00:00:00 +0000</pubDate>
+      <guid>/post/self-isolation-projects/</guid>
+      <description>&lt;p&gt;With my internship ending soon and me having lots of time on my hands I&amp;rsquo;ve been kind of puttering around with some stuff. I recently found some data from the Office of Personnel management that is kind of a good data wrangling exercise. Also, I&amp;rsquo;m going to work on some operations research stuff. I&amp;rsquo;m planning on rewriting &lt;em&gt;Linear Programming and Extensions&lt;/em&gt; by George B. Danzig in LaTeX. Also, I&amp;rsquo;d like to use &lt;code&gt;scipy&lt;/code&gt; in order to solve some of the operations research problems he poses in this paper. Keep an eye on my github repo for more info.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>How Statistics Has Ruined My Ability To Have Opinions</title>
