@@ -3,8 +3,23 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>/post/tile_rep_diff/</loc>
+    <lastmod>2020-04-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/creating-code-free-jupyter-notebook-exports/</loc>
+    <lastmod>2020-04-09T16:33:44-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/</loc>
+    <lastmod>2020-04-09T16:33:44-04:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/post/</loc>
-    <lastmod>2020-04-01T11:53:28-04:00</lastmod>
+    <lastmod>2020-04-09T16:33:44-04:00</lastmod>
   </url>
   
   <url>
@@ -35,11 +50,6 @@
   <url>
     <loc>/post/transform/</loc>
     <lastmod>2019-09-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/</loc>
-    <lastmod>2018-06-28T00:00:00+01:00</lastmod>
   </url>
   
   <url>
