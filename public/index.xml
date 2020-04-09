@@ -25,6 +25,14 @@
 
 &lt;p&gt;For example, we can sell different types of chairs in quantities of 10 and 20.&lt;/p&gt;
 
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import pandas as pd
+import numpy as np
+pd.DataFrame({
+    &#39;name&#39;:np.repeat([&#39;silk&#39;, &#39;expression&#39;], 2),
+    &#39;size&#39;:np.tile([10, 20], 2)
+})
+&lt;/code&gt;&lt;/pre&gt;
+
 &lt;div&gt;
 &lt;style scoped&gt;
     .dataframe tbody tr th:only-of-type {
@@ -73,6 +81,15 @@
 &lt;/div&gt;
 
 &lt;p&gt;Here is a really quick demonstration of the differences of these 2 functions. &lt;code&gt;.repeat&lt;/code&gt; will element-wise repeat each value, while &lt;code&gt;.tile&lt;/code&gt; will repeat the entire sequence that many times. Very helpful! Let&amp;rsquo;s extend this a tad to get something we can play around with. If we really think about this here, we need to repeat the names (unique vals) times, and we need to tile the values (unique names) times.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;names = [&#39;silk&#39;, &#39;expression&#39;]
+vals = [10, 20]
+
+pd.DataFrame({
+    &#39;name&#39;:np.repeat(names, len(vals)),
+    &#39;size&#39;:np.tile(vals, len(names))
+})
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;div&gt;
 &lt;style scoped&gt;
@@ -123,6 +140,31 @@
 
 &lt;p&gt;By adding &lt;code&gt;len(vals)&lt;/code&gt; and &lt;code&gt;len(names)&lt;/code&gt;, if I want to create another name or add a value to my list it won&amp;rsquo;t require me to change anything. I&amp;rsquo;ll wrap the df construction in function and prove it to you.&lt;/p&gt;
 
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;def buildFrame(names, vals):
+    &amp;quot;&amp;quot;&amp;quot; Create a dataframe with names and values.
+    
+    Args:
+        names (list): Some names
+        vals (list): Some values
+    Returns:
+        pd.DataFrame: Dataframe with a record for each name and value
+    &amp;quot;&amp;quot;&amp;quot;
+    
+    return pd.DataFrame({
+        &#39;name&#39;:np.repeat(names, len(vals)),
+        &#39;size&#39;:np.tile(vals, len(names))
+    })
+
+n1 = [&#39;anthony&#39;, &#39;jim&#39;]
+v1 = [10]
+
+n2 = [&#39;a&#39;, &#39;b&#39;, &#39;c&#39;]
+v2 = [10, 20]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;buildFrame(n1, v1)
+&lt;/code&gt;&lt;/pre&gt;
+
 &lt;div&gt;
 &lt;style scoped&gt;
     .dataframe tbody tr th:only-of-type {
@@ -159,6 +201,9 @@
   &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;/div&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;buildFrame(n2, v2)
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;div&gt;
 &lt;style scoped&gt;
@@ -216,6 +261,9 @@
   &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;/div&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;
+&lt;/code&gt;&lt;/pre&gt;
 </description>
     </item>
     
