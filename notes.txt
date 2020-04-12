@@ -6,3 +6,7 @@ config/_default/menus.toml:
   
 content/home:
   - Edit skills / experience / about / etc.
+  
+content/post:
+  - Create a new post
+  - Create a new directory for a jupyter notebook post
