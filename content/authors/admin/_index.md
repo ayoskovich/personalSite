@@ -17,7 +17,7 @@ name: Anthony Yoskovich
 organizations:
 - name: Grand Rapids, MI
   url: ""
-role: Soon to be college graduate and fan of delimited files.
+role: Recent college graduate and fan of delimited files.
 social:
 - icon: envelope
   icon_pack: fas
