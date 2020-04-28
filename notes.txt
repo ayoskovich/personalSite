@@ -10,3 +10,7 @@ content/home:
 content/post:
   - Create a new post
   - Create a new directory for a jupyter notebook post
+  
+content/authors/admin:
+  - Change profile image
+  - Change name tag / Mission / Interests / Education

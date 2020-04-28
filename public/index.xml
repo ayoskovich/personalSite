@@ -17,21 +17,32 @@
       <link>/post/tile_rep_diff/</link>
       <pubDate>Thu, 09 Apr 2020 00:00:00 +0000</pubDate>
       <guid>/post/tile_rep_diff/</guid>
-      <description>&lt;p&gt;I&amp;rsquo;ve recently been sharpening my fake data creation skills. Mainly because I&amp;rsquo;ve been in a couple situations where I&amp;rsquo;ve needed to develop things but real data was not available. &lt;code&gt;numpy&lt;/code&gt; is full of great functions to make this a streamlined process and I&amp;rsquo;m going to talk through the &lt;code&gt;.tile&lt;/code&gt; and &lt;code&gt;.repeat&lt;/code&gt; functions. Let&amp;rsquo;s get some context for the data I&amp;rsquo;m going to fakify.&lt;/p&gt;
+      <description>&lt;p&gt;In terms of working on a project, waiting for data can make things take a bit longer than usual. However, I don&amp;rsquo;t think you should ever have that excuse. If you know the format of how the data will be formatted you can still get a lot of work done. The data wrangling / actual mechanical analysis can be completed. However, the actual interpretation cannot be done, but that&amp;rsquo;s not a lot of the project. In this post I explain how to use &lt;code&gt;np.tile&lt;/code&gt; and &lt;code&gt;np.repeat&lt;/code&gt; in order to make fake data that help this process.&lt;/p&gt;
 
-&lt;blockquote&gt;
-&lt;p&gt;We&amp;rsquo;ve got some data that tracks the different quantity options of different types of product.&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;Sometimes you wait for data
 
-&lt;p&gt;For example, we can sell different types of chairs in quantities of 10 and 20.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;You can still make a lot of progress&lt;/li&gt;
+&lt;li&gt;There are some parts of the project that only rely on the format of the data&lt;/li&gt;
+&lt;li&gt;Actual interpretation cannot be done&lt;/li&gt;
+&lt;li&gt;Further discussion of this idea is for another post&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Creating fake data is an artform&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;I use &lt;code&gt;np.tile&lt;/code&gt; and &lt;code&gt;np.repeat&lt;/code&gt; in order to help this process&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import pandas as pd
 import numpy as np
 pd.DataFrame({
-    &#39;name&#39;:np.repeat([&#39;silk&#39;, &#39;expression&#39;], 2),
-    &#39;size&#39;:np.tile([10, 20], 2)
+&#39;name&#39;:np.repeat([&#39;silk&#39;, &#39;expression&#39;], 2),
+&#39;size&#39;:np.tile([10, 20], 2)
 })
-&lt;/code&gt;&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;div&gt;
 &lt;style scoped&gt;
@@ -261,9 +272,6 @@ v2 = [10, 20]
   &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;/div&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;
-&lt;/code&gt;&lt;/pre&gt;
 </description>
     </item>
     

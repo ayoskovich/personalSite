@@ -28,7 +28,7 @@
   
     
   
-  <meta name="description" content="There are a couple different ways to repeat a list of items.">
+  <meta name="description" content="Interestingly enough, there isnt just one way to repeat a list.">
 
   
   <link rel="alternate" hreflang="en-us" href="/post/tile_rep_diff/">
@@ -231,7 +231,7 @@
   <meta property="og:site_name" content="Home">
   <meta property="og:url" content="/post/tile_rep_diff/">
   <meta property="og:title" content="Comparing np.tile vs np.repeat | Home">
-  <meta property="og:description" content="There are a couple different ways to repeat a list of items."><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
+  <meta property="og:description" content="Interestingly enough, there isnt just one way to repeat a list."><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
   <meta property="twitter:image" content="img/map[gravatar:%!s(bool=false) shape:circle]"><meta property="og:locale" content="en-us">
   
     
@@ -281,7 +281,7 @@
       "url": "/images/icon_hua1b8334fde163bb2069beee6b7051f03_365075_192x192_fill_lanczos_center_2.png"
     }
   },
-  "description": "There are a couple different ways to repeat a list of items."
+  "description": "Interestingly enough, there isnt just one way to repeat a list."
 }
 </script>
 
@@ -643,21 +643,32 @@
   <div class="article-container">
 
     <div class="article-style">
-      <p>I&rsquo;ve recently been sharpening my fake data creation skills. Mainly because I&rsquo;ve been in a couple situations where I&rsquo;ve needed to develop things but real data was not available. <code>numpy</code> is full of great functions to make this a streamlined process and I&rsquo;m going to talk through the <code>.tile</code> and <code>.repeat</code> functions. Let&rsquo;s get some context for the data I&rsquo;m going to fakify.</p>
+      <p>In terms of working on a project, waiting for data can make things take a bit longer than usual. However, I don&rsquo;t think you should ever have that excuse. If you know the format of how the data will be formatted you can still get a lot of work done. The data wrangling / actual mechanical analysis can be completed. However, the actual interpretation cannot be done, but that&rsquo;s not a lot of the project. In this post I explain how to use <code>np.tile</code> and <code>np.repeat</code> in order to make fake data that help this process.</p>
 
-<blockquote>
-<p>We&rsquo;ve got some data that tracks the different quantity options of different types of product.</p>
-</blockquote>
+<ul>
+<li>Sometimes you wait for data
 
-<p>For example, we can sell different types of chairs in quantities of 10 and 20.</p>
+<ul>
+<li>You can still make a lot of progress</li>
+<li>There are some parts of the project that only rely on the format of the data</li>
+<li>Actual interpretation cannot be done</li>
+<li>Further discussion of this idea is for another post</li>
+</ul></li>
+
+<li><p>Creating fake data is an artform</p>
+
+<ul>
+<li><p>I use <code>np.tile</code> and <code>np.repeat</code> in order to help this process</p>
 
 <pre><code class="language-python">import pandas as pd
 import numpy as np
 pd.DataFrame({
-    'name':np.repeat(['silk', 'expression'], 2),
-    'size':np.tile([10, 20], 2)
+'name':np.repeat(['silk', 'expression'], 2),
+'size':np.tile([10, 20], 2)
 })
-</code></pre>
+</code></pre></li>
+</ul></li>
+</ul>
 
 <div>
 <style scoped>
@@ -887,9 +898,6 @@ v2 = [10, 20]
   </tbody>
 </table>
 </div>
-
-<pre><code class="language-python">
-</code></pre>
 
     </div>
 

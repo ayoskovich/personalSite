@@ -1,19 +1,14 @@
 ---
 title: Comparing np.tile vs np.repeat
 date: 2020-04-09
-summary: 'Interestingly enough, there isnt just one way to repeat a list.'
+summary: 'There are a couple different ways to repeat a list of items.'
 draft: true
 ---
-In terms of working on a project, waiting for data can make things take a bit longer than usual. However, I don't think you should ever have that excuse. If you know the format of how the data will be formatted you can still get a lot of work done. The data wrangling / actual mechanical analysis can be completed. However, the actual interpretation cannot be done, but that's not a lot of the project. In this post I explain how to use `np.tile` and `np.repeat` in order to make fake data that help this process.
+I've recently been sharpening my fake data creation skills. Mainly because I've been in a couple situations where I've needed to develop things but real data was not available. `numpy` is full of great functions to make this a streamlined process and I'm going to talk through the `.tile` and `.repeat` functions. Let's get some context for the data I'm going to fakify.
 
+> We've got some data that tracks the different quantity options of different types of product.
 
-- Sometimes you wait for data
-    - You can still make a lot of progress
-    - There are some parts of the project that only rely on the format of the data
-    - Actual interpretation cannot be done
-    - Further discussion of this idea is for another post
-- Creating fake data is an artform
-    - I use `np.tile` and `np.repeat` in order to help this process
+For example, we can sell different types of chairs in quantities of 10 and 20.
 
 
 ```python
@@ -281,3 +276,8 @@ buildFrame(n2, v2)
 </div>
 
 
+
+
+```python
+
+```
