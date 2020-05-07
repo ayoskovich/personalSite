@@ -4,8 +4,7 @@ date: 2020-04-09
 summary: 'Interestingly enough, there isnt just one way to repeat a list.'
 draft: true
 ---
-In terms of working on a project, waiting for data can make things take a bit longer than usual. However, I don't think you should ever have that excuse. If you know the format of how the data will be formatted you can still get a lot of work done. The data wrangling / actual mechanical analysis can be completed. However, the actual interpretation cannot be done, but that's not a lot of the project. In this post I explain how to use `np.tile` and `np.repeat` in order to make fake data that help this process.
-
+Waiting for data can make things take a bit longer than usual. However, I don't think you should ever have that excuse. If you know the format of how the data will be formatted you can still get a lot of work done. The data wrangling / actual mechanical analysis can be completed. However, the actual interpretation cannot be done, but that's not a lot of the project. In this post I explain how to use `np.tile` and `np.repeat` in order to make fake data that help this process.
 
 - Sometimes you wait for data
     - You can still make a lot of progress
