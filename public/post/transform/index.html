@@ -643,10 +643,7 @@
   <div class="article-container">
 
     <div class="article-style">
-      
-
-<p>Merging summary statistics back into a table is quite a common thing to do. At first glance, a solution to this problem is to simply compute the statistics in a new table and merge the table back in. However, with <code>pandas</code> we don&rsquo;t have to do that.</p>
-
+      <p>Merging summary statistics back into a table is quite a common thing to do. At first glance, a solution to this problem is to simply compute the statistics in a new table and merge the table back in. However, with <code>pandas</code> we don&rsquo;t have to do that.</p>
 <pre><code class="language-python">import pandas as pd
 import numpy as np
 
@@ -656,21 +653,20 @@ df = pd.DataFrame({
     'x':np.random.randint(100, 200, 5)
 }).sort_values(by='group'); df
 </code></pre>
-
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
+<p></style></p>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -708,26 +704,23 @@ df = pd.DataFrame({
   </tbody>
 </table>
 </div>
-
 <p>Here I&rsquo;ve got some rows that having a grouping column called <code>group</code>, and I&rsquo;d like to calculate the sum of <code>x</code> within each group and integrate it into my table.</p>
-
 <pre><code class="language-python">df['g_sum'] = df.groupby('group')['x'].transform(np.sum); df
 </code></pre>
-
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
+<p></style></p>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -771,32 +764,28 @@ df = pd.DataFrame({
   </tbody>
 </table>
 </div>
-
 <p>A key idea is that <code>.transform</code> will apply its function argument to the dataframe and <strong>return a result that is the same size as the input frame.</strong></p>
-
 <h3 id="we-can-also-use-transform-with-a-user-defined-function">We can also use <code>.transform</code> with a user defined function</h3>
-
 <pre><code class="language-python">def max_minus_one(col):
     &quot;&quot;&quot; Get the max - 1 of a list&quot;&quot;&quot;
     return np.max(col) - 1
 
 df['udf'] = df.groupby('group')['x'].transform(max_minus_one); df
 </code></pre>
-
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
+<p></style></p>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -846,26 +835,23 @@ df['udf'] = df.groupby('group')['x'].transform(max_minus_one); df
   </tbody>
 </table>
 </div>
-
 <h3 id="and-even-lambda-functions">&hellip;and even lambda functions</h3>
-
 <pre><code class="language-python">df['use_lam'] = df.groupby('group')['x'].transform(lambda x: np.max(x) - 1); df
 </code></pre>
-
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
+<p></style></p>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">

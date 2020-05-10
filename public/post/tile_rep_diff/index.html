@@ -28,7 +28,7 @@
   
     
   
-  <meta name="description" content="Interestingly enough, there isnt just one way to repeat a list.">
+  <meta name="description" content="and some insights into a larger idea">
 
   
   <link rel="alternate" hreflang="en-us" href="/post/tile_rep_diff/">
@@ -230,8 +230,8 @@
   
   <meta property="og:site_name" content="Home">
   <meta property="og:url" content="/post/tile_rep_diff/">
-  <meta property="og:title" content="Comparing np.tile vs np.repeat | Home">
-  <meta property="og:description" content="Interestingly enough, there isnt just one way to repeat a list."><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
+  <meta property="og:title" content="Adventures in creating fake data | Home">
+  <meta property="og:description" content="and some insights into a larger idea"><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
   <meta property="twitter:image" content="img/map[gravatar:%!s(bool=false) shape:circle]"><meta property="og:locale" content="en-us">
   
     
@@ -263,7 +263,7 @@
     "@type": "WebPage",
     "@id": "/post/tile_rep_diff/"
   },
-  "headline": "Comparing np.tile vs np.repeat",
+  "headline": "Adventures in creating fake data",
   
   "datePublished": "2020-04-09T00:00:00Z",
   "dateModified": "2020-04-09T00:00:00Z",
@@ -281,7 +281,7 @@
       "url": "/images/icon_hua1b8334fde163bb2069beee6b7051f03_365075_192x192_fill_lanczos_center_2.png"
     }
   },
-  "description": "Interestingly enough, there isnt just one way to repeat a list."
+  "description": "and some insights into a larger idea"
 }
 </script>
 
@@ -299,7 +299,7 @@
 
 
 
-  <title>Comparing np.tile vs np.repeat | Home</title>
+  <title>Adventures in creating fake data | Home</title>
 
 </head>
 
@@ -579,7 +579,7 @@
   
   
 <div class="article-container pt-3">
-  <h1>Comparing np.tile vs np.repeat</h1>
+  <h1>Adventures in creating fake data</h1>
 
   
 
@@ -607,7 +607,7 @@
   
   <span class="middot-divider"></span>
   <span class="article-reading-time">
-    3 min read
+    2 min read
   </span>
   
 
@@ -643,105 +643,55 @@
   <div class="article-container">
 
     <div class="article-style">
-      <p>Waiting for data can make things take a bit longer than usual. However, I don&rsquo;t think you should ever have that excuse. If you know the format of how the data will be formatted you can still get a lot of work done. The data wrangling / actual mechanical analysis can be completed. However, the actual interpretation cannot be done, but that&rsquo;s not a lot of the project. In this post I explain how to use <code>np.tile</code> and <code>np.repeat</code> in order to make fake data that help this process.</p>
-
+      <ul>
+<li>Main point
 <ul>
-<li>Sometimes you wait for data
-
+<li>Abstracting tasks (or partitioning work into &lsquo;context specific&rsquo; and general can be helpful)</li>
+</ul>
+</li>
+<li>Summary
 <ul>
-<li>You can still make a lot of progress</li>
-<li>There are some parts of the project that only rely on the format of the data</li>
-<li>Actual interpretation cannot be done</li>
-<li>Further discussion of this idea is for another post</li>
-</ul></li>
-
-<li><p>Creating fake data is an artform</p>
-
+<li>Creating fake data from known rules can be a tad challenging</li>
+<li>In the development process, &ldquo;I&rsquo;m waiting for data&rdquo; shouldn&rsquo;t stop someone from continuing</li>
+<li>Conditional probability can be dealt with</li>
+</ul>
+</li>
+<li>Motivation
 <ul>
-<li><p>I use <code>np.tile</code> and <code>np.repeat</code> in order to help this process</p>
-
+<li>Worked on a project where we were waiting on someone to give us data</li>
+<li>We had given them a sheet to fill out, ensuring the data was in an easy to digest format (good consulting skill)</li>
+</ul>
+</li>
+</ul>
 <pre><code class="language-python">import pandas as pd
 import numpy as np
-pd.DataFrame({
-'name':np.repeat(['silk', 'expression'], 2),
-'size':np.tile([10, 20], 2)
-})
-</code></pre></li>
-</ul></li>
-</ul>
 
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
+SEATS = ['silk', 'expression']
+AMOUNTS = [10, 20]
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>name</th>
-      <th>size</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>0</td>
-      <td>silk</td>
-      <td>10</td>
-    </tr>
-    <tr>
-      <td>1</td>
-      <td>silk</td>
-      <td>20</td>
-    </tr>
-    <tr>
-      <td>2</td>
-      <td>expression</td>
-      <td>10</td>
-    </tr>
-    <tr>
-      <td>3</td>
-      <td>expression</td>
-      <td>20</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
-<p>Here is a really quick demonstration of the differences of these 2 functions. <code>.repeat</code> will element-wise repeat each value, while <code>.tile</code> will repeat the entire sequence that many times. Very helpful! Let&rsquo;s extend this a tad to get something we can play around with. If we really think about this here, we need to repeat the names (unique vals) times, and we need to tile the values (unique names) times.</p>
-
-<pre><code class="language-python">names = ['silk', 'expression']
-vals = [10, 20]
-
-pd.DataFrame({
-    'name':np.repeat(names, len(vals)),
-    'size':np.tile(vals, len(names))
+df = pd.DataFrame({
+    'name':np.repeat(SEATS, len(AMOUNTS)),
+    'size':np.tile(AMOUNTS, len(SEATS))
 })
 </code></pre>
-
+<p><em>comment about np.repeat vs np.tile here</em></p>
+<p>Now, if I wanted to add random prices, they would obviously have a distribution. However, let&rsquo;s say I just know that the 20 size will be around $5 more, that is also a distribution.</p>
+<pre><code class="language-python">df
+</code></pre>
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
+<p></style></p>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -752,152 +702,43 @@ pd.DataFrame({
   </thead>
   <tbody>
     <tr>
-      <td>0</td>
+      <th>0</th>
       <td>silk</td>
       <td>10</td>
     </tr>
     <tr>
-      <td>1</td>
+      <th>1</th>
       <td>silk</td>
       <td>20</td>
     </tr>
     <tr>
-      <td>2</td>
+      <th>2</th>
       <td>expression</td>
       <td>10</td>
     </tr>
     <tr>
-      <td>3</td>
+      <th>3</th>
       <td>expression</td>
       <td>20</td>
     </tr>
   </tbody>
 </table>
 </div>
-
-<p>By adding <code>len(vals)</code> and <code>len(names)</code>, if I want to create another name or add a value to my list it won&rsquo;t require me to change anything. I&rsquo;ll wrap the df construction in function and prove it to you.</p>
-
-<pre><code class="language-python">def buildFrame(names, vals):
-    &quot;&quot;&quot; Create a dataframe with names and values.
+<pre><code class="language-python">def addPrices(df):
+    &quot;&quot;&quot; Conditionally add prices to the dataframe.
     
-    Args:
-        names (list): Some names
-        vals (list): Some values
-    Returns:
-        pd.DataFrame: Dataframe with a record for each name and value
+    df (pd.DataFrame): Input data
+    pct_mk (float): Percentage markup for the 20 size.
     &quot;&quot;&quot;
-    
-    return pd.DataFrame({
-        'name':np.repeat(names, len(vals)),
-        'size':np.tile(vals, len(names))
-    })
-
-n1 = ['anthony', 'jim']
-v1 = [10]
-
-n2 = ['a', 'b', 'c']
-v2 = [10, 20]
+    # 
+df.apply(lambda x: x['size'] + 10, axis=1)
 </code></pre>
-
-<pre><code class="language-python">buildFrame(n1, v1)
+<pre><code>0    20
+1    30
+2    20
+3    30
+dtype: int64
 </code></pre>
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>name</th>
-      <th>size</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>0</td>
-      <td>anthony</td>
-      <td>10</td>
-    </tr>
-    <tr>
-      <td>1</td>
-      <td>jim</td>
-      <td>10</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
-<pre><code class="language-python">buildFrame(n2, v2)
-</code></pre>
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>name</th>
-      <th>size</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>0</td>
-      <td>a</td>
-      <td>10</td>
-    </tr>
-    <tr>
-      <td>1</td>
-      <td>a</td>
-      <td>20</td>
-    </tr>
-    <tr>
-      <td>2</td>
-      <td>b</td>
-      <td>10</td>
-    </tr>
-    <tr>
-      <td>3</td>
-      <td>b</td>
-      <td>20</td>
-    </tr>
-    <tr>
-      <td>4</td>
-      <td>c</td>
-      <td>10</td>
-    </tr>
-    <tr>
-      <td>5</td>
-      <td>c</td>
-      <td>20</td>
-    </tr>
-  </tbody>
-</table>
-</div>
 
     </div>
 

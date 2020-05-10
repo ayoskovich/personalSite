@@ -5,7 +5,7 @@
     <link>/</link>
       <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     <description>Home</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Thu, 09 Apr 2020 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Thu, 28 Jun 2018 00:00:00 +0100</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>Home</title>
@@ -13,109 +13,59 @@
     </image>
     
     <item>
-      <title>Comparing np.tile vs np.repeat</title>
+      <title>Adventures in creating fake data</title>
       <link>/post/tile_rep_diff/</link>
       <pubDate>Thu, 09 Apr 2020 00:00:00 +0000</pubDate>
       <guid>/post/tile_rep_diff/</guid>
-      <description>&lt;p&gt;Waiting for data can make things take a bit longer than usual. However, I don&amp;rsquo;t think you should ever have that excuse. If you know the format of how the data will be formatted you can still get a lot of work done. The data wrangling / actual mechanical analysis can be completed. However, the actual interpretation cannot be done, but that&amp;rsquo;s not a lot of the project. In this post I explain how to use &lt;code&gt;np.tile&lt;/code&gt; and &lt;code&gt;np.repeat&lt;/code&gt; in order to make fake data that help this process.&lt;/p&gt;
-
+      <description>&lt;ul&gt;
+&lt;li&gt;Main point
 &lt;ul&gt;
-&lt;li&gt;Sometimes you wait for data
-
+&lt;li&gt;Abstracting tasks (or partitioning work into &amp;lsquo;context specific&amp;rsquo; and general can be helpful)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Summary
 &lt;ul&gt;
-&lt;li&gt;You can still make a lot of progress&lt;/li&gt;
-&lt;li&gt;There are some parts of the project that only rely on the format of the data&lt;/li&gt;
-&lt;li&gt;Actual interpretation cannot be done&lt;/li&gt;
-&lt;li&gt;Further discussion of this idea is for another post&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Creating fake data is an artform&lt;/p&gt;
-
+&lt;li&gt;Creating fake data from known rules can be a tad challenging&lt;/li&gt;
+&lt;li&gt;In the development process, &amp;ldquo;I&amp;rsquo;m waiting for data&amp;rdquo; shouldn&amp;rsquo;t stop someone from continuing&lt;/li&gt;
+&lt;li&gt;Conditional probability can be dealt with&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Motivation
 &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;I use &lt;code&gt;np.tile&lt;/code&gt; and &lt;code&gt;np.repeat&lt;/code&gt; in order to help this process&lt;/p&gt;
-
+&lt;li&gt;Worked on a project where we were waiting on someone to give us data&lt;/li&gt;
+&lt;li&gt;We had given them a sheet to fill out, ensuring the data was in an easy to digest format (good consulting skill)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import pandas as pd
 import numpy as np
-pd.DataFrame({
-&#39;name&#39;:np.repeat([&#39;silk&#39;, &#39;expression&#39;], 2),
-&#39;size&#39;:np.tile([10, 20], 2)
-})
-&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;
 
-&lt;div&gt;
-&lt;style scoped&gt;
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
+SEATS = [&#39;silk&#39;, &#39;expression&#39;]
+AMOUNTS = [10, 20]
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-&lt;/style&gt;
-&lt;table border=&#34;1&#34; class=&#34;dataframe&#34;&gt;
-  &lt;thead&gt;
-    &lt;tr style=&#34;text-align: right;&#34;&gt;
-      &lt;th&gt;&lt;/th&gt;
-      &lt;th&gt;name&lt;/th&gt;
-      &lt;th&gt;size&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;0&lt;/td&gt;
-      &lt;td&gt;silk&lt;/td&gt;
-      &lt;td&gt;10&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;1&lt;/td&gt;
-      &lt;td&gt;silk&lt;/td&gt;
-      &lt;td&gt;20&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;2&lt;/td&gt;
-      &lt;td&gt;expression&lt;/td&gt;
-      &lt;td&gt;10&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;3&lt;/td&gt;
-      &lt;td&gt;expression&lt;/td&gt;
-      &lt;td&gt;20&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Here is a really quick demonstration of the differences of these 2 functions. &lt;code&gt;.repeat&lt;/code&gt; will element-wise repeat each value, while &lt;code&gt;.tile&lt;/code&gt; will repeat the entire sequence that many times. Very helpful! Let&amp;rsquo;s extend this a tad to get something we can play around with. If we really think about this here, we need to repeat the names (unique vals) times, and we need to tile the values (unique names) times.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;names = [&#39;silk&#39;, &#39;expression&#39;]
-vals = [10, 20]
-
-pd.DataFrame({
-    &#39;name&#39;:np.repeat(names, len(vals)),
-    &#39;size&#39;:np.tile(vals, len(names))
+df = pd.DataFrame({
+    &#39;name&#39;:np.repeat(SEATS, len(AMOUNTS)),
+    &#39;size&#39;:np.tile(AMOUNTS, len(SEATS))
 })
 &lt;/code&gt;&lt;/pre&gt;
-
+&lt;p&gt;&lt;em&gt;comment about np.repeat vs np.tile here&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Now, if I wanted to add random prices, they would obviously have a distribution. However, let&amp;rsquo;s say I just know that the 20 size will be around $5 more, that is also a distribution.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;df
+&lt;/code&gt;&lt;/pre&gt;
 &lt;div&gt;
 &lt;style scoped&gt;
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
+&lt;pre&gt;&lt;code&gt;.dataframe tbody tr th {
+    vertical-align: top;
+}
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-&lt;/style&gt;
+.dataframe thead th {
+    text-align: right;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;/style&gt;&lt;/p&gt;
 &lt;table border=&#34;1&#34; class=&#34;dataframe&#34;&gt;
   &lt;thead&gt;
     &lt;tr style=&#34;text-align: right;&#34;&gt;
@@ -126,152 +76,43 @@ pd.DataFrame({
   &lt;/thead&gt;
   &lt;tbody&gt;
     &lt;tr&gt;
-      &lt;td&gt;0&lt;/td&gt;
+      &lt;th&gt;0&lt;/th&gt;
       &lt;td&gt;silk&lt;/td&gt;
       &lt;td&gt;10&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
-      &lt;td&gt;1&lt;/td&gt;
+      &lt;th&gt;1&lt;/th&gt;
       &lt;td&gt;silk&lt;/td&gt;
       &lt;td&gt;20&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
-      &lt;td&gt;2&lt;/td&gt;
+      &lt;th&gt;2&lt;/th&gt;
       &lt;td&gt;expression&lt;/td&gt;
       &lt;td&gt;10&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
-      &lt;td&gt;3&lt;/td&gt;
+      &lt;th&gt;3&lt;/th&gt;
       &lt;td&gt;expression&lt;/td&gt;
       &lt;td&gt;20&lt;/td&gt;
     &lt;/tr&gt;
   &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;/div&gt;
-
-&lt;p&gt;By adding &lt;code&gt;len(vals)&lt;/code&gt; and &lt;code&gt;len(names)&lt;/code&gt;, if I want to create another name or add a value to my list it won&amp;rsquo;t require me to change anything. I&amp;rsquo;ll wrap the df construction in function and prove it to you.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;def buildFrame(names, vals):
-    &amp;quot;&amp;quot;&amp;quot; Create a dataframe with names and values.
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;def addPrices(df):
+    &amp;quot;&amp;quot;&amp;quot; Conditionally add prices to the dataframe.
     
-    Args:
-        names (list): Some names
-        vals (list): Some values
-    Returns:
-        pd.DataFrame: Dataframe with a record for each name and value
+    df (pd.DataFrame): Input data
+    pct_mk (float): Percentage markup for the 20 size.
     &amp;quot;&amp;quot;&amp;quot;
-    
-    return pd.DataFrame({
-        &#39;name&#39;:np.repeat(names, len(vals)),
-        &#39;size&#39;:np.tile(vals, len(names))
-    })
-
-n1 = [&#39;anthony&#39;, &#39;jim&#39;]
-v1 = [10]
-
-n2 = [&#39;a&#39;, &#39;b&#39;, &#39;c&#39;]
-v2 = [10, 20]
+    # 
+df.apply(lambda x: x[&#39;size&#39;] + 10, axis=1)
 &lt;/code&gt;&lt;/pre&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;buildFrame(n1, v1)
+&lt;pre&gt;&lt;code&gt;0    20
+1    30
+2    20
+3    30
+dtype: int64
 &lt;/code&gt;&lt;/pre&gt;
-
-&lt;div&gt;
-&lt;style scoped&gt;
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-&lt;/style&gt;
-&lt;table border=&#34;1&#34; class=&#34;dataframe&#34;&gt;
-  &lt;thead&gt;
-    &lt;tr style=&#34;text-align: right;&#34;&gt;
-      &lt;th&gt;&lt;/th&gt;
-      &lt;th&gt;name&lt;/th&gt;
-      &lt;th&gt;size&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;0&lt;/td&gt;
-      &lt;td&gt;anthony&lt;/td&gt;
-      &lt;td&gt;10&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;1&lt;/td&gt;
-      &lt;td&gt;jim&lt;/td&gt;
-      &lt;td&gt;10&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-&lt;/div&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;buildFrame(n2, v2)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;div&gt;
-&lt;style scoped&gt;
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-&lt;/style&gt;
-&lt;table border=&#34;1&#34; class=&#34;dataframe&#34;&gt;
-  &lt;thead&gt;
-    &lt;tr style=&#34;text-align: right;&#34;&gt;
-      &lt;th&gt;&lt;/th&gt;
-      &lt;th&gt;name&lt;/th&gt;
-      &lt;th&gt;size&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;0&lt;/td&gt;
-      &lt;td&gt;a&lt;/td&gt;
-      &lt;td&gt;10&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;1&lt;/td&gt;
-      &lt;td&gt;a&lt;/td&gt;
-      &lt;td&gt;20&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;2&lt;/td&gt;
-      &lt;td&gt;b&lt;/td&gt;
-      &lt;td&gt;10&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;3&lt;/td&gt;
-      &lt;td&gt;b&lt;/td&gt;
-      &lt;td&gt;20&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;4&lt;/td&gt;
-      &lt;td&gt;c&lt;/td&gt;
-      &lt;td&gt;10&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;5&lt;/td&gt;
-      &lt;td&gt;c&lt;/td&gt;
-      &lt;td&gt;20&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-&lt;/div&gt;
 </description>
     </item>
     
@@ -281,11 +122,10 @@ v2 = [10, 20]
       <pubDate>Thu, 09 Apr 2020 00:00:00 +0000</pubDate>
       <guid>/post/creating-code-free-jupyter-notebook-exports/</guid>
       <description>&lt;p&gt;This is going to be a really short post! If you&amp;rsquo;ve ever exported a jupyter notebook to html or pdf in order to share with someone that doesn&amp;rsquo;t want to see code, I&amp;rsquo;ve got the answer right here. To export a jupyter notebook without all the code use the following:&lt;/p&gt;
-
 &lt;pre&gt;&lt;code class=&#34;language-text&#34;&gt;jupyter nbconvert --to markdown --TemplateExporter.exclude_input=True index.ipynb
 &lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Just replace &lt;code&gt;index.ipynb&lt;/code&gt; with the name of your jupyter notebook. More info &lt;a href=&#34;https://nbconvert.readthedocs.io/en/latest/config_options.html?highlight=TemplateExporter.exclude&#34;&gt;here&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Just replace &lt;code&gt;index.ipynb&lt;/code&gt; with the name of your jupyter notebook. More info 
+&lt;a href=&#34;https://nbconvert.readthedocs.io/en/latest/config_options.html?highlight=TemplateExporter.exclude&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;here&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     
@@ -341,30 +181,23 @@ v2 = [10, 20]
       <link>/post/a-handy-use-of-decorators-in-python/</link>
       <pubDate>Wed, 04 Mar 2020 00:00:00 +0000</pubDate>
       <guid>/post/a-handy-use-of-decorators-in-python/</guid>
-      <description>&lt;p&gt;&amp;emsp; Lets say I have the following function, and for some weird reason I want it to be called twice every time I call it.&lt;/p&gt;
-
+      <description>&lt;p&gt;  Lets say I have the following function, and for some weird reason I want it to be called twice every time I call it.&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;def foo():
   print(&#39;hello&#39;)
 &lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&amp;emsp; I could solve this in a couple of different ways.&lt;/p&gt;
-
+&lt;p&gt;  I could solve this in a couple of different ways.&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;def foo():
   print(&#39;hello&#39;)
   print(&#39;hello&#39;)
 &lt;/code&gt;&lt;/pre&gt;
-
 &lt;pre&gt;&lt;code&gt;def foo()
   print(&#39;hello&#39;)
   
 foo()
 foo()
 &lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&amp;emsp; So&amp;hellip;the first way is bad because if I want to extend this functionality to other funtions, I would have to copy and paste the code everywhere. Also, to switch it on and off would be a mess. The second way is even clunkier.&lt;/p&gt;
-
-&lt;p&gt;&amp;emsp; This is where decorators come in handy. I can write a function, that takes in a function as an argument, and then modify that function. Here&amp;rsquo;s what it looks like:&lt;/p&gt;
-
+&lt;p&gt;  So&amp;hellip;the first way is bad because if I want to extend this functionality to other funtions, I would have to copy and paste the code everywhere. Also, to switch it on and off would be a mess. The second way is even clunkier.&lt;/p&gt;
+&lt;p&gt;  This is where decorators come in handy. I can write a function, that takes in a function as an argument, and then modify that function. Here&amp;rsquo;s what it looks like:&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;def doTwice(function):
   def wrapper(*args, **args):
     function()
@@ -372,30 +205,21 @@ foo()
     
   return wrapper
 &lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&amp;emsp; Let&amp;rsquo;s break down what&amp;rsquo;s going on here.&lt;/p&gt;
-
+&lt;p&gt;  Let&amp;rsquo;s break down what&amp;rsquo;s going on here.&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;The &lt;code&gt;doTwice&lt;/code&gt; function first takes in another function as an argument.&lt;/li&gt;
 &lt;li&gt;There is a function inside of it, called &lt;code&gt;wrapper&lt;/code&gt;, that simply calls &lt;code&gt;function&lt;/code&gt; twice.&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;doTwice&lt;/code&gt; returns &lt;code&gt;wrapper&lt;/code&gt;, which is actually a function.&lt;/li&gt;
 &lt;/ol&gt;
-
-&lt;p&gt;&amp;emsp; Now that we have the &lt;code&gt;doTwice&lt;/code&gt; function, we&amp;rsquo;ll need to use it to &amp;ldquo;decorate&amp;rdquo; the &lt;code&gt;foo&lt;/code&gt; function. The syntax in python is simple.&lt;/p&gt;
-
+&lt;p&gt;  Now that we have the &lt;code&gt;doTwice&lt;/code&gt; function, we&amp;rsquo;ll need to use it to &amp;ldquo;decorate&amp;rdquo; the &lt;code&gt;foo&lt;/code&gt; function. The syntax in python is simple.&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;@doTwice
 def foo():
   print(&#39;hello&#39;)
 &lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&amp;emsp; Now, every time I call &lt;code&gt;foo&lt;/code&gt;, &amp;lsquo;hello&amp;rsquo; will be printed twice, mission accomplished. The beauty of this solution is that I can now use &lt;code&gt;doTwice&lt;/code&gt; on as many functions as I&amp;rsquo;d like. I would simply add &lt;code&gt;@doTwice&lt;/code&gt; above each function definition.&lt;/p&gt;
-
-&lt;p&gt;&amp;emsp; There are tons more helpful things you can do with decorators, and I think in the future I&amp;rsquo;ll write some more posts about them. Thanks for reading!&lt;/p&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-
+&lt;p&gt;  Now, every time I call &lt;code&gt;foo&lt;/code&gt;, &amp;lsquo;hello&amp;rsquo; will be printed twice, mission accomplished. The beauty of this solution is that I can now use &lt;code&gt;doTwice&lt;/code&gt; on as many functions as I&amp;rsquo;d like. I would simply add &lt;code&gt;@doTwice&lt;/code&gt; above each function definition.&lt;/p&gt;
+&lt;p&gt;  There are tons more helpful things you can do with decorators, and I think in the future I&amp;rsquo;ll write some more posts about them. Thanks for reading!&lt;/p&gt;
+&lt;br&gt;
+&lt;hr&gt;
 &lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: The @ syntax isn&amp;rsquo;t the only way to decorate functions, the python documentation lays out another way that requires a bit more explaining.&lt;/p&gt;
 </description>
     </item>
@@ -405,29 +229,20 @@ def foo():
       <link>/post/custom-logging/</link>
       <pubDate>Sun, 01 Sep 2019 00:00:00 +0000</pubDate>
       <guid>/post/custom-logging/</guid>
-      <description>
-
-&lt;p&gt;&amp;emsp; When working with data, there are a lot of things I need to keep track of in my head.&lt;/p&gt;
-
+      <description>&lt;p&gt;  When working with data, there are a lot of things I need to keep track of in my head.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;How many observations do I have in total?&lt;/li&gt;
 &lt;li&gt;I just filtered some out, how many did I throw out?&lt;/li&gt;
 &lt;li&gt;Am I aggregating before or after I filter?&lt;/li&gt;
 &lt;li&gt;Where should I add this chunk of code?&lt;/li&gt;
 &lt;/ul&gt;
-
-&lt;p&gt;&amp;emsp; In order to keep track of these questions when working in a jupyter notebook I end up having &lt;em&gt;tons&lt;/em&gt; of cells that look like this:&lt;/p&gt;
-
+&lt;p&gt;  In order to keep track of these questions when working in a jupyter notebook I end up having &lt;em&gt;tons&lt;/em&gt; of cells that look like this:&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;df.head()
 &lt;/code&gt;&lt;/pre&gt;
-
 &lt;p&gt;or&lt;/p&gt;
-
 &lt;pre&gt;&lt;code&gt;df.shape
 &lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&amp;emsp; By using decorators and the &lt;code&gt;.pipe&lt;/code&gt; method I can develop an analysis path that will give me customized output and automate this tedious cycle of &lt;code&gt;.head()&lt;/code&gt; and &lt;code&gt;.shape&lt;/code&gt;. Let&amp;rsquo;s take a look.&lt;/p&gt;
-
+&lt;p&gt;  By using decorators and the &lt;code&gt;.pipe&lt;/code&gt; method I can develop an analysis path that will give me customized output and automate this tedious cycle of &lt;code&gt;.head()&lt;/code&gt; and &lt;code&gt;.shape&lt;/code&gt;. Let&amp;rsquo;s take a look.&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import pandas as pd
 import numpy as np
 import functools
@@ -439,21 +254,20 @@ df = pd.DataFrame({
     &#39;y&#39;:np.random.normal(0, 10, 10)
 }); df.head()
 &lt;/code&gt;&lt;/pre&gt;
-
 &lt;div&gt;
 &lt;style scoped&gt;
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
+&lt;pre&gt;&lt;code&gt;.dataframe tbody tr th {
+    vertical-align: top;
+}
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-&lt;/style&gt;
+.dataframe thead th {
+    text-align: right;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;/style&gt;&lt;/p&gt;
 &lt;table border=&#34;1&#34; class=&#34;dataframe&#34;&gt;
   &lt;thead&gt;
     &lt;tr style=&#34;text-align: right;&#34;&gt;
@@ -497,60 +311,52 @@ df = pd.DataFrame({
   &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;/div&gt;
-
-&lt;h3 id=&#34;now-i-ll-define-some-processing-functions&#34;&gt;Now I&amp;rsquo;ll define some processing functions.&lt;/h3&gt;
-
-&lt;p&gt;&amp;emsp; These functions all take the dataframe as an argument and pass the dataframe back. A few notes:&lt;/p&gt;
-
+&lt;h3 id=&#34;now-ill-define-some-processing-functions&#34;&gt;Now I&amp;rsquo;ll define some processing functions.&lt;/h3&gt;
+&lt;p&gt;  These functions all take the dataframe as an argument and pass the dataframe back. A few notes:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;The &lt;code&gt;pDoc&lt;/code&gt; decorator is what allows me to print out the docstring and the shapes of the df at each step of the process.&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;The &lt;code&gt;startPipe&lt;/code&gt; function may seem useless, but I&amp;rsquo;m just using it the get the size of the dataframe at the beginning of the analysis path.&lt;/p&gt;
-
+&lt;li&gt;The &lt;code&gt;startPipe&lt;/code&gt; function may seem useless, but I&amp;rsquo;m just using it the get the size of the dataframe at the beginning of the analysis path.&lt;/li&gt;
+&lt;/ul&gt;
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;def pDoc(func):
-&amp;quot;&amp;quot;&amp;quot;Print the docstring of a function.&amp;quot;&amp;quot;&amp;quot;
-@functools.wraps(func)
-def wrapper(*args, **kwargs):
-    rv = func(*args, **kwargs)
-    print(&amp;quot;{}(): \n\t{} -&amp;gt; {}&amp;quot;.format(func.__name__, func.__doc__, rv.shape))
-    return rv
-return wrapper
+    &amp;quot;&amp;quot;&amp;quot;Print the docstring of a function.&amp;quot;&amp;quot;&amp;quot;
+    @functools.wraps(func)
+    def wrapper(*args, **kwargs):
+        rv = func(*args, **kwargs)
+        print(&amp;quot;{}(): \n\t{} -&amp;gt; {}&amp;quot;.format(func.__name__, func.__doc__, rv.shape))
+        return rv
+    return wrapper
 
 @pDoc
 def startPipe(df):
-&amp;quot;&amp;quot;&amp;quot;Begin pipeline&amp;quot;&amp;quot;&amp;quot;
-return df
+    &amp;quot;&amp;quot;&amp;quot;Begin pipeline&amp;quot;&amp;quot;&amp;quot;
+    return df
 
 @pDoc
 def filterGroups(df):
-&amp;quot;&amp;quot;&amp;quot;Remove group b from the analysis.&amp;quot;&amp;quot;&amp;quot;
-return df.query(&#39;group != &amp;quot;b&amp;quot;&#39;)
+    &amp;quot;&amp;quot;&amp;quot;Remove group b from the analysis.&amp;quot;&amp;quot;&amp;quot;
+    return df.query(&#39;group != &amp;quot;b&amp;quot;&#39;)
 
 @pDoc
 def capVal(df):
-&amp;quot;&amp;quot;&amp;quot;Cap the value of y at 10.&amp;quot;&amp;quot;&amp;quot;
-dat = df.copy()
-dat[&#39;y&#39;] = dat[&#39;y&#39;].apply(lambda x: 10 if x &amp;gt; 10 else x)
-return dat
+    &amp;quot;&amp;quot;&amp;quot;Cap the value of y at 10.&amp;quot;&amp;quot;&amp;quot;
+    dat = df.copy()
+    dat[&#39;y&#39;] = dat[&#39;y&#39;].apply(lambda x: 10 if x &amp;gt; 10 else x)
+    return dat
 
 @pDoc
 def getMean(df):
-&amp;quot;&amp;quot;&amp;quot;Add column as mean value of x by group.&amp;quot;&amp;quot;&amp;quot;
-dat = df.copy()
-dat[&#39;g_mean&#39;] = dat.groupby(&#39;group&#39;)[&#39;x&#39;].transform(np.mean)
-return dat
-&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&amp;emsp; Now I&amp;rsquo;ll tie all these functions together using &lt;code&gt;.pipe&lt;/code&gt;.&lt;/p&gt;
-
+    &amp;quot;&amp;quot;&amp;quot;Add column as mean value of x by group.&amp;quot;&amp;quot;&amp;quot;
+    dat = df.copy()
+    dat[&#39;g_mean&#39;] = dat.groupby(&#39;group&#39;)[&#39;x&#39;].transform(np.mean)
+    return dat
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;  Now I&amp;rsquo;ll tie all these functions together using &lt;code&gt;.pipe&lt;/code&gt;.&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;(df
     .pipe(startPipe)
     .pipe(filterGroups)
     .pipe(getMean)
     .pipe(capVal)).head()
 &lt;/code&gt;&lt;/pre&gt;
-
 &lt;pre&gt;&lt;code&gt;startPipe(): 
     Begin pipeline -&amp;gt; (10, 3)
 filterGroups(): 
@@ -560,21 +366,20 @@ getMean():
 capVal(): 
     Cap the value of y at 10. -&amp;gt; (8, 4)
 &lt;/code&gt;&lt;/pre&gt;
-
 &lt;div&gt;
 &lt;style scoped&gt;
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
+&lt;pre&gt;&lt;code&gt;.dataframe tbody tr th {
+    vertical-align: top;
+}
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-&lt;/style&gt;
+.dataframe thead th {
+    text-align: right;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;/style&gt;&lt;/p&gt;
 &lt;table border=&#34;1&#34; class=&#34;dataframe&#34;&gt;
   &lt;thead&gt;
     &lt;tr style=&#34;text-align: right;&#34;&gt;
@@ -624,11 +429,8 @@ capVal():
   &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;/div&gt;
-
-&lt;p&gt;&amp;emsp; As you can see, I get a really nice log output that shows the function name, docstring, and the shape of its output. I like this solution because it automates the really tedious process of having to ask myself &amp;ldquo;how many records did I just throw out&amp;rdquo;. By using decorators, the function will always show me the shape of the output.&lt;/p&gt;
-
-&lt;p&gt;&amp;emsp; Also, this solution can be really easily extended / modified. Don&amp;rsquo;t like what my &lt;code&gt;pDoc&lt;/code&gt; decorator is doing? It&amp;rsquo;s really easy to change and customize. You&amp;rsquo;re really only limited by your imagination (and python).&lt;/p&gt;
-
+&lt;p&gt;  As you can see, I get a really nice log output that shows the function name, docstring, and the shape of its output. I like this solution because it automates the really tedious process of having to ask myself &amp;ldquo;how many records did I just throw out&amp;rdquo;. By using decorators, the function will always show me the shape of the output.&lt;/p&gt;
+&lt;p&gt;  Also, this solution can be really easily extended / modified. Don&amp;rsquo;t like what my &lt;code&gt;pDoc&lt;/code&gt; decorator is doing? It&amp;rsquo;s really easy to change and customize. You&amp;rsquo;re really only limited by your imagination (and python).&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;
 &lt;/code&gt;&lt;/pre&gt;
 </description>
@@ -639,10 +441,7 @@ capVal():
       <link>/post/transform/</link>
       <pubDate>Sun, 01 Sep 2019 00:00:00 +0000</pubDate>
       <guid>/post/transform/</guid>
-      <description>
-
-&lt;p&gt;Merging summary statistics back into a table is quite a common thing to do. At first glance, a solution to this problem is to simply compute the statistics in a new table and merge the table back in. However, with &lt;code&gt;pandas&lt;/code&gt; we don&amp;rsquo;t have to do that.&lt;/p&gt;
-
+      <description>&lt;p&gt;Merging summary statistics back into a table is quite a common thing to do. At first glance, a solution to this problem is to simply compute the statistics in a new table and merge the table back in. However, with &lt;code&gt;pandas&lt;/code&gt; we don&amp;rsquo;t have to do that.&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import pandas as pd
 import numpy as np
 
@@ -652,21 +451,20 @@ df = pd.DataFrame({
     &#39;x&#39;:np.random.randint(100, 200, 5)
 }).sort_values(by=&#39;group&#39;); df
 &lt;/code&gt;&lt;/pre&gt;
-
 &lt;div&gt;
 &lt;style scoped&gt;
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
+&lt;pre&gt;&lt;code&gt;.dataframe tbody tr th {
+    vertical-align: top;
+}
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-&lt;/style&gt;
+.dataframe thead th {
+    text-align: right;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;/style&gt;&lt;/p&gt;
 &lt;table border=&#34;1&#34; class=&#34;dataframe&#34;&gt;
   &lt;thead&gt;
     &lt;tr style=&#34;text-align: right;&#34;&gt;
@@ -704,26 +502,23 @@ df = pd.DataFrame({
   &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;/div&gt;
-
 &lt;p&gt;Here I&amp;rsquo;ve got some rows that having a grouping column called &lt;code&gt;group&lt;/code&gt;, and I&amp;rsquo;d like to calculate the sum of &lt;code&gt;x&lt;/code&gt; within each group and integrate it into my table.&lt;/p&gt;
-
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;df[&#39;g_sum&#39;] = df.groupby(&#39;group&#39;)[&#39;x&#39;].transform(np.sum); df
 &lt;/code&gt;&lt;/pre&gt;
-
 &lt;div&gt;
 &lt;style scoped&gt;
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
+&lt;pre&gt;&lt;code&gt;.dataframe tbody tr th {
+    vertical-align: top;
+}
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-&lt;/style&gt;
+.dataframe thead th {
+    text-align: right;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;/style&gt;&lt;/p&gt;
 &lt;table border=&#34;1&#34; class=&#34;dataframe&#34;&gt;
   &lt;thead&gt;
     &lt;tr style=&#34;text-align: right;&#34;&gt;
@@ -767,32 +562,28 @@ df = pd.DataFrame({
   &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;/div&gt;
-
 &lt;p&gt;A key idea is that &lt;code&gt;.transform&lt;/code&gt; will apply its function argument to the dataframe and &lt;strong&gt;return a result that is the same size as the input frame.&lt;/strong&gt;&lt;/p&gt;
-
 &lt;h3 id=&#34;we-can-also-use-transform-with-a-user-defined-function&#34;&gt;We can also use &lt;code&gt;.transform&lt;/code&gt; with a user defined function&lt;/h3&gt;
-
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;def max_minus_one(col):
     &amp;quot;&amp;quot;&amp;quot; Get the max - 1 of a list&amp;quot;&amp;quot;&amp;quot;
     return np.max(col) - 1
 
 df[&#39;udf&#39;] = df.groupby(&#39;group&#39;)[&#39;x&#39;].transform(max_minus_one); df
 &lt;/code&gt;&lt;/pre&gt;
-
 &lt;div&gt;
 &lt;style scoped&gt;
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
+&lt;pre&gt;&lt;code&gt;.dataframe tbody tr th {
+    vertical-align: top;
+}
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-&lt;/style&gt;
+.dataframe thead th {
+    text-align: right;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;/style&gt;&lt;/p&gt;
 &lt;table border=&#34;1&#34; class=&#34;dataframe&#34;&gt;
   &lt;thead&gt;
     &lt;tr style=&#34;text-align: right;&#34;&gt;
@@ -842,26 +633,23 @@ df[&#39;udf&#39;] = df.groupby(&#39;group&#39;)[&#39;x&#39;].transform(max_minus
   &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;/div&gt;
-
 &lt;h3 id=&#34;and-even-lambda-functions&#34;&gt;&amp;hellip;and even lambda functions&lt;/h3&gt;
-
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;df[&#39;use_lam&#39;] = df.groupby(&#39;group&#39;)[&#39;x&#39;].transform(lambda x: np.max(x) - 1); df
 &lt;/code&gt;&lt;/pre&gt;
-
 &lt;div&gt;
 &lt;style scoped&gt;
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
+&lt;pre&gt;&lt;code&gt;.dataframe tbody tr th {
+    vertical-align: top;
+}
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-&lt;/style&gt;
+.dataframe thead th {
+    text-align: right;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;/style&gt;&lt;/p&gt;
 &lt;table border=&#34;1&#34; class=&#34;dataframe&#34;&gt;
   &lt;thead&gt;
     &lt;tr style=&#34;text-align: right;&#34;&gt;
@@ -952,13 +740,9 @@ df[&#39;udf&#39;] = df.groupby(&#39;group&#39;)[&#39;x&#39;].transform(max_minus
       <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
       <guid>/project/internal-project/</guid>
       <description>&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus ac convallis placerat. Proin tincidunt magna sed ex sollicitudin condimentum. Sed ac faucibus dolor, scelerisque sollicitudin nisi. Cras purus urna, suscipit quis sapien eu, pulvinar tempor diam. Quisque risus orci, mollis id ante sit amet, gravida egestas nisl. Sed ac tempus magna. Proin in dui enim. Donec condimentum, sem id dapibus fringilla, tellus enim condimentum arcu, nec volutpat est felis vel metus. Vestibulum sit amet erat at nulla eleifend gravida.&lt;/p&gt;
-
 &lt;p&gt;Nullam vel molestie justo. Curabitur vitae efficitur leo. In hac habitasse platea dictumst. Sed pulvinar mauris dui, eget varius purus congue ac. Nulla euismod, lorem vel elementum dapibus, nunc justo porta mi, sed tempus est est vel tellus. Nam et enim eleifend, laoreet sem sit amet, elementum sem. Morbi ut leo congue, maximus velit ut, finibus arcu. In et libero cursus, rutrum risus non, molestie leo. Nullam congue quam et volutpat malesuada. Sed risus tortor, pulvinar et dictum nec, sodales non mi. Phasellus lacinia commodo laoreet. Nam mollis, erat in feugiat consectetur, purus eros egestas tellus, in auctor urna odio at nibh. Mauris imperdiet nisi ac magna convallis, at rhoncus ligula cursus.&lt;/p&gt;
-
 &lt;p&gt;Cras aliquam rhoncus ipsum, in hendrerit nunc mattis vitae. Duis vitae efficitur metus, ac tempus leo. Cras nec fringilla lacus. Quisque sit amet risus at ipsum pharetra commodo. Sed aliquam mauris at consequat eleifend. Praesent porta, augue sed viverra bibendum, neque ante euismod ante, in vehicula justo lorem ac eros. Suspendisse augue libero, venenatis eget tincidunt ut, malesuada at lorem. Donec vitae bibendum arcu. Aenean maximus nulla non pretium iaculis. Quisque imperdiet, nulla in pulvinar aliquet, velit quam ultrices quam, sit amet fringilla leo sem vel nunc. Mauris in lacinia lacus.&lt;/p&gt;
-
 &lt;p&gt;Suspendisse a tincidunt lacus. Curabitur at urna sagittis, dictum ante sit amet, euismod magna. Sed rutrum massa id tortor commodo, vitae elementum turpis tempus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean purus turpis, venenatis a ullamcorper nec, tincidunt et massa. Integer posuere quam rutrum arcu vehicula imperdiet. Mauris ullamcorper quam vitae purus congue, quis euismod magna eleifend. Vestibulum semper vel augue eget tincidunt. Fusce eget justo sodales, dapibus odio eu, ultrices lorem. Duis condimentum lorem id eros commodo, in facilisis mauris scelerisque. Morbi sed auctor leo. Nullam volutpat a lacus quis pharetra. Nulla congue rutrum magna a ornare.&lt;/p&gt;
-
 &lt;p&gt;Aliquam in turpis accumsan, malesuada nibh ut, hendrerit justo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Quisque sed erat nec justo posuere suscipit. Donec ut efficitur arcu, in malesuada neque. Nunc dignissim nisl massa, id vulputate nunc pretium nec. Quisque eget urna in risus suscipit ultricies. Pellentesque odio odio, tincidunt in eleifend sed, posuere a diam. Nam gravida nisl convallis semper elementum. Morbi vitae felis faucibus, vulputate orci placerat, aliquet nisi. Aliquam erat volutpat. Maecenas sagittis pulvinar purus, sed porta quam laoreet at.&lt;/p&gt;
 </description>
     </item>
