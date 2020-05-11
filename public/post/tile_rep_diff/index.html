@@ -645,24 +645,25 @@
     <div class="article-style">
       <ul>
 <li>Main point
+
 <ul>
 <li>Abstracting tasks (or partitioning work into &lsquo;context specific&rsquo; and general can be helpful)</li>
-</ul>
-</li>
+</ul></li>
 <li>Summary
+
 <ul>
 <li>Creating fake data from known rules can be a tad challenging</li>
 <li>In the development process, &ldquo;I&rsquo;m waiting for data&rdquo; shouldn&rsquo;t stop someone from continuing</li>
 <li>Conditional probability can be dealt with</li>
-</ul>
-</li>
-<li>Motivation
+</ul></li>
+
+<li><p>Motivation</p>
+
 <ul>
 <li>Worked on a project where we were waiting on someone to give us data</li>
-<li>We had given them a sheet to fill out, ensuring the data was in an easy to digest format (good consulting skill)</li>
-</ul>
-</li>
-</ul>
+
+<li><p>We had given them a sheet to fill out, ensuring the data was in an easy to digest format (good consulting skill)</p>
+
 <pre><code class="language-python">import pandas as pd
 import numpy as np
 
@@ -670,28 +671,34 @@ SEATS = ['silk', 'expression']
 AMOUNTS = [10, 20]
 
 df = pd.DataFrame({
-    'name':np.repeat(SEATS, len(AMOUNTS)),
-    'size':np.tile(AMOUNTS, len(SEATS))
+'name':np.repeat(SEATS, len(AMOUNTS)),
+'size':np.tile(AMOUNTS, len(SEATS))
 })
-</code></pre>
+</code></pre></li>
+</ul></li>
+</ul>
+
 <p><em>comment about np.repeat vs np.tile here</em></p>
-<p>Now, if I wanted to add random prices, they would obviously have a distribution. However, let&rsquo;s say I just know that the 20 size will be around $5 more, that is also a distribution.</p>
+
+<p>Now, if I wanted to add random prices, they would obviously have a distribution. However, let&rsquo;s say I just know that the 20 size will be around \$5 more, that is also a distribution.</p>
+
 <pre><code class="language-python">df
 </code></pre>
+
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
-<pre><code>.dataframe tbody tr th {
-    vertical-align: top;
-}
 
-.dataframe thead th {
-    text-align: right;
-}
-</code></pre>
-<p></style></p>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -724,6 +731,7 @@ df = pd.DataFrame({
   </tbody>
 </table>
 </div>
+
 <pre><code class="language-python">def addPrices(df):
     &quot;&quot;&quot; Conditionally add prices to the dataframe.
     
@@ -733,6 +741,7 @@ df = pd.DataFrame({
     # 
 df.apply(lambda x: x['size'] + 10, axis=1)
 </code></pre>
+
 <pre><code>0    20
 1    30
 2    20

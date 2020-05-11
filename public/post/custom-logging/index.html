@@ -645,20 +645,29 @@
   <div class="article-container">
 
     <div class="article-style">
-      <p>  When working with data, there are a lot of things I need to keep track of in my head.</p>
+      
+
+<p>&emsp; When working with data, there are a lot of things I need to keep track of in my head.</p>
+
 <ul>
 <li>How many observations do I have in total?</li>
 <li>I just filtered some out, how many did I throw out?</li>
 <li>Am I aggregating before or after I filter?</li>
 <li>Where should I add this chunk of code?</li>
 </ul>
-<p>  In order to keep track of these questions when working in a jupyter notebook I end up having <em>tons</em> of cells that look like this:</p>
+
+<p>&emsp; In order to keep track of these questions when working in a jupyter notebook I end up having <em>tons</em> of cells that look like this:</p>
+
 <pre><code>df.head()
 </code></pre>
+
 <p>or</p>
+
 <pre><code>df.shape
 </code></pre>
-<p>  By using decorators and the <code>.pipe</code> method I can develop an analysis path that will give me customized output and automate this tedious cycle of <code>.head()</code> and <code>.shape</code>. Let&rsquo;s take a look.</p>
+
+<p>&emsp; By using decorators and the <code>.pipe</code> method I can develop an analysis path that will give me customized output and automate this tedious cycle of <code>.head()</code> and <code>.shape</code>. Let&rsquo;s take a look.</p>
+
 <pre><code class="language-python">import pandas as pd
 import numpy as np
 import functools
@@ -670,20 +679,21 @@ df = pd.DataFrame({
     'y':np.random.normal(0, 10, 10)
 }); df.head()
 </code></pre>
+
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
-<pre><code>.dataframe tbody tr th {
-    vertical-align: top;
-}
 
-.dataframe thead th {
-    text-align: right;
-}
-</code></pre>
-<p></style></p>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -727,52 +737,60 @@ df = pd.DataFrame({
   </tbody>
 </table>
 </div>
-<h3 id="now-ill-define-some-processing-functions">Now I&rsquo;ll define some processing functions.</h3>
-<p>  These functions all take the dataframe as an argument and pass the dataframe back. A few notes:</p>
+
+<h3 id="now-i-ll-define-some-processing-functions">Now I&rsquo;ll define some processing functions.</h3>
+
+<p>&emsp; These functions all take the dataframe as an argument and pass the dataframe back. A few notes:</p>
+
 <ul>
 <li>The <code>pDoc</code> decorator is what allows me to print out the docstring and the shapes of the df at each step of the process.</li>
-<li>The <code>startPipe</code> function may seem useless, but I&rsquo;m just using it the get the size of the dataframe at the beginning of the analysis path.</li>
-</ul>
+
+<li><p>The <code>startPipe</code> function may seem useless, but I&rsquo;m just using it the get the size of the dataframe at the beginning of the analysis path.</p>
+
 <pre><code class="language-python">def pDoc(func):
-    &quot;&quot;&quot;Print the docstring of a function.&quot;&quot;&quot;
-    @functools.wraps(func)
-    def wrapper(*args, **kwargs):
-        rv = func(*args, **kwargs)
-        print(&quot;{}(): \n\t{} -&gt; {}&quot;.format(func.__name__, func.__doc__, rv.shape))
-        return rv
-    return wrapper
+&quot;&quot;&quot;Print the docstring of a function.&quot;&quot;&quot;
+@functools.wraps(func)
+def wrapper(*args, **kwargs):
+    rv = func(*args, **kwargs)
+    print(&quot;{}(): \n\t{} -&gt; {}&quot;.format(func.__name__, func.__doc__, rv.shape))
+    return rv
+return wrapper
 
 @pDoc
 def startPipe(df):
-    &quot;&quot;&quot;Begin pipeline&quot;&quot;&quot;
-    return df
+&quot;&quot;&quot;Begin pipeline&quot;&quot;&quot;
+return df
 
 @pDoc
 def filterGroups(df):
-    &quot;&quot;&quot;Remove group b from the analysis.&quot;&quot;&quot;
-    return df.query('group != &quot;b&quot;')
+&quot;&quot;&quot;Remove group b from the analysis.&quot;&quot;&quot;
+return df.query('group != &quot;b&quot;')
 
 @pDoc
 def capVal(df):
-    &quot;&quot;&quot;Cap the value of y at 10.&quot;&quot;&quot;
-    dat = df.copy()
-    dat['y'] = dat['y'].apply(lambda x: 10 if x &gt; 10 else x)
-    return dat
+&quot;&quot;&quot;Cap the value of y at 10.&quot;&quot;&quot;
+dat = df.copy()
+dat['y'] = dat['y'].apply(lambda x: 10 if x &gt; 10 else x)
+return dat
 
 @pDoc
 def getMean(df):
-    &quot;&quot;&quot;Add column as mean value of x by group.&quot;&quot;&quot;
-    dat = df.copy()
-    dat['g_mean'] = dat.groupby('group')['x'].transform(np.mean)
-    return dat
-</code></pre>
-<p>  Now I&rsquo;ll tie all these functions together using <code>.pipe</code>.</p>
+&quot;&quot;&quot;Add column as mean value of x by group.&quot;&quot;&quot;
+dat = df.copy()
+dat['g_mean'] = dat.groupby('group')['x'].transform(np.mean)
+return dat
+</code></pre></li>
+</ul>
+
+<p>&emsp; Now I&rsquo;ll tie all these functions together using <code>.pipe</code>.</p>
+
 <pre><code class="language-python">(df
     .pipe(startPipe)
     .pipe(filterGroups)
     .pipe(getMean)
     .pipe(capVal)).head()
 </code></pre>
+
 <pre><code>startPipe(): 
     Begin pipeline -&gt; (10, 3)
 filterGroups(): 
@@ -782,20 +800,21 @@ getMean():
 capVal(): 
     Cap the value of y at 10. -&gt; (8, 4)
 </code></pre>
+
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
-<pre><code>.dataframe tbody tr th {
-    vertical-align: top;
-}
 
-.dataframe thead th {
-    text-align: right;
-}
-</code></pre>
-<p></style></p>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -845,8 +864,11 @@ capVal():
   </tbody>
 </table>
 </div>
-<p>  As you can see, I get a really nice log output that shows the function name, docstring, and the shape of its output. I like this solution because it automates the really tedious process of having to ask myself &ldquo;how many records did I just throw out&rdquo;. By using decorators, the function will always show me the shape of the output.</p>
-<p>  Also, this solution can be really easily extended / modified. Don&rsquo;t like what my <code>pDoc</code> decorator is doing? It&rsquo;s really easy to change and customize. You&rsquo;re really only limited by your imagination (and python).</p>
+
+<p>&emsp; As you can see, I get a really nice log output that shows the function name, docstring, and the shape of its output. I like this solution because it automates the really tedious process of having to ask myself &ldquo;how many records did I just throw out&rdquo;. By using decorators, the function will always show me the shape of the output.</p>
+
+<p>&emsp; Also, this solution can be really easily extended / modified. Don&rsquo;t like what my <code>pDoc</code> decorator is doing? It&rsquo;s really easy to change and customize. You&rsquo;re really only limited by your imagination (and python).</p>
+
 <pre><code class="language-python">
 </code></pre>
 
