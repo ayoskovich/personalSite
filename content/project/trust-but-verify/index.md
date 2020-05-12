@@ -1,5 +1,5 @@
 ---
-date: "2016-04-27T00:00:00Z"
+date: "2020-05-12T00:00:00Z"
 external_link: ""
 image:
   caption: 
@@ -7,7 +7,7 @@ image:
 slides: example
 summary: A journey down the (chicken) rabbit hole.
 title: Trust But Verify
-url_code: ""
+url_code: "https://github.com/ayoskovich/chickens_trust"
 url_pdf: ""
 url_slides: ""
 url_video: ""
@@ -28,9 +28,9 @@ If there is a huge difference in me getting it myself and what the author did, s
 ## Goals
 
 1. See if I can recreate some of the numbers he describes in his post (not because I don't believe him, but I'm just curious).
-  - "poultry costs U.S. consumers 62% less in inflation-adjusted terms than it did in 1935": https://beta.bls.gov/dataViewer/view/timeseries/APU0000706111 (only goes back to 1980???)
-  - "Pork, now also raised mostly at factory scale indoors, is 12% cheaper": https://beta.bls.gov/dataViewer/view/timeseries/APU0000FD3101 (again, only back to 1998???)
-  - "Beef, which isn’t, costs 63% more. ": https://beta.bls.gov/dataViewer/view/timeseries/APU0000703112 (only back to 1984)
+  - "poultry costs U.S. consumers 62% less in inflation-adjusted terms than it did in 1935"
+  - "Pork, now also raised mostly at factory scale indoors, is 12% cheaper"
+  - "Beef, which isn’t, costs 63% more. "
   - 'U.S. Consumption of Boneless Meat' Graph, U.S. Department of Agriculture
   
 2. Take his article a step further in some aspects.
