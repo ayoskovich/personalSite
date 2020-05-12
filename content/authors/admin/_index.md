@@ -1,13 +1,13 @@
 ---
 authors:
 - admin
-bio: I enjoy making tidy datasets out of unreasonably messy ones.
+bio: Dedicated analyst and clean data enthusiast.
 education:
   courses:
   - course: BSc in Statistics & Economics
     institution: Grand Valley State University
     year: 2020
-email: "yoskovia@mail.gvsu.edu"
+email: "anthony.yoskovich@gmail.com"
 interests:
 - Statistics
 - Economics
