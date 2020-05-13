@@ -17,28 +17,26 @@ draft: true
 
 ## Motivation
 
-A recent [bloomberg article](https://www.bloomberg.com/news/articles/2020-05-11/why-chicken-is-plentiful-during-the-pandemic-and-beef-is-not?srnd=premium&utm_medium=social&utm_source=twitter&utm_campaign=socialflow-organic&utm_content=markets&cmpid%3D=socialflow-twitter-markets&sref=XQtHDW1P) authored by [Justin Fox](https://twitter.com/foxjust) piqued my interest. 
+A recent [bloomberg article](https://www.bloomberg.com/news/articles/2020-05-11/why-chicken-is-plentiful-during-the-pandemic-and-beef-is-not?srnd=premium&utm_medium=social&utm_source=twitter&utm_campaign=socialflow-organic&utm_content=markets&cmpid%3D=socialflow-twitter-markets&sref=XQtHDW1P) authored by [Justin Fox](https://twitter.com/foxjust) piqued my interest. In the article, Fox describes how the prices and consumption of 3 different types of meat have changed over time. He gives some good insights into why the price of chicken has stayed relatively low in recent years (due to the ease of automation). I would encourage you to give the article a read. 
 
-
-## What's the point
-Is this going to be easy to do or hard? Clearly I could reach out to the author of the article directly and ask about the process, but is that how it should be? What is the expectation for putting numeric estimates in articles? The author here has cited a few sources, but all I get to is the over arching site. It's now my job to go and try and find the data used.
-
-If there is a huge difference in me getting it myself and what the author did, should the author be expected to be more explicit about the data gathering / analyzing process?
+In the article, Fox brings up a large amount of statistics and percentages. My goal here is to go out, find the data he references, and perform an identical analysis. Then, I'll see if I get the same numbers as him. I'll just say here that I'm not calling into question Fox's statistics. This is more meant to be an exercise in reproducible research than anything.
 
 ## Goals
+Like any good project, let's create some concrete goals.
 
-1. See if I can recreate some of the numbers he describes in his post (not because I don't believe him, but I'm just curious).
-  - "poultry costs U.S. consumers 62% less in inflation-adjusted terms than it did in 1935"
-  - "Pork, now also raised mostly at factory scale indoors, is 12% cheaper"
-  - "Beef, which isn’t, costs 63% more. "
-  - 'U.S. Consumption of Boneless Meat' Graph, U.S. Department of Agriculture
-  
+1. Recreate some of the numbers he describes in his post.
+
 2. Take his article a step further in some aspects.
-  - TODO
+  - How has the price change in recent times differed between the different types of meat?
   
 
 ## Process
+I decided to go to where he points in order to get the data. If you aren't interested in the technical details, feel free to skip to the conclusion.
+
+[Here](https://github.com/ayoskovich/chickens_trust) is the repo for my analysis.
+
+[Here](https://github.com/ayoskovich/chickens_trust/blob/master/price_check.md) is the accompanying materials (markdown file).
 
 
-## Summary
-
+## Parting Thoughts
+Here are my parting thoughts.
