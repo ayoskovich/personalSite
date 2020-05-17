@@ -41,28 +41,32 @@ Here's what I tried to find data that goes back to 1935:
 3. [This](https://www.nationalchickencouncil.org/about-the-industry/statistics/wholesale-and-retail-prices-for-chicken-beef-and-pork/) data from the national chicken council has prices that go back to 1960.
 4. [This](https://www.ers.usda.gov/data-products/meat-price-spreads/) data from the US Department of Agriculture only has prices that go back to 1970.
 
-**It would take me 2 seconds to reach out to Fox on twitter and ask for clarification about the data that goes back to 1935.**
+An obvious next step would be to reach out to Fox and ask for clarification about the data that goes back to 1935.
 
-I have no reason to distrust Fox's numbers, and I don't doubt the legitimacy of the bloomberg publication at all. But there is a cost associated with the verification process.
+***
 
-The cost associated with verifying a data-driven claim is a function of 3 main things:
+This general process of validating statistics requires a few key pieces of information. I need to know <u>what they did</u> with <u>what data</u> using <u>what tools</u>. Some definitions are in order.
 
-1. **Technical Resources:** These are the programming languages, skills, and time required to actually perform the analysis. Using open source languages such as `python` and `R` lower this cost, while performing an analysis in `SAS` or any other licensed solution gatekeeps individuals out of verification.
-    
-    
-2. **Data availability:** The reader must go out and acquire the data used.
-  1. Ability to navigate to the exact location of the data
-      - Citing price data simply by saying [BLS](https://www.bls.gov) or the [USDA](https://www.usda.gov) is absolutely not enough to make the data easily available. These websites are **dense** and often contain many different cuts of the same data. Readers need to know the <u>exact</u> location (series ID, name, etc.).
-  2. Ability to download the data
-      - Once the reader has navigated to the source of the data, do they have access to it?
-       
-       
-3. **Process transparency:** The reader must be given the author's assumptions and exact process. 
-  - Any filtering, aggregation, data cleaning, buttons pushed should be clearly defined *somewhere*. Not necessarily in the article or main medium itself, but a technical description of the entire (and exact) process should be made available to the reader (such as an external github repository).
+1. **what they did:** I need to know the author's process to analyze the data in an equivalent way to arrive at their conclusion.
+  - Was any data filtered out?
+  - Were there aggregations?
+  
+  
+2. **what data:** I need to go out and acquire the exact data used.
+  - I have to be able to navigate to the exact location of the data
+      - Citing price data simply by saying [BLS](https://www.bls.gov) or the [USDA](https://www.usda.gov) is not enough to make the data easily available. These websites are dense and often contain many different cuts of the same data. I need to know the <u>exact</u> location (series ID, name, etc.).
+  - Once the data has been navigated to, do I have access to download it?
+      - Is the data behind a paywall?
+      
+      
+3. **what tools:** These are the programming languages, skills, and time required to actually perform an identical analysis.
 
+An easily verifiable claim happens when the author is clear about what they did, cites the exact location of the data used, and describes the tools they used in order to complete the analysis.
 
 # Zooming out and moving on
 
-[Nate Silver's](https://twitter.com/NateSilver538) website [fivethirtyeight](https://fivethirtyeight.com) does a wonderful job making data analysis verifiable and transparent. They host their data and code on [github](https://github.com/fivethirtyeight/data) so the interested (or skeptic) reader can dive in. 
+[Nate Silver's](https://twitter.com/NateSilver538) website [fivethirtyeight](https://fivethirtyeight.com) does a wonderful job making data analysis verifiable and transparent. They host their data and code on [github](https://github.com/fivethirtyeight/data) so the interested (even skeptic) reader can dive in. 
 
-The New York Times does something similar with their "The Upshot" section, hosting code [here](https://github.com/TheUpshot), but it looks fairly inactive (last update seems to be in March of 2019). I tried to read more about the methodology for [this](https://github.com/TheUpshot/nyt_weddings) project but conveniently ran out of my free articles for the day.
+The New York Times does something similar with their "The Upshot" section, hosting code [here](https://github.com/TheUpshot), but it looks fairly inactive (last update seems to be in March of 2019). I tried to read more about the methodology for [this](https://github.com/TheUpshot/nyt_weddings) project but unfortunately ran out of free articles for the day. The article I checked here too is also behind a similar paywall.
+
+Plenty of political fact checkers exist today, but are there any places that verify statistical claims such as these? 
