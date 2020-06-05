@@ -6,7 +6,7 @@ slug: learning-learning-learning
 categories: []
 tags: []
 subtitle: ''
-summary: ''
+summary: 'Reflecting on my first project on this website.'
 authors: []
 lastmod: '2020-05-26T10:58:41-04:00'
 featured: no
