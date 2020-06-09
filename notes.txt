@@ -5,6 +5,9 @@ config/_default/menus.toml:
   - Change menu item names
   - Change resume link
   
+config/_default/params.toml:
+  - Specify social sharing image
+  
 static/files:
   - Insert resume / coverletter for showing a pdf
   
