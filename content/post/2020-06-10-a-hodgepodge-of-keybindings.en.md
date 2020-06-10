@@ -6,7 +6,7 @@ slug: a-hodgepodge-of-keybindings
 categories: []
 tags: []
 subtitle: ''
-summary: 'Documenting my current faves'
+summary: 'Documenting my favorite keybindings and shortcuts'
 authors: []
 lastmod: '2020-06-10T09:20:12-04:00'
 featured: no
@@ -18,56 +18,41 @@ projects: []
 draft: true
 ---
 
-I really like learning keyboard shortcuts, which has ended up with me knowing lots of them. Its kind of a cycle
-of I use some a lot, then forget some and learn new ones, and then I remember to the ones I forgot...Anyways, I'd
-like to document some of my current favorites. 
+I am a huge fan of the keyboard and feel the opposite way about the mouse, which is slow and bulky. I won't unleash my full rant here, but long story short I really like keyboard shortcuts. So, without anyone's request here are some of my current favorites.
 
-Jupyter notebook
+Sidenote: Here are some helpful links if you aren't familiar with any of the things named down there:
 
-|command | explanation|
-|-------|-------|
-|%who | show current variables|
-|%whos | same as who, just more info |
-|%load | paste in a text file|
-|!ls | from inside jupyter lab|
-|!!pwd | from inside jupyter lab|
+- [IPython](https://ipython.org/): Interactive python
+- [vim](https://www.vim.org/): The world's most absurdly powerful text editor
+- [tmux](https://github.com/tmux/tmux/wiki): Terminal multiplexer
+- [ranger](https://github.com/ranger/ranger): Terminal based file explorer
 
-Vim
 
-|command | explanation|
-|-------|-------|
-|ZZ | save and close current file|
-|ZQ | close (dont save) current file|
-|ctrl-g  |show current file name, line number|
-|/test\c | case insensitive search|
-|R | replace |
-|:tab |:help usermanual   Open user manual in new tab|
-|:gt  |change tabs|
-|f<char>    |move cursor to next occurrence of <char>, press ; to find the next|
-|F<char>    | same as `f` but search left|
-|:help |wordmotion|
-|:help |motion|
-|u |undo change|
-|U |undo all changes on line|
-|. |repeat last motion|
+| Program | Command/Keystroke  | Explanation                                           | 
+|---------|----------|-----------------------------------------------------------------|
+| IPython | %who     | Show variables currently in memory                              |
+| IPython | %whos    | Sames as `%who`, just gives more info                           |
+| IPython | %load    | Fill cell with text contained in a file                         |
+| IPython | !ls      | Handy to quickly check the contents of current directory        |
+| IPython | !pwd     | Show the working directory (these can also be saved into a var) |
+| vim     | ZZ       | Save and close current file (faster than `:wq`)                 |
+| vim     | ZQ       | Close (dont save) current file (faster than `:q!`)              |
+| vim     | ctrl-g   | Show current file name, line number                             |
+| vim     | /test\c  | Case insensitive line search                                    |
+| vim     | R        | Enter replace mode (on current line)                            |
+| vim     | :tab :help usermanual  |  Open user manual in new tab                      |
+| vim     | :gt      | Change tabs                                                     |
+| vim     | f        | Move cursor to next occurrence of `,` press `;` to find next    |
+| vim     | F        | same as `f` but search left                                     |
+| vim     | :help wordmotion  | This is a useful help page                             |
+| vim     | :help motion |      This is another useful help page                       |
+| vim     | u        | Undo change                                                     |
+| vim     | U        | Undo all changes on line                                        |
+| vim     | .        | Repeat last motion                                              |
+| tmux    | ctrl-w-w | Swap between panes in vim                                       |
+| tmux    | ctrl-b-q | Show pane numbers in tmux, can type number to swap to that pane |
+| tmux    | ctrl-b-w | Display all current windows                                     |
+| Firefox | ctrl-d   | Save bookmark                                                   |
+| ranger  | S        | Open shell in current directory                                 |
+| ranger  | @vim     | Open currently selected file in vim                             |
 
-Tmux
-
-|command | explanation|
-|-------|-------|
-|ctrl-w-w |swap between panes in vim|
-|ctrl-b-q   |show pane numbers in tmux, can type number to swap to that pane|
-|ctrl-b-w   |Display all current windows|
-
-Firefox
-
-|command | explanation|
-|-------|-------|
-|ctrl-d   |save bookmark|
-
-Ranger
-
-|command | explanation|
-|-------|-------|
-|S  |open shell in current directory|
-|@  |and then vim to open currently selected file|
