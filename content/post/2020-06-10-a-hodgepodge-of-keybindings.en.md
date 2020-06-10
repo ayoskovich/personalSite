@@ -44,6 +44,7 @@ Vim
 |:tab |:help usermanual   Open user manual in new tab|
 |:gt  |change tabs|
 |f<char>    |move cursor to next occurrence of <char>, press ; to find the next|
+|F<char>    | same as `f` but search left|
 |:help |wordmotion|
 |:help |motion|
 |u |undo change|
