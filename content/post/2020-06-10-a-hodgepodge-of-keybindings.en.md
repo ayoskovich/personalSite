@@ -15,7 +15,6 @@ image:
   focal_point: ''
   preview_only: no
 projects: []
-draft: true
 ---
 
 I am a huge fan of the keyboard and feel the opposite way about the mouse, which is slow and bulky. I won't unleash my full rant here, but long story short I really like keyboard shortcuts. So, without anyone's request here are some of my current favorites.
