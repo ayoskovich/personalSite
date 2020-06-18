@@ -15,7 +15,7 @@ image:
   focal_point: ''
   preview_only: no
 projects: []
-draft: true
+draft: false
 ---
 
 Recently I installed the Linux Lite operating system onto my computer. My hardware is a tad old and was getting quite slow with all the Windows overhead, and it was time for a change. I've been using the terminal a lot and really love just messing around inside the command line. One specific thing I've learned how to do is move files that match a certain pattern to another location very quickly. Lets say I have the following file structure:
