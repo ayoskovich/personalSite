@@ -1,12 +1,12 @@
 ---
-title: RSS feeds and the FTC
+title: RSS feeds 
 author: ''
 date: '2020-07-09'
 slug: rss-feeds-and-the-ftc
 categories: []
 tags: []
 subtitle: ''
-summary: 'I now feel 60 years old and am using RSS feeds...'
+summary: 'Discovering a new (old) technology.'
 authors: []
 lastmod: '2020-07-09T08:55:32-04:00'
 featured: no
@@ -18,22 +18,7 @@ projects: []
 draft: true
 ---
 
-### The RSS part
+RSS feeds have freed me from the clunky and distracting process of checking the same sites each day for new content, and I just started using [`newsboat`](https://newsboat.org/) manage my feeds. I get press releases from the [FTC](https://www.ftc.gov/stay-connected/rss), some other government agencies, and even youtube channels as they post new videos (Tame Impala for example).
 
-I feel like a lot of people subscribe to this belief that the only way to aggregate news is to visit sites like twitter, facebook, youtube, and other social media platforms. The philosophical implications I believe this has isn't in the scope of this post. But, by using RSS feeds you can do all that aggregation yourself, and with no ads. 
+`newsboat` is terminal based which I like, and uses a very simple text file to configure things. This has already saved me hours of time each day because the internet is full of distractions, and newsboat allows me to focus on the content that matters. 
 
-RSS feeds solve the problem of, "I have all these sites I visit frequently and I want to know when they update or create new content." 
-
-I use `newsboat` in order to subscribe to RSS feeds of some particular parts of the internet I frequent. `newsboat` is terminal based which I like, and has a very simple text file that configures the feeds you want to subscribe to. 
-
----
-
-### The FTC part
-
-After studying economics for 4 years I'm a big fan of the FTC. There seems to be a lot of sentiment of businesses treating consumers poorly, and not enough people give credit to the government agency tasked with "protecting America's consumers". 
-
-One of the specific feeds I'm subscribed to is the FTC's business blog. Today, it featured this elegant bit of text from Lesley Fair...
-
-> But based on the illegal conduct alleged in a lawsuit just filed by the FTC, maybe it’s because the URL SuperDeceptivePractices.com was already taken. 
-
-Anti trust economics was interesting to me. 
