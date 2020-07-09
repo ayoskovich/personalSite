@@ -15,10 +15,10 @@ image:
   focal_point: ''
   preview_only: no
 projects: []
-draft: true
+draft: false
 ---
 
 RSS feeds have freed me from the clunky and distracting process of checking the same sites each day for new content, and I just started using [`newsboat`](https://newsboat.org/) manage my feeds. I get press releases from the [FTC](https://www.ftc.gov/stay-connected/rss), some other government agencies, and even youtube channels as they post new videos (Tame Impala for example).
 
-`newsboat` is terminal based which I like, and uses a very simple text file to configure things. This has already saved me hours of time each day because the internet is full of distractions, and newsboat allows me to focus on the content that matters. 
+`newsboat` is terminal based which I like, and uses a very simple text file to configure things. This has already saved me hours of time each day because the internet is full of distractions, and newsboat allows me to focus on the content that matters. Perhaps a more fleshed out discussion about these time savings is in order... 
 
