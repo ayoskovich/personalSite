@@ -35,9 +35,9 @@
    url = "files/resume.pdf"
    weight = 50
 
-[[main]]
-   name = "Coursework"
-   url = "files/coursework.pdf"
-   weight = 60
+# [[main]]
+#    name = "Coursework"
+#    url = "files/coursework.pdf"
+#    weight = 60
    
 
