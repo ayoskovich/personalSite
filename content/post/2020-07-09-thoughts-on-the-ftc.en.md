@@ -1,12 +1,12 @@
 ---
-title: Thoughts on the FTC
+title: Who protects consumers in the United States?
 author: ''
 date: '2020-07-09'
 slug: thoughts-on-the-ftc
 categories: []
 tags: []
 subtitle: ''
-summary: ''
+summary: 'The FTC is a government organization everyone can get behind.'
 authors: []
 lastmod: '2020-07-09T15:24:07-04:00'
 featured: no
@@ -19,14 +19,29 @@ draft: true
 ---
 
 
-### The FTC part
+I'd like to shed some light on the government organization tasked with protecting consumers from bad practices. The [Federal Trade Commission](https://www.ftc.gov/about-ftc) (FTC) is the government organization who's mission according to their website is:
 
-https://www.ftc.gov/news-events/blogs/business-blog/2020/07/company-claimed-ships-tomorrow-where-were-masks-respirators
+> Protecting consumers and competition by preventing anticompetitive, deceptive, and unfair business practices through law enforcement, advocacy, and education without unduly burdening legitimate business activity. 
 
-There seems to be a lot of sentiment of businesses treating consumers poorly, and not enough people give credit to the government agency tasked with "protecting America's consumers".
+Created in 1914, the FTC investigates things like:
 
-One of the specific feeds I'm subscribed to is the FTC's business blog. Today, it featured this elegant bit of text from Lesley Fair...
+1. Mergers (vertical and horizontal)
+2. False advertising
+3. Anticompetitive behavior (price fixing, dumping, limit pricing)
 
-> But based on the illegal conduct alleged in a lawsuit just filed by the FTC, maybe it’s because the URL SuperDeceptivePractices.com was already taken. 
+---
 
-Anti trust economics was interesting to me. 
+### Zoom in 
+
+I'd like to focus on #3, anticompetitive behavior, which is usually grouped into 2 types, horizontal conduct and single firm conduct. More info on these [here](https://www.ftc.gov/enforcement/anticompetitive-practices). Horizontal conduct is behavior happening __between__ firms (price fixing), and single firm conduct happens within an individual firm.
+
+A company having a monopoly is not inherently unlawful, and neither is attempting to get a monopoly position using aggressive methods. However by using unreasonable methods IS illegal. The FTC makes a very important distinction between these 2 things. And in the end, the FTC's job is to protect __consumers__, not protect competitors from competition. 
+
+> The FTC's Bureau of Competition, working in tandem with the Bureau of Economics, enforces the antitrust laws for the benefit of consumers. 
+
+- [Source](https://www.ftc.gov/tips-advice/competition-guidance/guide-antitrust-laws)
+
+
+For example, Walmart is probably a monopoly in a lot of places, but consumers gain massive benefits from the scale and efficiency Walmart operates at. Shorter lines, cheaper prices, more options, all these things are good for consumers.
+
+[info here](https://www.ftc.gov/tips-advice/competition-guidance/guide-antitrust-laws)
