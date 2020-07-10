@@ -1,5 +1,5 @@
 ---
-title: Who protects consumers in the United States?
+title: The FTC and American consumers
 author: ''
 date: '2020-07-09'
 slug: thoughts-on-the-ftc
@@ -19,7 +19,7 @@ draft: true
 ---
 
 
-I'd like to shed some light on the government organization tasked with protecting consumers from bad practices. The [Federal Trade Commission](https://www.ftc.gov/about-ftc) (FTC) is the government organization who's mission according to their website is:
+I'd like to shed some light on the government organization tasked with protecting consumers . The [Federal Trade Commission](https://www.ftc.gov/about-ftc) (FTC) is the government organization who's mission is:
 
 > Protecting consumers and competition by preventing anticompetitive, deceptive, and unfair business practices through law enforcement, advocacy, and education without unduly burdening legitimate business activity. 
 
@@ -33,7 +33,17 @@ Created in 1914, the FTC investigates things like:
 
 ### Zoom in 
 
-I'd like to focus on #3, anticompetitive behavior, which is usually grouped into 2 types, horizontal conduct and single firm conduct. More info on these [here](https://www.ftc.gov/enforcement/anticompetitive-practices). Horizontal conduct is behavior happening __between__ firms (price fixing), and single firm conduct happens within an individual firm.
+The thesis here is that monopolization is not inherently illegal, which is a common misconception.
+
+I'd like to focus on #3, anticompetitive behavior, which is usually [grouped](https://www.ftc.gov/enforcement/anticompetitive-practices) into 2 types.
+
+1. Horizontal conduct: conduct __between__ firms 
+2. Single firm conduct: conduct __within__ firms
+
+The first relates to agreements between competitors. The second relates to the actions of a single firm.
+
+
+
 
 A company having a monopoly is not inherently unlawful, and neither is attempting to get a monopoly position using aggressive methods. However by using unreasonable methods IS illegal. The FTC makes a very important distinction between these 2 things. And in the end, the FTC's job is to protect __consumers__, not protect competitors from competition. 
 
