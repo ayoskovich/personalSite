@@ -6,7 +6,7 @@ image:
   focal_point: Smart
 slides: example
 summary: Is there a best time to be on the internet?
-title: Analyzing Internet Speed
+title: Analyzing Internet Speed (part 1)
 url_code: "https://github.com/ayoskovich/int-traffic"
 url_pdf: ""
 url_slides: ""
@@ -15,39 +15,62 @@ url_video: ""
 draft: true
 ---
 
-In order to analyze my internet speed I created an cron job to log the output of `ping` and `traceroute`. I'm wondering if there is a best time to browse the internet. I suppose this echoes the operations research idea of does an optimum exist, and if so, where is it? My questions were as follows:
-
-1. Has my internet speed been changing over time?
-2. When is my internet speed the most variable?
-3. When is the best time for me to get on the internet?
-
-SPOILER: There isn't a clear optimum time, and my internet speed (as I defined that) is remarkably consistent.
+Over the course of a month, I created a cron job to log the output of `ping` in order to analyze my internet latency to `google.com`. Is there a "fastest" time to go to google.com? And if this magical time does exist, when is it?
 
 --- 
 
-## Findings
+__SPOILER__: The magical time of fast internet doesn't seem to exist, and my latency is remarkably consistent (< 1/10th of a second 90% of the time).
 
-![oops](yikes.png)
+---
 
-Looking at the information cut by hour yields this messy image. There is major skewness overall, by hour, and also by day of the week and these patterns are consistent across all.
+I was logging data every time my computer was on, and I had around 60,000 observations per day with quite a bit of variability.
 
-In an effort to see what's going on, I'll filter down to < 100 ms.
+![](sampsize.png)
+
+--- 
+
+
+Here's what the raw data looked like by hour:
+
+![oops](yikes2.png)
+
+The red line is drawn at 1000 ms (1 second), and it's immediately noticeable that there is a lot of skewness. Even when limiting the data to measurements less than 100ms, the skewness exists.
 
 ![](fix.png)
 
-Still pretty messy, an investigation of the percentiles yields an insight. Pretty much 90% of all pings had latencies less than 100ms. My total sample size is 894,039. 
+Still not pretty but at least the box part of the box plots are visible now! The 1000 fastest times occurred 10am, 11am, and 1pm of 2 consecutive days.
 
-I'll go out on a limb and say that we'll start approaching a "noticeable" difference at around the 1/2 second mark or 500ms. Of all the observations, that happens ~ 7% of the time.
+---
+
+### Are some hours more skewed than others? 
+ 
+![Oops](both.png)
 
 
-![Oops, didn't load](hour.png)
-![Oops, didn't load](day.png)
+I'd say anything more than 500ms is going to be noticeable, and by that definition the latency to google.com is only going to be "slow" around 5% of the time.
+
+
+--- 
+
+### What do these slow pings have in common?
+
+![Whoops, nothin](slows.png)
+
+
+After computing the within hour proportion of pings greater than 500ms, no clear pattern jumps out. There appears to be a slight difference between hours 0 - 8, and the rest of the day, but it'd be a stretch to say any of that would be practically noticeable. 
 
 
 --- 
 
 ## Onward
-Maybe instead of just pinging google.com, simulate an average day on the computer for me, using my internet history. The resulting consistency doesn't really mean that I'm experiencing a constant speed on the internet, another explanation might be that the traffic is being routed the exact same and google is just really consistent.
 
+I didn't find any shocking results here, apart from learning that my latency is quite consistent over time. It was a fun project learning to automate things and dealing with the output.
 
+This is part 1 of who knows how many parts. In part 2 I'll integrate the traceroute information, as I suspect that the slow speeds may have something to do with the route the packet takes. 
+
+Also, from an inferential perspective I can't really say that the data I used is representative of the internet speed that I experience in a normal day. After all, I go to other sights than google.com. Simulating a "normal day" using my internet history and ping rather than just pinging google.com might score me some points in that direction, though.
+
+---
+
+Thanks for reading! If you're interested in the code I used for this project, the github repo is [here](https://github.com/ayoskovich/int-traffic).
 
