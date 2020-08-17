@@ -12,7 +12,7 @@ url_pdf: ""
 url_slides: ""
 url_video: ""
 
-draft: true
+draft: false
 ---
 
 Over the course of a month, I created a cron job to log the output of `ping` in order to analyze my internet latency to `google.com`. Is there a "fastest" time to go to google.com? And if this magical time does exist, when is it?
