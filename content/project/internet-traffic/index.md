@@ -5,7 +5,7 @@ image:
   caption: 
   focal_point: Smart
 slides: example
-summary: When is the best time to be on the internet?
+summary: Is there a best time to be on the internet?
 title: Analyzing Internet Speed
 url_code: "https://github.com/ayoskovich/int-traffic"
 url_pdf: ""
@@ -15,30 +15,39 @@ url_video: ""
 draft: true
 ---
 
-## Motivation
-I recently changed operating systems (Linux Lite) and like messing around with various computer related things in the command line. One thing you can do is use `cron` in order to schedule a task to run at a certain time. For example, if I wanted to change my background image every 15 minutes, this could be done using `cron`.
-
-Me messing around with scheduled jobs, and a curiosity of how my internet speed changes over time led me to create a bash script which logged my internet specs (`ping` and `traceroute`). Using `cron` I have these specs auto generate upon reboot of my pc and run all day. Essentially I'm tracking my internet speed all the time, saving it into a file that can be easily ingested into python.
-
-## Research Questions
-I had a few main questions I wanted answers to.
+In order to analyze my internet speed I created an cron job to log the output of `ping` and `traceroute`. I'm wondering if there is a best time to browse the internet. I suppose this echoes the operations research idea of does an optimum exist, and if so, where is it? My questions were as follows:
 
 1. Has my internet speed been changing over time?
 2. When is my internet speed the most variable?
-3. When is my internet speed the most consistent?
-4. When is the best time for me to get on the internet?
+3. When is the best time for me to get on the internet?
 
-I'll now define some terms that will be helpful.
+SPOILER: There isn't a clear optimum time, and my internet speed (as I defined that) is remarkably consistent.
 
-- Internet speed: The time (in milliseconds) it takes to ping google.com
-- The most variable / consistent: Does 3pm always have fast speeds? Or is it random? Maybe 5pm always has very high speeds?
-- The best time: The time of day that has the least variable and highest average ping time. AKA the distribution of ping times is as left and as close to eachother as possible.
-
-
-## Process
-
-
+--- 
 
 ## Findings
-## Summary
+
+![oops](yikes.png)
+
+Looking at the information cut by hour yields this messy image. There is major skewness overall, by hour, and also by day of the week and these patterns are consistent across all.
+
+In an effort to see what's going on, I'll filter down to < 100 ms.
+
+![](fix.png)
+
+Still pretty messy, an investigation of the percentiles yields an insight. Pretty much 90% of all pings had latencies less than 100ms. My total sample size is 894,039. 
+
+I'll go out on a limb and say that we'll start approaching a "noticeable" difference at around the 1/2 second mark or 500ms. Of all the observations, that happens ~ 7% of the time.
+
+
+![Oops, didn't load](hour.png)
+![Oops, didn't load](day.png)
+
+
+--- 
+
+## Onward
+Maybe instead of just pinging google.com, simulate an average day on the computer for me, using my internet history. The resulting consistency doesn't really mean that I'm experiencing a constant speed on the internet, another explanation might be that the traffic is being routed the exact same and google is just really consistent.
+
+
 
