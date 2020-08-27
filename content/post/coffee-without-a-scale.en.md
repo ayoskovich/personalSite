@@ -15,9 +15,12 @@ image:
   focal_point: ''
   preview_only: no
 projects: []
-draft: true
 ---
 
-I do pourover coffee each morning and I like to weight out the coffee. However, the scale I was using has left alongside my roommate who just moved out.
+I like weighing out raw coffee each morning before I make it it, but I no longer have access to the scale I was using. A quick google search yields that a single coffee bean weighs around .13 grams of coffee, so for my normal 23g cup in the morning I've been counting out around 172 coffee beans (which only takes around 3 minutes lol).
 
-I'd like to do a project where I estimate the weight of a single coffee bean. Obviously it would be a tad bit counter-intuitive. First I need to get a scale, in order to estimate the weight of a coffee bean...so I can determine the weight of coffee without using a scale...
+Bean weight probably varies by the roast level / type of coffee, and it would be nice to create some sort of reference document that aids in the `"how many beans do I need for X amount of coffee"` calculations.
+
+The irony here is that I would use the document in situations when I didn't have a scale, but to create the document I'd need to buy a scale first. 
+
+The wallet must suffer in the pursuit of science! 
