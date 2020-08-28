@@ -21,7 +21,7 @@ role:
 social:
 - icon: envelope
   icon_pack: fas
-  link: '#contact'
+  link: 'mailto: abc@example.com'
 - icon: linkedin
   icon_pack: fab
   link: https://www.linkedin.com/in/ayoskovich/
@@ -34,4 +34,6 @@ user_groups:
 - Visitors
 ---
 
-I strive to be an effective thought partner to deliver actionable insights using technologies like Python, R, SAS, and many others. I am just as comfortable inverting a matrix as I am communicating complex analyses to non-technical stakeholders and am always on the lookout for opportunities to intertwine analytical models with business processes.
+I strive to be an effective thought partner to deliver actionable insights using technologies like Python, R, SAS, and many others. I am just as comfortable inverting a matrix as I am communicating complex analyses to non-technical stakeholders and am always on the lookout for opportunities to intertwine analytical models with business processes. 
+
+
