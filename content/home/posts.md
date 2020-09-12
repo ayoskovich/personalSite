@@ -8,7 +8,7 @@ active = true  # Activate this widget? true/false
 weight = 2  # Order that this section will appear.
 
 title = "Blog"
-subtitle = "My random thoughts..."
+subtitle = "My random thoughts"
 
 [content]
   # Page type to display. E.g. post, talk, or publication.
