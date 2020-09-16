@@ -34,6 +34,4 @@ user_groups:
 - Visitors
 ---
 
-I strive to be an effective thought partner to deliver actionable insights using technologies like Python, R, SAS, and many others. I am just as comfortable inverting a matrix as I am communicating complex analyses to non-technical stakeholders and am always on the lookout for opportunities to intertwine analytical models with business processes. 
-
-
+I strive to be an effective thought partner that fuses quantitative data with qualitative knowledge. While I have the technnical skills in Python, SAS, and R to perform complex analyses, I believe my communication and consulting skills set me apart. This website is meant to display the wide breadth of my skills, interests, and even some of my personality!
