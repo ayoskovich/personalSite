@@ -68,7 +68,7 @@ I didn't find any shocking results here, apart from learning that my latency is 
 
 This is part 1 of who knows how many parts. In part 2 I'll integrate the traceroute information, as I suspect that the slow speeds may have something to do with the route the packet takes. 
 
-Also, from an inferential perspective I can't really say that the data I used is representative of the internet speed that I experience in a normal day. After all, I go to other sights than google.com. Simulating a "normal day" using my internet history and ping rather than just pinging google.com might score me some points in that direction, though.
+Also, from an inferential perspective I can't really say that the data I used is representative of the internet speed that I experience in a normal day. After all, I go to other sites than google.com. Simulating a "normal day" using my internet history and ping rather than just pinging google.com might score me some points in that direction, though.
 
 ---
 
