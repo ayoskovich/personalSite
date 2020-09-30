@@ -18,14 +18,34 @@ projects: []
 draft: true
 ---
 
-I've done a bit more planning on my most recent project than I have in the past. I think it's easy to get caught in a rut where the projects you work on just reuse the same technologies or techniques. So one of my goals with my current project is to challenge myself while learning something new.
+> Is buying a coffee maker cheaper than buying coffee at Starbucks every day? 
 
-In this case, it's deploying a bokeh application to the web using heroku. I've got the deployment figured out, just need to edit the DNS records so that [amisaving.herokuapp.com](https://amisaving.herokuapp.com/main) redirects to [amisaving.com](http://amisaving.com/).
+I suppose I should define what cheaper means, as clearly buying the necessary equipment is more expensive than a single cup of coffee. Think about the long run costs, as in the total cost spent on coffee over a specific period of time, say one year.
 
-On herkou I enabled auto-deployment from `master` which means that every time I push changes to the `master` branch the application is redeployed. I also created a `dev` branch, so I can test things locally and then merge with `master` when I'm ready to update the live site.
+The total cost may be incurred under two scenarios:
+
+1. Buying coffee at Starbucks.
+2. Purchasing equipment and making coffee at home.
+
+Option 1 includes a payment for each cup of coffee consumed.
+Option 2 includes a one time payment (for equipment), PLUS a payment for each cup of coffee consumed.
+
+Perhaps buying equipment would lead to lower total cost, because although it costs more in the short term, the payment for each cup of coffee consumed is actually less. In terms of which is cheaper, the answer really depends. Given our time frame of 1 year, the question can be reframed as
+
+> Is the variable cost of Option 2 low enough to offset the initial fixed cost incurred, over our specified time period?
+
+Or framed another way:
+
+> Over what time frame (if ever) would it make sense to go with Option 2?
+
+This could get really mathy really quick, but I'd like to stay away from that in this post because the bigger picture is more important.
+
+--- 
+
+I thought about this and was inspired to create a tool that would help me and other enthusiastic economic agents make decisions like this.
 
 ---
 
-### Vim tip...
+### Bonus vim tip
 
-Use `&` while in normal mode to repeat the last substitution on the current line.
+Press `&` while in normal mode to repeat the last substitution on the current line.
