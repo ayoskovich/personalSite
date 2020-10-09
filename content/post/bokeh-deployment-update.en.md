@@ -6,7 +6,7 @@ slug: bokeh-deployment-update
 categories: []
 tags: []
 subtitle: ''
-summary: ''
+summary: 'My most recent project is close to completion.'
 authors: []
 lastmod: '2020-10-08T19:47:45-04:00'
 featured: no
