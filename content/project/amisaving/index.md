@@ -16,23 +16,23 @@ url_video: ""
 draft: true
 ---
 
-I built an [online calculator](http://www.amisaving.com) to help people save money. You put in the costs associated with 2 spending options (ex. brewing coffee at home vs. getting from starbucks) and the output is your breakeven between the two options. For example, "Before 30 purchases you save money getting coffee from Starbucks and after 30 purchases you save money brewing from home".
+I built an [online calculator](http://www.amisaving.com) to help people save money. You put the costs associated with 2 spending options (ex. brewing coffee at home vs. getting from starbucks) and the output is your breakeven between the two options. For example, "Before 30 purchases you save money getting coffee from Starbucks and after 30 purchases you save money brewing from home".
 
-Here are some decisions that this calculator could help with: 
-- Coffee can be made at home or you can go to Starbucks. 
-- Buy the unlimited pass at the carwash or pay each time you go. 
+Here are some "should I" decisions that this calculator could help with: 
+- Make coffee at home or go to starbucks. 
+- Buy the unlimited pass at the carwash or pay each visit. 
 - Rent a chainsaw each time you need one or just buy one.
 
-[Here](https://www.youtube.com/watch?v=RUKujjKL9Ys) is a 2 minute video explaining how to use it.
+I've also made a [quick 2 minute video](https://www.youtube.com/watch?v=RUKujjKL9Ys) explaining how to use the calculator.
 
 <hr>
 
 ## Why I Made This
-Lots of online calculators exist but they are primarily geared towards deciding about renting vs. buying housing. As a consequence, they require lots of user input and are not well suited for the more general idea of "renting vs. buying" or "investing vs. not investing".
+Lots of cost saving online calculators exist but they are primarily geared towards deciding about renting vs. buying housing. As a consequence, they require lots of user input and are not well suited for the more general idea of "renting vs. buying" or "investing vs. not investing" that I'm interested in.
 
-The goal with this tool is to be quick to use and be general enough to help you shop. I imagine this being used by people in grocery aisles.
+The goal with this tool is to be quick to use and general enough to help you in lots of different situations. I imagine this being used by people in grocery aisles.
 
-
+That's it for the overview of the project, and everything after this discusses the technical aspect of this.
 
 <hr>
 
