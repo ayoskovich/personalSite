@@ -11,14 +11,17 @@ subtitle: View the dashboard [here](http://www.amisaving.com).
 url_code: "https://github.com/ayoskovich/amisaving"
 url_pdf: ""
 url_slides: ""
-url_video: ""
+url_video: "https://www.youtube.com/watch?v=RUKujjKL9Ys"
 
 draft: true
 ---
 
-I built an [online calculator](http://www.amisaving.com) to help people save money. You put the costs associated with 2 spending options (ex. brewing coffee at home vs. getting from starbucks) and the output is your breakeven between the two options. For example, "Before 30 purchases you save money getting coffee from Starbucks and after 30 purchases you save money brewing from home".
+I built an [online calculator](http://www.amisaving.com) to help people save money. After entering the costs associated with 2 spending options the calculator outputs the breakeven number of purchases between the two options. For example: 
 
-Here are some "should I" decisions that this calculator could help with: 
+> Before 30 purchases you save money with Option A and after 30 purchases you save money with Option B.
+
+Here are some example decisions the calculator can help with: 
+
 - Make coffee at home or go to starbucks. 
 - Buy the unlimited pass at the carwash or pay each visit. 
 - Rent a chainsaw each time you need one or just buy one.
@@ -28,9 +31,9 @@ I've also made a [quick 2 minute video](https://www.youtube.com/watch?v=RUKujjKL
 <hr>
 
 ## Why I Made This
-Lots of cost saving online calculators exist but they are primarily geared towards deciding about renting vs. buying housing. As a consequence, they require lots of user input and are not well suited for the more general idea of "renting vs. buying" or "investing vs. not investing" that I'm interested in.
+Lots of cost saving online calculators exist but they are primarily geared towards deciding about renting vs. buying housing. As a consequence, they require lots of user input and are not well suited for the more general idea of "renting vs. buying".
 
-The goal with this tool is to be quick to use and general enough to help you in lots of different situations. I imagine this being used by people in grocery aisles.
+The primary goal of this tool is to be quick to use and useful for many different comparisons. I imagine this being used by people in grocery aisles.
 
 That's it for the overview of the project, and everything after this discusses the technical aspect of this.
 
