@@ -17,7 +17,7 @@ draft: true
 ---
 
 ## What is it and how do I use it?
-I built an [online calculator](http://www.amisaving.com) to help people save money. After entering the costs associated with 2 spending options the calculator outputs the breakeven number of purchases between the two options. For example: 
+I built an [online calculator](http://www.amisaving.com) to help people save money. After entering the costs associated with 2 spending options the calculator outputs the breakeven number of purchases between the two options. Example output from the calculator is shown below: 
 
 > Before 30 purchases you save money with Option A and after 30 purchases you save money with Option B.
 
@@ -34,15 +34,17 @@ I've made a [quick 2 minute video](https://www.youtube.com/watch?v=RUKujjKL9Ys) 
 <hr>
 
 ## Why I Made This
-I created this for a couple reasons. The first is that while I understand the math involved in comparing costs effectively, it's really clunky and I lose personal efficiency points when I need to manually do algebra to compare purchasing decisions. Having a deployed calculator means no manual algebra and I have access to the tool anywhere / anytime.
+I created this for a couple reasons. The first is that while I understand the math involved in comparing costs effectively, it's really clunky and I lose personal efficiency points when I need to manually do algebra to compare purchasing decisions. Having a deployed calculator means no manual algebra and having access to the tool anywhere / anytime.
 
-The second reason is that this tool makes cost saving calculations available to everyone, regardless of their mathematical inclination. No algebra, no fractions, just a quick informative result about their options.
+The second reason is that this tool makes cost saving calculations available to everyone, regardless of their mathematical inclination. No algebra, no fractions, just a quick informative result about their spending options.
 
-The third and final reason is that lots of cost saving online calculators exist but they are primarily geared towards deciding about renting vs. buying housing. As a consequence, they require lots of context specific user input (interest rates, mortgage rates, etc.) and are not well suited for general cost comparisons. 
+The third and final reason is that lots of cost saving online calculators exist but they are primarily geared towards deciding about renting vs. buying housing. As a consequence, they require lots of context specific user input (interest rates, mortgage rates, etc.) and are not well suited for general cost comparisons. This calculator attempts to fill that gap.
+
+This is my first fully deployed project and I learned a TON building it. Certainly not perfect, but I'm happy with where I ended up.
 
 <hr>
 
-That completes the general overview of the project, and everything below discusses the technical aspect of the project.
+That completes the general overview of the project and everything below discusses the technical aspects of the project.  
 
 <hr>
 
@@ -56,7 +58,7 @@ When I started this project I had a few goals. I wanted to:
 3. Visualize results
 4. Make something genuinely useful for me and others
 
-I'd say I accomplished all my goals!
+I'd say I accomplished all my goals.
 
 1. I used bokeh to serve an interactive dashboard.
 2. I deployed the project using Heroku and a custom domain name.
@@ -64,7 +66,7 @@ I'd say I accomplished all my goals!
 4. I used this tool the other day to investigate an espresso machine.
 
 ## Other Ideas
-This project really sat in my mind as something that would never end, as I have lots of ideas on how to extend it even further. Here are a other things:
+This project really sat in my mind as something that would never end, as kept having (and still keep having) lots of ideas on how to extend it even further. Here are some of my ideas:
 
 - Take into account the time each option requires
 - Have the user input have a "flip" option. 
