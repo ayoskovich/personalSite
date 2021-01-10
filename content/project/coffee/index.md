@@ -1,12 +1,12 @@
 ---
-title: Coffee Analysis
+title: Estimating My Morning Cup
 author: ''
 date: '2021-01-09'
 slug: coffee
 categories: []
 tags: []
 subtitle: ''
-summary: 'Analyzing Coffee'
+summary: 'How long does my morning coffee take?'
 url_code: "https://github.com/ayoskovich/coffee-log"
 authors: []
 featured: no
@@ -18,89 +18,82 @@ projects: []
 draft: true
 ---
 
-I've always wondered about the amount of time it takes me to brew coffee. Does it take me longer to make it earlier in the morning? Does it vary by the type of coffee I have? In order to answer these questions, I kept track of the amount of time it took me to make a cup of coffee. 
+I've always wondered about the amount of time it takes me to brew a cup of coffee. In order to answer this question I recorded the amount of time it took me to make a cup of coffee every day for over 3 months.
 
 ---
 
-### Summary
-I got faster at counting the beans, but didn't get more accurate when counting them out. Grind times were different between coffees as well as the drawdown times. On average it takes around 13 minutes to make coffee, and on average it varies by 2ish minutes. After some time value calculations I end up saving money by purchasing an electric grinder or scale.
+### Tl;dr / Summary
+On average it takes me 13 minutes to make a cup of coffee and that average varies by 2 minutes. I got faster measuring out the beans but didn't get more accurate when eyeballing the amount. The amount of time it took to grind the beans were different across coffees as well as the amount of time it took for all the water to pass through the ground beans. I'd end up saving money in less than a year if I purchased an electric grinder and scale.
 
 ---
 
 ### Coffee Brewing Process
 
-
 The way I brew coffee looks something like this:
 ![](pourover.jpeg)
 
-I start with a bag of whole bean coffee, count out 173 beans, and then grind them up using a manually cranked coffee grinder. Hot water is poured over ground coffee beans and the water passes through and into some sort of vessel. This process gave me quite a few things I could keep track of:
+I start with a bag of whole bean coffee, count out 173 beans, and then grind them up using a manually cranked coffee grinder. I pour hot water over the coffee beans and the water passes through them into a cup. I decided to keep track of a few things throughout the coffee brewing process: 
 
-- Count Time: Time to count out the beans 
-- Grind Time: Time to grind the beans manually
-- Draw Down Time: Time for the water to pass through the coffee grounds
-- Number of beans I was supposed to count out (need to control for this)
-- Number of beans I actually poured out (I was eyeballing everything)
+- cTime: Time to count out the beans 
+- gTime: Time to grind the beans manually
+- bTime: Time for the water to pass through the coffee grounds
+- count: Number of beans I was supposed to count out 
+- over: Number of beans I actually poured out 
+- duration: Total amount of time the cup took to make
+
+Here's a screenshot of the data, and you can find the code [here](https://github.com/ayoskovich/coffee-log).
+
+![](data.png)
 
 ---
 
-I recorded data 104 times between August 27th, 2020 and December 26th, 2020, and the below plot shows the total amount of time the coffee brewing process took each day.
+I recorded data 104 times between October 27th, 2020 and December 26th, 2020. The below plot shows the total amount of time the coffee brewing process took each day.
 ![](total.png)
 
-It took 13.3 minutes to brew a cup of coffee on average, and varies by around 2 minutes. The fastest cup took 10 minutes of make, and the longest cupt took 20 minutes to make.
+It took 13.3 minutes to brew a cup of coffee on average, and varies by around 2 minutes. The fastest cup took 10 minutes to make, and the longest cup took 20 minutes to make.
 
 ---
 
-Not all records contained all of the fields, as I didn't start recording the start / end times until 30 or 40 records in, so there is some filtering that happens when you see these visualizations. 
-
-I used 11 different types of coffee throughout the project.
-![](coffee_bar.png)
-
-Things like brew time and grind time definitely vary by coffee, and I think this has more to do with the coffee bean shape / size / weight than anything I can control.
+Things like brew time and grind time seem to vary by the type of coffee, but this likely has more to do with the coffee bean shape / size / weight than anything I can control.
 
 ![](total_brew.png)
 
-
-Maybe the grind time varies
 ![](grind_time.png)
 
-
-Or the draw down time
 ![](draw_down.png)
 
 
-The drawdowns do appear to vary by coffee.
-
 ---
 
-As I started to do this consistently, I started to wonder if I was getting any faster at counting out the beans.
+As I started to record data consistently, I began to wonder if I was getting any faster at counting out the beans.
 ![](c_over_time.png)
 
-The first few times I got lots better, but the returns appear to be diminishing. Now I'm at less than 100.
+The first 20 or so times I improved quite a bit, but the gains dimished quite quickly after that. 
 
 ---
 
-I wondered the same thing with my pouring accuracy. That is, am I getting better at eyeballing 173 beans after I pour the beans out of the bag?
+I also wondered the same thing about my pouring accuracy. In other words, am I getting better at eyeballing the number of beans I need to pour out?
 ![](overages.png)
 
 Doesn't look like I really improved on pouring them out, and I was way more likely to overpour than underpour. 
 ![](overages_by_cof.png)
 
+The Stovetop Buesaco, Stovetop Sakicha, and Starbucks Brazil coffess were the main culprits of my underpouring.
+
 ---
 
-### Money Money Money
+## Money Money Money
+I could reduce the total brewing time if I had some more electronic equipment. For example, I wouldn't have to manually count out the beans if I had a scale, and I could grind the beans almost instantly if I had an electric coffee grinder. Allow me to throw out 2 extremely rough estimates of what these tools would cost:
+- Scale: around $50
+- Electric grinder: $200 (yes that's 2 zeros, I need a good one...)
 
-Both the time it takes me to count out the beans and the time it takes me to grind them could be reduced. But would these upgrades be worth it? For that I'll have to turn to one of my previous projects, [amisaving](https://anthonyyoskovich.com/project/amisaving/).
-
-Tackle one at a time:
-- Scale to stop counting: around $50
-- Electric grinder to stop manually grinding: $200 (yes, that expensive)
-
-I suppose at this point I'm missing something for this comparison to be possible, and that's some sort of measurement for the value of my time. If I'm going to save 15 minutes by making the purchase, I need some sort of way to value my time. I'll use my wage, which let's say is $25. The value of my hour. 
-
-To simplify things, let's say that both of these pieces of equipment completely eliminate the time required for counting and grinding. In other words, the grinding is instant and the "counting" by weighing is instant.
+In order to start judging whether or not these investments are worth my money, I need some sort of measurement for the value of my time. I'd say I value 1 hour of my time at around $25. I know that with my current, no equipment setup, I'm spending at least this much time:
 
 - Avg count time: 2 minutes
 - Avg grind time: 2 minutes
 
-So basically, at 25 / hour, I would save 4 minutes every day, or (25/60) * 4 = $1.66. I'd start saving money after 150 uses, which is a little less than half of a year. So yeah, I think for my wallet AND my sanity it would be a good idea to invest in some technology to bring me out of the stone age.
+By purchasing a scale and an electric grinder, I would save around 4 minutes every day.
 
+At $25 / hour, (25/60) * 4 = $1.66. I'd save $1.66 each use. After inputting these values into my handy, custom built calculator <a href="http://www.amisaving.com" target="_blank">amisaving</a>, I'd start saving money after 150 uses, which is a little less than half of a year. 
+
+So yeah, I think for my wallet AND my sanity it would be a good idea to invest in some technology to bring me out of the stone age.
