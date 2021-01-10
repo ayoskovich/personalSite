@@ -15,7 +15,7 @@ image:
   focal_point: ''
   preview_only: no
 projects: []
-draft: true
+draft: false
 ---
 
 I've always wondered about the amount of time it takes me to brew a cup of coffee. In order to answer this question,  every day for over 3 months I kept track of a few key variables that determine the amount of time it takes me to make a cup of coffee.
