@@ -27,59 +27,64 @@ I got faster at counting the beans, but didn't get more accurate when counting t
 
 ---
 
-Along with the type of coffee and the time of day, the main things I timed were:
-- Count Time: Amount of time to count out the beans (yes, I manually do this)
-- Grind Time: Amount of time to grind the beans manually
-- Brew Time: Amount of time it took the water to pass through the coffee 
+### Coffee Brewing Process
 
-I also kept track of a few other things:
-- Amount of beans I was supposed to count out (need to control for this)
-- Amount of beans I actually poured out
+
+The way I brew coffee looks something like this:
+![](pourover.jpeg)
+
+I start with a bag of whole bean coffee, count out 173 beans, and then grind them up using a manually cranked coffee grinder. Hot water is poured over ground coffee beans and the water passes through and into some sort of vessel. This process gave me quite a few things I could keep track of:
+
+- Start Time: Time of day I began making the coffee (recorded when I began counting beans)
+- Count Time: Time to count out the beans 
+- Grind Time: Time to grind the beans manually
+- Draw Down Time: Time for the water to pass through the coffee grounds
+- Number of beans I was supposed to count out (need to control for this)
+- Number of beans I actually poured out (I was eyeballing everything)
+- End Time: Time of day when the whole process was done
 
 ---
 
-For some context, brewing the coffee looks something like this:
-![](pourover.jpeg)
-
-In total I had around 100 data points. I was fairly consistent in making the coffee every day:
+I recorded data 104 between August 27th, 2020 and December 26th, 2020. The below plot shows the total amount of time the coffee brewing process took each day.
 ![](total.png)
 
+It took 13.3 minutes to brew a cup of coffee on average, and varies by around 2 minutes. The fastest cup took 10 minutes of make, and the longest cupt took 20 minutes to make.
+
+---
 
 Not all records contained all of the fields, as I didn't start recording the start / end times until 30 or 40 records in, so there is some filtering that happens when you see these visualizations. 
 
-I used 11 different types of coffee throughout the time, and only some groups had more than 10 observations.
+I used 11 different types of coffee throughout the project.
 ![](coffee_bar.png)
 
-Let's first look at the total amount of time I spent making coffee over time:
-![](total.png)
-
-Most of the time it took me around 14ish minutes to make coffee, and I don't really see any sort of trend here. It's fairly consistent. I don't see any sort of trend to indicate that I could "skill" my way to a faster brew time.
-
-
 Maybe the brew time varies by the type of coffee:
+![](total_brew.png)
 
 
-We can zoom in a bit and look at the grind time / drawdown time for each
+Maybe the grind time varies
 ![](grind_time.png)
 
-Here is about that one.
 
+Or the draw down time
 ![](draw_down.png)
+
 
 The drawdowns do appear to vary by coffee.
 
 ---
 
-I was also curious if I got faster at counting out the beans
+As I did this consistently, I started to wonder if I was getting any faster at counting out the beans.
 ![](c_over_time.png)
 
 The first few times I got lots better, but the returns appear to be diminishing. Now I'm at less than 100.
 
+---
 
-Or if I became any more accurate at eyeballing the pours
+I wondered the same thing with my pouring accuracy. That is, am I getting better at eyeballing 173 beans after I pour the beans out of the bag?
 ![](overages.png)
 
-Doesn't look like I really improved on pouring them out, and I was way more likely to overpour than underpour.
+Doesn't look like I really improved on pouring them out, and I was way more likely to overpour than underpour. 
+![](overages_by_cof.png)
 
 ---
 
