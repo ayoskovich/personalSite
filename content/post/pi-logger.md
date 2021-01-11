@@ -18,6 +18,6 @@ projects: []
 draft: false
 ---
 
-I recently picked up a Raspberry Pi and started logging the price of bitcoin every 40 or 50 seconds. Check out a demo [here](https://www.youtube.com/watch?v=KQN2H1IuiuM&t=2s).
+I recently picked up a Raspberry Pi and started logging the price of bitcoin every 40 or 50 seconds. Check out a demo [here](https://youtu.be/KQN2H1IuiuM).
 
 Working on a flask app as well, should have another update by this Friday.
