@@ -15,13 +15,9 @@ image:
   focal_point: ''
   preview_only: no
 projects: []
-draft: true
+draft: false
 ---
 
-I recently picked up a Raspberry Pi v4 and have built a nice little data logger. I've got a python script that calls an api once every 40 seconds ish and saves the result to a text file.
+I recently picked up a Raspberry Pi and started logging the price of bitcoin every 40 or 50 seconds. Check out a demo [here](https://www.youtube.com/watch?v=KQN2H1IuiuM&t=2s).
 
-I'm working on a flask app to serve some sort of dashboard on the local network. I was trying to have the pages play a sound effect automatically when something happened but I've been having trouble because most browsers don't support autoplaying audio.
-
-I've also been working a bit with Docker, got some project ideas about it but don't want to share too much to soon.
-
-
+Working on a flask app as well, should have another update by this Friday.
