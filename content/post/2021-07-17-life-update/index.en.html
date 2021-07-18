@@ -1,0 +1,133 @@
+---
+title: Some plots in R
+author: ''
+date: '2021-07-17'
+slug: []
+categories: []
+tags: []
+subtitle: ''
+summary: 'For my reference and your viewing pleasure'
+authors: []
+lastmod: '2021-07-17T12:32:15-04:00'
+featured: no
+image:
+  caption: ''
+  focal_point: ''
+  preview_only: no
+projects: []
+editor_options: 
+  chunk_output_type: console
+---
+
+<script src="{{< blogdown/postref >}}index.en_files/header-attrs/header-attrs.js"></script>
+
+
+<p>This is a plot dump for my own reference, as I’ve been</p>
+<blockquote>
+<p>using <code>ggplot</code> and <code>theme()</code> a lot more lately</p>
+</blockquote>
+<pre class="r"><code>GRPS &lt;- c(&#39;Car 1&#39;, &#39;Car 2&#39;, &#39;Car 3&#39;)
+
+cars %&gt;% 
+  mutate(grp = sample(GRPS, n(), replace=TRUE)) %&gt;% 
+  ggplot(aes(x=speed, y=dist, color=grp)) +
+  geom_jitter(size=5)+
+  labs(
+    caption=&#39;(points are jittered)&#39;,
+    x=&#39;Speed&#39;,
+    y=&#39;Distance&#39;,
+    color=&#39;Group&#39;
+  )+
+  theme(
+    panel.background = element_blank(),
+    panel.border = element_rect(fill=NA, color=&#39;black&#39;),
+    axis.text = element_blank(),
+    axis.ticks = element_blank(),
+    text = element_text(size=15),
+    legend.position = c(.91, .15),
+    legend.background = element_rect(fill=NA, color=&#39;black&#39;)
+  )</code></pre>
+<p><img src="{{< blogdown/postref >}}index.en_files/figure-html/unnamed-chunk-1-1.svg" width="672" /></p>
+<blockquote>
+<p>and manually ordering facets and using colorblind friendly palettes</p>
+</blockquote>
+<pre class="r"><code>ChickWeight %&gt;% 
+  group_by(Diet, Chick) %&gt;% 
+  summarise(avg = mean(weight)) %&gt;% 
+  ggplot(aes(x=Chick, y=avg, fill=Diet))+
+  geom_bar(stat=&#39;identity&#39;)+
+  scale_fill_colorblind()+
+  facet_wrap(~factor(Diet, levels=c(4, 2, 3, 1)), 
+             scales = &#39;free_x&#39;)+
+  labs(
+    x=&#39;&#39;,
+    y=&#39;&#39;,
+    caption=&#39;This palette is colorblind friendly btw&#39;
+  )+
+  theme(
+    panel.background = element_blank(),
+    strip.background = element_rect(fill=&#39;grey&#39;),
+    strip.text = element_text(size=15, face=&#39;italic&#39;),
+    axis.text = element_blank(),
+    axis.ticks = element_blank(),
+    legend.position = &#39;none&#39;
+  )</code></pre>
+<p><img src="{{< blogdown/postref >}}index.en_files/figure-html/unnamed-chunk-2-1.svg" width="672" /></p>
+<blockquote>
+<p>and adding labels to bars</p>
+</blockquote>
+<pre class="r"><code>USArrests %&gt;% 
+  as_tibble(rownames=&#39;state&#39;) %&gt;% 
+  filter(state %in% c(&#39;Michigan&#39;, &#39;Illinois&#39;)) %&gt;% 
+  select(-5) %&gt;% 
+  pivot_longer(cols=!state) %&gt;% 
+  ggplot(aes(x=name, y=value, fill=state))+
+  geom_bar(stat=&#39;identity&#39;, position = &#39;dodge&#39;)+
+  geom_text(aes(label=round(value, 0)), position=position_dodge(width=1),
+            vjust=-1)+
+  scale_fill_brewer(palette=&#39;Set1&#39;)+
+  ylim(c(0, 270))+
+  labs(
+    caption=&#39;Data from the &quot;datasets&quot; package in R&#39;,
+    fill=&#39;&#39;,
+    x=&#39;&#39;,
+    y=&#39;Rate&#39;
+  )+
+  theme(
+    panel.background = element_blank(),
+    axis.text.y = element_blank(),
+    axis.ticks = element_blank(),
+    text = element_text(size=15)
+  )</code></pre>
+<p><img src="{{< blogdown/postref >}}index.en_files/figure-html/unnamed-chunk-3-1.svg" width="672" /></p>
+<blockquote>
+<p>and dealing with positive and negative bar labels</p>
+</blockquote>
+<pre class="r"><code>USArrests %&gt;% 
+  as_tibble(rownames=&#39;state&#39;) %&gt;% 
+  filter(state %in% c(&#39;Michigan&#39;, &#39;Illinois&#39;)) %&gt;% 
+  select(-5) %&gt;% 
+  pivot_longer(cols=!state) %&gt;% 
+  pivot_wider(id_cols=name,
+              values_from=value,
+              names_from=state) %&gt;% 
+  mutate(d = Illinois - Michigan) %&gt;% 
+  ggplot(aes(x=name, y=d, fill=factor(sign(d))))+
+  geom_bar(stat=&#39;identity&#39;, width=.25)+
+  geom_text(aes(label=d, 
+                y=d + sign(d)*1),
+            size=10)+
+  geom_hline(yintercept=0, size=2)+
+  scale_fill_manual(values=c(&#39;#ec4d2a&#39;, &#39;#2aecae&#39;))+
+  labs(
+    x = &#39;&#39;,
+    y = &#39;&#39;
+  )+
+  theme(
+    panel.background = element_blank(),
+    axis.text = element_blank(),
+    axis.ticks = element_blank(),
+    legend.position = &#39;none&#39;,
+    text = element_text(size=15, face = &#39;bold&#39;)
+  )</code></pre>
+<p><img src="{{< blogdown/postref >}}index.en_files/figure-html/unnamed-chunk-4-1.svg" width="672" /></p>

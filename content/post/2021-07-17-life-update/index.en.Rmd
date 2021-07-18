@@ -1,0 +1,145 @@
+---
+title: Some plots in R
+author: ''
+date: '2021-07-17'
+slug: []
+categories: []
+tags: []
+subtitle: ''
+summary: 'For my reference and your viewing pleasure'
+authors: []
+lastmod: '2021-07-17T12:32:15-04:00'
+featured: no
+image:
+  caption: ''
+  focal_point: ''
+  preview_only: no
+projects: []
+editor_options: 
+  chunk_output_type: console
+---
+
+This is a plot dump for my own reference, as I've been
+
+> using `ggplot` and `theme()` a lot more lately
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(dev = 'svg') 
+
+library(tidyverse)
+library(tidylog)
+library(ggthemes)
+
+cars %>% head()
+```
+
+```{r message=FALSE, warning=FALSE, include=TRUE}
+GRPS <- c('Car 1', 'Car 2', 'Car 3')
+
+cars %>% 
+  mutate(grp = sample(GRPS, n(), replace=TRUE)) %>% 
+  ggplot(aes(x=speed, y=dist, color=grp)) +
+  geom_jitter(size=5)+
+  labs(
+    caption='(points are jittered)',
+    x='Speed',
+    y='Distance',
+    color='Group'
+  )+
+  theme(
+    panel.background = element_blank(),
+    panel.border = element_rect(fill=NA, color='black'),
+    axis.text = element_blank(),
+    axis.ticks = element_blank(),
+    text = element_text(size=15),
+    legend.position = c(.91, .15),
+    legend.background = element_rect(fill=NA, color='black')
+  )
+```
+
+> and manually ordering facets and using colorblind friendly palettes
+
+```{r message=FALSE, warning=FALSE}
+
+ChickWeight %>% 
+  group_by(Diet, Chick) %>% 
+  summarise(avg = mean(weight)) %>% 
+  ggplot(aes(x=Chick, y=avg, fill=Diet))+
+  geom_bar(stat='identity')+
+  scale_fill_colorblind()+
+  facet_wrap(~factor(Diet, levels=c(4, 2, 3, 1)), 
+             scales = 'free_x')+
+  labs(
+    x='',
+    y='',
+    caption='This palette is colorblind friendly btw'
+  )+
+  theme(
+    panel.background = element_blank(),
+    strip.background = element_rect(fill='grey'),
+    strip.text = element_text(size=15, face='italic'),
+    axis.text = element_blank(),
+    axis.ticks = element_blank(),
+    legend.position = 'none'
+  )
+```
+
+> and adding labels to bars
+
+```{r message=FALSE, warning=FALSE, include=TRUE}
+USArrests %>% 
+  as_tibble(rownames='state') %>% 
+  filter(state %in% c('Michigan', 'Illinois')) %>% 
+  select(-5) %>% 
+  pivot_longer(cols=!state) %>% 
+  ggplot(aes(x=name, y=value, fill=state))+
+  geom_bar(stat='identity', position = 'dodge')+
+  geom_text(aes(label=round(value, 0)), position=position_dodge(width=1),
+            vjust=-1)+
+  scale_fill_brewer(palette='Set1')+
+  ylim(c(0, 270))+
+  labs(
+    caption='Data from the "datasets" package in R',
+    fill='',
+    x='',
+    y='Rate'
+  )+
+  theme(
+    panel.background = element_blank(),
+    axis.text.y = element_blank(),
+    axis.ticks = element_blank(),
+    text = element_text(size=15)
+  )
+```
+
+> and dealing with positive and negative bar labels
+
+```{r message=FALSE, warning=FALSE}
+USArrests %>% 
+  as_tibble(rownames='state') %>% 
+  filter(state %in% c('Michigan', 'Illinois')) %>% 
+  select(-5) %>% 
+  pivot_longer(cols=!state) %>% 
+  pivot_wider(id_cols=name,
+              values_from=value,
+              names_from=state) %>% 
+  mutate(d = Illinois - Michigan) %>% 
+  ggplot(aes(x=name, y=d, fill=factor(sign(d))))+
+  geom_bar(stat='identity', width=.25)+
+  geom_text(aes(label=d, 
+                y=d + sign(d)*1),
+            size=10)+
+  geom_hline(yintercept=0, size=2)+
+  scale_fill_manual(values=c('#ec4d2a', '#2aecae'))+
+  labs(
+    x = '',
+    y = ''
+  )+
+  theme(
+    panel.background = element_blank(),
+    axis.text = element_blank(),
+    axis.ticks = element_blank(),
+    legend.position = 'none',
+    text = element_text(size=15, face = 'bold')
+  )
+```
