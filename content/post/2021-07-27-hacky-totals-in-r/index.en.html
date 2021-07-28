@@ -1,0 +1,72 @@
+---
+title: Hacky Totals in R
+author: ''
+date: '2021-07-27'
+slug: []
+categories: []
+tags: []
+subtitle: ''
+summary: 'A quick way to add a total category to a plot'
+authors: []
+lastmod: '2021-07-27T21:25:19-04:00'
+featured: no
+image:
+  caption: ''
+  focal_point: ''
+  preview_only: no
+projects: []
+editor_options: 
+  chunk_output_type: console
+---
+
+<script src="{{< blogdown/postref >}}index.en_files/header-attrs/header-attrs.js"></script>
+
+
+<p>Here’s how I add a total column when visualizing aggregates by group in R.</p>
+<pre class="r"><code>library(tidyverse)
+library(ggthemes)
+
+get_avg &lt;- function(df, ...){
+  df %&gt;% 
+    group_by(...) %&gt;% 
+    summarise(avg = mean(mpg))
+}
+
+TOT_NAME &lt;- &#39;Total&#39;
+
+mtcars %&gt;% 
+  mutate(gear = as.character(gear)) %&gt;% 
+  get_avg(gear) %&gt;% 
+  bind_rows(
+    mtcars %&gt;% 
+      get_avg() %&gt;% 
+      mutate(gear = TOT_NAME)
+  ) %&gt;% 
+  # I like manually computing the aggregates so I can easily export
+  # write_csv(&#39;my_aggs.csv&#39;)
+  ggplot(aes(x=factor(gear, 
+                      levels=c(&#39;3&#39;, &#39;4&#39;, &#39;5&#39;, &#39; &#39;, TOT_NAME)), 
+             y=avg,
+             fill=gear == TOT_NAME))+
+  geom_bar(stat=&#39;identity&#39;)+
+  geom_text(aes(label=round(avg, 0)), 
+            nudge_y=1, 
+            size=5)+
+  scale_x_discrete(drop=FALSE)+
+  geom_vline(xintercept=4, size=3, color=&#39;#56B4E9&#39;)+
+  labs(x=&#39;&#39;, y=&#39;&#39;, title=&#39;Averages By Group&#39;)+
+  theme_bw()+
+  scale_fill_colorblind()+
+  theme(
+    plot.title = element_text(size=15, hjust=.5),
+    legend.position = &#39;none&#39;,
+    axis.text.x = element_text(size=15, face = &#39;italic&#39;),
+    axis.text.y = element_blank(),
+    axis.ticks = element_blank(),
+    panel.grid = element_blank(),
+    panel.border = element_blank()
+  )</code></pre>
+<p><img src="{{< blogdown/postref >}}index.en_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
+<p>I used <code>colorblind_pal()(3)</code> while working on this to extract the first 3 hex values from the colorblind palette. These colors are <a href="http://www.cookbook-r.com/Graphs/Colors_(ggplot2)/#color-selection">evenly spaced around the HSL circle</a> which makes it easy to quickly pick contrasting colors.</p>
+<hr />
+<p>I’m sure there’s a better way to do the <code>levels=c(...)</code> line with <code>forcats</code>, but it’s late.</p>

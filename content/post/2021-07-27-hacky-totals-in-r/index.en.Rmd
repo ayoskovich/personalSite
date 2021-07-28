@@ -1,0 +1,74 @@
+---
+title: Hacky Totals in R
+author: ''
+date: '2021-07-27'
+slug: []
+categories: []
+tags: []
+subtitle: ''
+summary: 'A quick way to add a total category to a plot'
+authors: []
+lastmod: '2021-07-27T21:25:19-04:00'
+featured: no
+image:
+  caption: ''
+  focal_point: ''
+  preview_only: no
+projects: []
+editor_options: 
+  chunk_output_type: console
+---
+
+Here's how I add a total column when visualizing aggregates by group in R. 
+
+```{r message=FALSE, warning=FALSE, include=TRUE}
+library(tidyverse)
+library(ggthemes)
+
+get_avg <- function(df, ...){
+  df %>% 
+    group_by(...) %>% 
+    summarise(avg = mean(mpg))
+}
+
+TOT_NAME <- 'Total'
+
+mtcars %>% 
+  mutate(gear = as.character(gear)) %>% 
+  get_avg(gear) %>% 
+  bind_rows(
+    mtcars %>% 
+      get_avg() %>% 
+      mutate(gear = TOT_NAME)
+  ) %>% 
+  # I like manually computing the aggregates so I can easily export
+  # write_csv('my_aggs.csv')
+  ggplot(aes(x=factor(gear, 
+                      levels=c('3', '4', '5', ' ', TOT_NAME)), 
+             y=avg,
+             fill=gear == TOT_NAME))+
+  geom_bar(stat='identity')+
+  geom_text(aes(label=round(avg, 0)), 
+            nudge_y=1, 
+            size=5)+
+  scale_x_discrete(drop=FALSE)+
+  geom_vline(xintercept=4, size=3, color='#56B4E9')+
+  labs(x='', y='', title='Averages By Group')+
+  theme_bw()+
+  scale_fill_colorblind()+
+  theme(
+    plot.title = element_text(size=15, hjust=.5),
+    legend.position = 'none',
+    axis.text.x = element_text(size=15, face = 'italic'),
+    axis.text.y = element_blank(),
+    axis.ticks = element_blank(),
+    panel.grid = element_blank(),
+    panel.border = element_blank()
+  )
+```
+
+I used ```colorblind_pal()(3)``` while working on this to extract the first 3 hex values from the colorblind palette. These colors are [evenly spaced around the HSL circle](http://www.cookbook-r.com/Graphs/Colors_(ggplot2)/#color-selection) which makes it easy to quickly pick contrasting colors. 
+
+---
+
+I'm sure there's a better way to do the `levels=c(...)` line with `forcats`, but it's late.
