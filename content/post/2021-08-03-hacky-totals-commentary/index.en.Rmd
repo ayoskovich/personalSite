@@ -1,0 +1,18 @@
+---
+title: 'Hacky Totals: Commentary'
+author: ''
+date: '2021-08-03'
+slug: []
+categories: []
+tags: []
+subtitle: ''
+summary: ''
+authors: []
+lastmod: '2021-08-03T22:07:26-04:00'
+featured: no
+image:
+  caption: ''
+  focal_point: ''
+  preview_only: no
+projects: []
+---
