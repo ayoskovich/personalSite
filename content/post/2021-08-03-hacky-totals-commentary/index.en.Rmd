@@ -15,4 +15,137 @@ image:
   focal_point: ''
   preview_only: no
 projects: []
+editor_options: 
+  chunk_output_type: console
+draft: true
 ---
+
+In my last post I demonstrated how I add a totals category to a plot in R. It looked like this:
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+library(tidyverse)
+library(ggthemes)
+
+TOT_NAME <- 'Total'
+  
+get_avg <- function(df, ...){
+  df %>% 
+    group_by(...) %>% 
+    summarise(avg = mean(mpg))
+}
+
+plt_grp <- function(levs, xint, tname, ptitle){
+  mtcars %>% 
+    mutate(gear = as.character(gear)) %>% 
+    get_avg(gear) %>% 
+    bind_rows(
+      mtcars %>% 
+        get_avg() %>% 
+        mutate(gear = TOT_NAME)
+    ) %>% 
+    ggplot(aes(x=factor(gear, levels=levs), 
+               y=avg,
+               fill=gear == tname))+
+    geom_bar(stat='identity')+
+    geom_text(aes(label=round(avg, 0)), 
+              nudge_y=1, 
+              size=5)+
+    geom_vline(xintercept=xint, size=3, color='#56B4E9')+
+    labs(x='', y='', title=ptitle) +
+    scale_x_discrete(drop=FALSE)+
+    theme_bw()+
+    scale_fill_colorblind()+
+    theme(
+      plot.title = element_text(size=15, hjust=.5),
+      legend.position = 'none',
+      axis.text.x = element_text(size=15, face = 'italic'),
+      axis.text.y = element_blank(),
+      axis.ticks = element_blank(),
+      panel.grid = element_blank(),
+      panel.border = element_blank()
+    )
+}
+
+plt_grp(
+  c('3', '4', '5', ' ', TOT_NAME),
+  4,
+  TOT_NAME,
+  'A'
+)
+```
+
+But why not make the plot like this?
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+plt_grp(
+  c(TOT_NAME, ' ', '3', '4', '5'),
+  2,
+  TOT_NAME,
+  'B'
+)
+```
+
+`A` initially makes more sense to me because in my mind I usually think, "1 + 2 + 3 = `r 1 + 2 + 3`" instead of "`r 1+2+3` = 1 + 2 + 3".
+
+It probably depends on what the point / story you're trying to tell is. 
+
+It also probably depends on what the actual data looks like. Is the total very far from the individual heights?
+
+This
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+# Pretend that these averages are coming from equal sizes so this math 
+# works ty
+plt_foo <- function(dat, ptitle){
+  dat %>% 
+    ggplot(aes(x=factor(x, levels=c('3', '4', '5', ' ', 'Total')), 
+               y=y,
+               fill=x == 'Total'))+
+        geom_bar(stat='identity')+
+        geom_text(aes(label=round(y, 0)), 
+                  nudge_y=1, 
+                  size=5)+
+        geom_vline(xintercept=4, size=3, color='#56B4E9')+
+        labs(x='', y='', title=ptitle)+
+        scale_x_discrete(drop=FALSE)+
+        theme_bw()+
+        scale_fill_colorblind()+
+        theme(
+          plot.title = element_text(size=15, hjust=.5),
+          legend.position = 'none',
+          axis.text.x = element_text(size=15, face = 'italic'),
+          axis.text.y = element_blank(),
+          axis.ticks = element_blank(),
+          panel.grid = element_blank(),
+          panel.border = element_blank()
+        )
+}
+
+tribble(
+  ~x, ~y,
+  '3', 16,
+  '4', 40,
+  '5', 14,
+  'Total', 23
+) %>% 
+  plt_foo('C')
+
+
+```
+
+makes more sense than 
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+tribble(
+  ~x, ~y,
+  '3', 16,
+  '4', 17,
+  '5', 15,
+  'Total', 16
+) %>% 
+  plt_foo('D')
+```
+
+
+For example, is this an explanation of why the total is what it is, or is this a 
+
+Is the total meaningful? Are the individual groups more important than the group overall? Insert some examples...
