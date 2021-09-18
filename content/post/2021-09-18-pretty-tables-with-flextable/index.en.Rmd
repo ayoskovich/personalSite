@@ -1,0 +1,30 @@
+---
+title: Pretty tables with flextable
+author: R package build
+date: '2021-09-18'
+slug: []
+categories: []
+tags: []
+subtitle: ''
+summary: ''
+authors: []
+lastmod: '2021-09-18T09:41:50-04:00'
+featured: no
+image:
+  caption: ''
+  focal_point: ''
+  preview_only: no
+projects: []
+editor_options: 
+  chunk_output_type: console
+draft: true
+---
+
+I've been using the `flextable` and `janitor` packages recently.
+
+```{r}
+library(tidyverse)
+library(flextable)
+library(janitor)
+```
+
