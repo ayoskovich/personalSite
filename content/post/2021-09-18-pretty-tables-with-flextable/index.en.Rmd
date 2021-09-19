@@ -20,10 +20,14 @@ editor_options:
 draft: true
 ---
 
-There are a few things that I've been doing a lot that I've found easier ways to do in R.
-- Formatting nice tables for word documents
-- Comparing dataframe columns
+There are a few things that I've been doing a lot.
+
+- Formatting nice tables for word documents using 
+  - [flextable](https://davidgohel.github.io/flextable/)
+- Comparing dataframe columns before joining
 - Computing 1, 2, and 3 way tables
+- Lumping categories
+
 
 ```{r echo=FALSE, message=FALSE, warning=FALSE}
 library(tidyverse)
@@ -32,9 +36,7 @@ library(janitor)
 library(waldo)
 ```
 
-- Ethnicity category lumping
-
-`Flextable` and `janitor` make making pretty tables great.
+- Building and formatting nice tables
 
 ```{r echo=FALSE, message=FALSE, warning=FALSE}
 mtcars %>%
@@ -43,13 +45,19 @@ mtcars %>%
   adorn_pct_formatting(digits=0) %>%
   flextable() %>%
   theme_booktabs() %>%
+  set_header_labels(
+    cyl = 'Cylinder',
+    n = '# Obs',
+    percent = 'Percent'
+  ) %>%
+  add_header_row(values=c('Summary Table'), colwidths = c(3)) %>%
   align(align='center', part='all') %>%
   bg(bg = 'blue', part='header') %>%
   color(color='white', part='header')
 ```
 
 
-Using `compare` from `waldo` makes comparing dataframes quick
+- Comparing dataframes using `compare` from `waldo`
 
 ```{r, echo=FALSE, message=FALSE, warning=FALSE}
 mtcars %>%
@@ -69,4 +77,48 @@ mtcars %>%
       head()
   ) %>%
   flextable()
+```
+
+- Wrangling categories with `forcats`
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+a <- tribble(
+  ~Category, ~pct, ~dat_src,
+  'Cats', .15,   'A',
+  'Dogs', .40,   'A',
+  'Humans', .45, 'A'
+)
+
+b <- tribble(
+  ~Category, ~pct, ~dat_src,
+  'Animals', .25, 'B',
+  # Are humans animals? thinkingemoji.pg
+  'Humans', .75, 'B'
+)
+```
+
+
+So we start with these two, and I'd like to combine them into 1 table.
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE, results='asis'}
+a %>% flextable() %>% flextable_to_rmd()
+b %>% flextable() %>% flextable_to_rmd()
+```
+
+```{r}
+a %>%
+  mutate_at(c('Category'), as_factor) %>%
+  mutate_at(c('Category'), ~ fct_collapse(.x, Animals = c('Cats', 'Dogs'))) %>%
+  group_by(Category, dat_src) %>%
+  summarise(pct = sum(pct)) %>% 
+  ungroup() %>%
+  bind_rows(b) %>%
+  pivot_wider(
+    names_from=dat_src,
+    values_from=pct
+  ) %>%
+  flextable() %>%
+  add_header_row(values=c('', 'Data Source'), colwidths = c(1, 2)) %>%
+  theme_box() %>%
+  align(align='center', part='all')
 ```
