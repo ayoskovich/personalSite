@@ -1,12 +1,12 @@
 ---
-title: Pretty tables with flextable
+title: Making my life easier in R
 author: R package build
 date: '2021-09-18'
 slug: []
 categories: []
 tags: []
 subtitle: ''
-summary: ''
+summary: 'Using `flextable`, `janitor`, and `waldo`'
 authors: []
 lastmod: '2021-09-18T09:41:50-04:00'
 featured: no
@@ -20,11 +20,53 @@ editor_options:
 draft: true
 ---
 
-I've been using the `flextable` and `janitor` packages recently.
+There are a few things that I've been doing a lot that I've found easier ways to do in R.
+- Formatting nice tables for word documents
+- Comparing dataframe columns
+- Computing 1, 2, and 3 way tables
 
-```{r}
+```{r echo=FALSE, message=FALSE, warning=FALSE}
 library(tidyverse)
 library(flextable)
 library(janitor)
+library(waldo)
 ```
 
+- Ethnicity category lumping
+
+`Flextable` and `janitor` make making pretty tables great.
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+mtcars %>%
+  tibble() %>%
+  tabyl(cyl) %>%
+  adorn_pct_formatting(digits=0) %>%
+  flextable() %>%
+  theme_booktabs() %>%
+  align(align='center', part='all') %>%
+  bg(bg = 'blue', part='header') %>%
+  color(color='white', part='header')
+```
+
+
+Using `compare` from `waldo` makes comparing dataframes quick
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+mtcars %>%
+  compare(mtcars %>% 
+            rename(foo = mpg)
+          ) %>%
+  print()
+
+COLS <- c('mpg', 'cyl', 'disp')
+mtcars %>%
+  head() %>%
+  select(all_of(COLS)) %>%
+  bind_cols(
+    mtcars %>% 
+      select(all_of(COLS)) %>%
+      rename(foo = mpg) %>%
+      head()
+  ) %>%
+  flextable()
+```
