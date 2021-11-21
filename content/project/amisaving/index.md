@@ -7,7 +7,7 @@ image:
 slides: example
 summary: An interactive cost saving dashboard.
 title: Am I Saving?
-subtitle: View the dashboard [here](http://www.amisaving.com).
+subtitle: View the dashboard [here](https://amisaving.herokuapp.com/myapp).
 url_code: "https://github.com/ayoskovich/amisaving"
 url_pdf: ""
 url_slides: ""
@@ -17,7 +17,7 @@ draft: false
 ---
 
 ## What is it and how do I use it?
-I built an [online calculator](http://www.amisaving.com) to help people save money. After entering the costs associated with 2 spending options the calculator outputs the breakeven number of purchases between the two options. Example output from the calculator is shown below: 
+I built an [online calculator](https://amisaving.herokuapp.com/myapp) to help people save money. After entering the costs associated with 2 spending options the calculator outputs the breakeven number of purchases between the two options. Example output from the calculator is shown below: 
 
 > Before 30 purchases you save money with Option A and after 30 purchases you save money with Option B.
 
