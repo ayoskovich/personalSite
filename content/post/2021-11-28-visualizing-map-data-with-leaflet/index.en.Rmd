@@ -1,0 +1,72 @@
+---
+title: Visualizing Spatial Data
+author: ''
+date: '2021-11-28'
+slug: []
+categories: []
+tags: []
+subtitle: ''
+summary: 'with `leaflet` and `tidygeocoder`'
+authors: []
+lastmod: '2021-11-28T15:55:19-05:00'
+featured: no
+image:
+  caption: ''
+  focal_point: ''
+  preview_only: no
+projects: []
+editor_options: 
+  chunk_output_type: console
+---
+
+For some reason I've always been afraid of working with spatial data, but `leaflet` and `tidygeocoder` have made all my worries go away! Here's an example using some addresses in New York.
+
+```{r, warning=F, message=F}
+library(tidyverse)
+library(leaflet)
+library(tidygeocoder)
+
+knitr::opts_chunk$set(warning = F, message = F)
+
+locations <- tribble(
+  ~addr, ~label,
+  '26 Broadway, New York, NY 10004', 'The Bull (kinda)',
+  '11 Wall St, New York, NY 10005', 'NYSE',
+  '90 Church St Fl 1, New York, NY 10007', 'World Trade Center',
+  '205 E Houston St, New York, NY 10002', 'Katz Deli',
+  'Washington Square, New York, NY 10012', 'Washington Square Park'
+) %>% 
+  # Geocode an address
+  # First try the census api, but if that doesn't yield any results
+  #   try the Nominatim api
+  geocode_combine(
+    queries = list(
+      list(method='census'),
+      list(method='osm')
+    ),
+    global_params = list(address = 'addr')
+  )
+```
+
+Once I've geocoded the addresses into latitude and longitude, I can use `leaflet` to visualize the results.
+```{r}
+mymap <- leaflet() %>% 
+  addTiles() %>% 
+  addMarkers(
+    data = locations,
+    label = ~label
+  )  
+
+mymap
+```
+
+<br>
+
+There are many different map styles [(aka "Third Party Tiles")](https://rstudio.github.io/leaflet/basemaps.html) to choose from and they can be implemented easily using `addProviderTiles`.
+
+The map below is going to look identical to the one above it, which is odd because it works properly in `R Studio` but once I knit the document the style vanishes...use your imagination!!
+
+```{r}
+mymap %>% 
+  addProviderTiles(providers$Stamen.Toner)
+```
