@@ -64,9 +64,10 @@ mymap
 
 There are many different map styles [(aka "Third Party Tiles")](https://rstudio.github.io/leaflet/basemaps.html) to choose from and they can be implemented easily using `addProviderTiles`.
 
-The map below is going to look identical to the one above it, which is odd because it works properly in `R Studio` but once I knit the document the style vanishes...use your imagination!!
+UPDATE: I wasn't able to use the `addProviderTiles` function in order to get the custom tiles to work. Instead, I used the `addTiles` function and passed the url from [this site](http://leaflet-extras.github.io/leaflet-providers/preview/) in to the `urlTemplate` argument.
 
 ```{r}
 mymap %>% 
-  addProviderTiles(providers$Stamen.Toner)
+  #addProviderTiles(providers$CartoDB.Positron)
+  addTiles(urlTemplate = 'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png')
 ```
