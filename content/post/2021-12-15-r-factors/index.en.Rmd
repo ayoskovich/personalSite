@@ -6,7 +6,7 @@ slug: []
 categories: []
 tags: []
 subtitle: ''
-summary: ''
+summary: 'Ordering factors using `fct_inorder` and a step forward in personal productivity using `rmarkdown::draft`.'
 authors: []
 lastmod: '2021-12-15T19:47:00-05:00'
 featured: no
@@ -20,51 +20,80 @@ editor_options:
 draft: true
 ---
 
-# R factors
-```{r}
+I had a realization that I spend an enormous amount of time trying to custom order categorical variables on visualizations. However, I realized I can make this *way* easier on myself by using `fct_inorder` and a left join.
+
+```{r, warning=F, message=F}
 library(tidyverse)
 
 VALS <- tribble(
-  ~gear, ~lab,
-  3, 'Three',
-  5, 'Five',
-  4, 'Four',
-) %>% 
-  # Use fct_inorder so I can just rearrange them here
-  mutate_at(c('lab'), ~fct_inorder(.x))
+  # by using fct_inorder, the factor will be ordered in whatever
+  # order the labels appear in the dataset
+  ~Species, ~lab,
+  'setosa', 'Setosa (a)',
+  'virginica', 'Virginica (c)',
+  'versicolor', 'Versicolor (b)',
+) %>% mutate_at(c('lab'), ~fct_inorder(.x))
+```
 
-mtcars %>% 
-  left_join(VALS, by=c('gear')) %>% 
+Now I join the `VALS` dataset with my source data and use the `lab` variable as the xaxis. Whenever I want to shuffle the values around, I can just rearrange them in the `VALS` dataset.
+```{r, warning=F, message=F}
+iris %>% 
+  left_join(VALS, by=c('Species')) %>% 
   group_by(lab) %>% 
-  summarise(avg_mpg = mean(mpg)) %>% 
-  ggplot(aes(lab, avg_mpg, fill=lab)) +
+  summarise(avg = mean(Petal.Width)) %>% 
+  ggplot(aes(lab, avg, fill=lab)) +
   geom_col()+
+  geom_text(aes(label=round(avg, 2)), nudge_y=.05) +
   scale_fill_brewer(palette='Dark2')+
   scale_y_continuous(
-    limits=c(0, 30),
-    breaks=seq(0, 30, 10),
-    expand = expansion(add=c(0, 1))
+    limits=c(0, 2.5),
+    breaks=seq(0, 2.5, 1),
+    expand = expansion(add=c(0, .1))
   )+
+  labs(
+    x='', y='Average Petal Width',
+    title = 'Ordered Factors',
+    fill = 'Category'
+  )+
+  ggthemes::theme_clean()+
   theme(
-    axis.ticks = element_blank()
+    axis.ticks = element_blank(),
+    axis.title = element_text(size=13),
+    axis.text = element_text(size=12),
   )
 ```
 
+---- 
+
 # Bonus R markdown template
 
-I have a very similar structure for all the project I complete at work.
-- analysis.Rmd
-- queries/
-  - getdat1.sql
-  - getdat2.sql
+Most of my R projects have a similar structure. There is usually 1 main notebook as well as a queries folder that contains queries I use to get all the data I need. I usually end up with a folder structure like this:
+- `analysis.Rmd`
+- `queries/`
+  - `getdat1.sql`
+  - `getdat2.sql`
   
-One thing I realized recently is that I can actually include the `queries/` folder in the markdown template `skeleton/` folder and additional files be included.
+I __do__ have an rmarkdown template that I use for all my notebooks, but I used to do this really annoying copy and paste dance every time I wanted to pull data from sql databases. 
+
+1. Do some work, realize I need to pull data on `x`
+2. Copy the query that gets `x` from a sql folder on my machine to my project folder. 
+3. Do some more work, then realize I need to pull data on `y`. 
+4. Copy the query that gets `y` from a sql folder on my machine to my project folder. 
+5. Go back to #1 and repeat.
 
 One thing I ran in to was that in order to have the folder structure reproduced in the same manner was that I actually needed to create the markdown document programmatically instead of my usual process of 
 1. File -> New file -> R Markdown... -> From Template
 
-```{r}
+[This chapter of R Markdown: The Definitive Guide](https://bookdown.org/yihui/rmarkdown/document-templates.html) goes into a little bit of detail about how to set up a template in the first place.
 
 ```
+rmarkdown::draft(
+  "tocreate.Rmd", 
+  template = "name_of_tmplt", 
+  package = "name_of_pkg"
+)
+```
 
-This might be easier to explain through a video, maybe I'll do that.
+and then I create a snippet called "begin" that is simply the above code, that way whenever I want to create a new project I can just type `begin` and get started. 
+
+This might be easier to explain through a video, maybe I'll do that...

@@ -6,7 +6,7 @@ slug: []
 categories: []
 tags: []
 subtitle: ''
-summary: ''
+summary: 'Ordering factors using `fct_inorder` and a step forward in personal productivity using `rmarkdown::draft`.'
 authors: []
 lastmod: '2021-12-15T19:47:00-05:00'
 featured: no
@@ -15,32 +15,75 @@ image:
   focal_point: ''
   preview_only: no
 projects: []
+editor_options: 
+  chunk_output_type: console
+draft: true
 ---
 
 <script src="{{< blogdown/postref >}}index.en_files/header-attrs/header-attrs.js"></script>
 
 
-<div id="r-factors" class="section level1">
-<h1>R factors</h1>
-<pre class="r"><code>library(tidyverse)</code></pre>
-<pre><code>## Warning: package &#39;tidyverse&#39; was built under R version 4.0.5</code></pre>
-<pre><code>## -- Attaching packages --------------------------------------- tidyverse 1.3.0 --</code></pre>
-<pre><code>## v ggplot2 3.3.5     v purrr   0.3.4
-## v tibble  3.1.6     v dplyr   1.0.7
-## v tidyr   1.1.4     v stringr 1.4.0
-## v readr   1.4.0     v forcats 0.5.1</code></pre>
-<pre><code>## Warning: package &#39;ggplot2&#39; was built under R version 4.0.5</code></pre>
-<pre><code>## Warning: package &#39;tibble&#39; was built under R version 4.0.5</code></pre>
-<pre><code>## Warning: package &#39;tidyr&#39; was built under R version 4.0.5</code></pre>
-<pre><code>## Warning: package &#39;readr&#39; was built under R version 4.0.5</code></pre>
-<pre><code>## Warning: package &#39;purrr&#39; was built under R version 4.0.5</code></pre>
-<pre><code>## Warning: package &#39;dplyr&#39; was built under R version 4.0.5</code></pre>
-<pre><code>## Warning: package &#39;stringr&#39; was built under R version 4.0.5</code></pre>
-<pre><code>## Warning: package &#39;forcats&#39; was built under R version 4.0.5</code></pre>
-<pre><code>## -- Conflicts ------------------------------------------ tidyverse_conflicts() --
-## x dplyr::filter() masks stats::filter()
-## x dplyr::lag()    masks stats::lag()</code></pre>
-</div>
+<p>I had a realization that I spend an enormous amount of time trying to custom order categorical variables on visualizations. However, I realized I can make this <em>way</em> easier on myself by using <code>fct_inorder</code> and a left join.</p>
+<pre class="r"><code>library(tidyverse)
+
+VALS &lt;- tribble(
+  # by using fct_inorder, the factor will be ordered in whatever
+  # order the labels appear in the dataset
+  ~Species, ~lab,
+  &#39;setosa&#39;, &#39;Setosa (a)&#39;,
+  &#39;virginica&#39;, &#39;Virginica (c)&#39;,
+  &#39;versicolor&#39;, &#39;Versicolor (b)&#39;,
+) %&gt;% mutate_at(c(&#39;lab&#39;), ~fct_inorder(.x))</code></pre>
+<p>Now I join the <code>VALS</code> dataset with my source data and use the <code>lab</code> variable as the xaxis. Whenever I want to shuffle the values around, I can just rearrange them in the <code>VALS</code> dataset.</p>
+<pre class="r"><code>iris %&gt;% 
+  left_join(VALS, by=c(&#39;Species&#39;)) %&gt;% 
+  group_by(lab) %&gt;% 
+  summarise(avg = mean(Petal.Width)) %&gt;% 
+  ggplot(aes(lab, avg, fill=lab)) +
+  geom_col()+
+  geom_text(aes(label=round(avg, 2)), nudge_y=.05) +
+  scale_fill_brewer(palette=&#39;Dark2&#39;)+
+  scale_y_continuous(
+    limits=c(0, 2.5),
+    breaks=seq(0, 2.5, 1),
+    expand = expansion(add=c(0, .1))
+  )+
+  labs(
+    x=&#39;&#39;, y=&#39;Average Petal Width&#39;,
+    title = &#39;Ordered Factors&#39;,
+    fill = &#39;Category&#39;
+  )+
+  ggthemes::theme_clean()+
+  theme(
+    axis.ticks = element_blank(),
+    axis.title = element_text(size=13),
+    axis.text = element_text(size=12),
+  )</code></pre>
+<p><img src="{{< blogdown/postref >}}index.en_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+<hr />
 <div id="bonus-r-markdown-template" class="section level1">
 <h1>Bonus R markdown template</h1>
+<p>Most of my R projects have a similar structure. There is usually 1 main notebook as well as a queries folder that contains queries I use to get all the data I need. I usually end up with a folder structure like this:
+- <code>analysis.Rmd</code>
+- <code>queries/</code>
+- <code>getdat1.sql</code>
+- <code>getdat2.sql</code></p>
+<p>I <strong>do</strong> have an rmarkdown template that I use for all my notebooks, but I used to do this really annoying copy and paste dance every time I wanted to pull data from sql databases.</p>
+<ol style="list-style-type: decimal">
+<li>Do some work, realize I need to pull data on <code>x</code></li>
+<li>Copy the query that gets <code>x</code> from a sql folder on my machine to my project folder.</li>
+<li>Do some more work, then realize I need to pull data on <code>y</code>.</li>
+<li>Copy the query that gets <code>y</code> from a sql folder on my machine to my project folder.</li>
+<li>Go back to #1 and repeat.</li>
+</ol>
+<p>One thing I ran in to was that in order to have the folder structure reproduced in the same manner was that I actually needed to create the markdown document programmatically instead of my usual process of
+1. File -&gt; New file -&gt; R Markdown… -&gt; From Template</p>
+<p><a href="https://bookdown.org/yihui/rmarkdown/document-templates.html">This chapter of R Markdown: The Definitive Guide</a> goes into a little bit of detail about how to set up a template in the first place.</p>
+<pre><code>rmarkdown::draft(
+  &quot;tocreate.Rmd&quot;, 
+  template = &quot;name_of_tmplt&quot;, 
+  package = &quot;name_of_pkg&quot;
+)</code></pre>
+<p>and then I create a snippet called “begin” that is simply the above code, that way whenever I want to create a new project I can just type <code>begin</code> and get started.</p>
+<p>This might be easier to explain through a video, maybe I’ll do that…</p>
 </div>
