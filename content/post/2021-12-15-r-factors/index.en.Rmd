@@ -59,6 +59,8 @@ iris %>%
     axis.ticks = element_blank(),
     axis.title = element_text(size=13),
     axis.text = element_text(size=12),
+    axis.text.y = element_blank(),
+    legend.position = 'none'
   )
 ```
 
