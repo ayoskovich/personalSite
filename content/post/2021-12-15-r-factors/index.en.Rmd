@@ -1,0 +1,70 @@
+---
+title: R Factors
+author: ''
+date: '2021-12-15'
+slug: []
+categories: []
+tags: []
+subtitle: ''
+summary: ''
+authors: []
+lastmod: '2021-12-15T19:47:00-05:00'
+featured: no
+image:
+  caption: ''
+  focal_point: ''
+  preview_only: no
+projects: []
+editor_options: 
+  chunk_output_type: console
+draft: true
+---
+
+# R factors
+```{r}
+library(tidyverse)
+
+VALS <- tribble(
+  ~gear, ~lab,
+  3, 'Three',
+  5, 'Five',
+  4, 'Four',
+) %>% 
+  # Use fct_inorder so I can just rearrange them here
+  mutate_at(c('lab'), ~fct_inorder(.x))
+
+mtcars %>% 
+  left_join(VALS, by=c('gear')) %>% 
+  group_by(lab) %>% 
+  summarise(avg_mpg = mean(mpg)) %>% 
+  ggplot(aes(lab, avg_mpg, fill=lab)) +
+  geom_col()+
+  scale_fill_brewer(palette='Dark2')+
+  scale_y_continuous(
+    limits=c(0, 30),
+    breaks=seq(0, 30, 10),
+    expand = expansion(add=c(0, 1))
+  )+
+  theme(
+    axis.ticks = element_blank()
+  )
+```
+
+# Bonus R markdown template
+
+I have a very similar structure for all the project I complete at work.
+- analysis.Rmd
+- queries/
+  - getdat1.sql
+  - getdat2.sql
+  
+One thing I realized recently is that I can actually include the `queries/` folder in the markdown template `skeleton/` folder and additional files be included.
+
+One thing I ran in to was that in order to have the folder structure reproduced in the same manner was that I actually needed to create the markdown document programmatically instead of my usual process of 
+1. File -> New file -> R Markdown... -> From Template
+
+```{r}
+
+```
+
+This might be easier to explain through a video, maybe I'll do that.
