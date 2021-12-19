@@ -17,7 +17,6 @@ image:
 projects: []
 editor_options: 
   chunk_output_type: console
-draft: true
 ---
 
 I had a realization that I spend an enormous amount of time trying to custom order categorical variables on visualizations. However, I realized I can make this *way* easier on myself by using `fct_inorder` and a left join.
@@ -67,24 +66,37 @@ iris %>%
 
 # Bonus R markdown template
 
-Most of my R projects have a similar structure. There is usually 1 main notebook as well as a queries folder that contains queries I use to get all the data I need. I usually end up with a folder structure like this:
+My R projects at work usually have 1 main R Markdown notebook and then a `queries/` folder that contains queries I commonly use. I usually end up with a folder structure something like this:
+
+- `.gitignore`
+- `readme.md`
 - `analysis.Rmd`
 - `queries/`
   - `getdat1.sql`
   - `getdat2.sql`
   
-I __do__ have an rmarkdown template that I use for all my notebooks, but I used to do this really annoying copy and paste dance every time I wanted to pull data from sql databases. 
+Now, I *do* have an R Markdown template that I use for all my notebooks, but for my sql queries I would do this really annoying copy and paste routine every time I wanted to use a sql query.
 
-1. Do some work, realize I need to pull data on `x`
-2. Copy the query that gets `x` from a sql folder on my machine to my project folder. 
-3. Do some more work, then realize I need to pull data on `y`. 
-4. Copy the query that gets `y` from a sql folder on my machine to my project folder. 
-5. Go back to #1 and repeat.
+1. Create the `analysis.Rmd` document using an R Markdown template that I created.
+2. Do some work, then realize I need to pull data on `x`.
+3. Copy the query that gets `x` from a centralized sql folder on my machine to my project folder. 
+4. Do some more work, then realize I need to pull data on `y`. 
+5. Copy the query that gets `y` from a centralized sql folder on my machine to my project folder. 
+6. Go back to #2 and repeat.
+7. Finish the project lol
 
-One thing I ran in to was that in order to have the folder structure reproduced in the same manner was that I actually needed to create the markdown document programmatically instead of my usual process of 
-1. File -> New file -> R Markdown... -> From Template
+[This chapter of R Markdown: The Definitive Guide](https://bookdown.org/yihui/rmarkdown/document-templates.html) goes into detail about how to set up a template in the first place and how to incorporate supporting files (my `queries/` folder). 
 
-[This chapter of R Markdown: The Definitive Guide](https://bookdown.org/yihui/rmarkdown/document-templates.html) goes into a little bit of detail about how to set up a template in the first place.
+Adding the supporting files to my template was painless, but whenever I would create a new rmarkdown document from that template it would put all the newly generated files into a subfolder which was really annoying. My projects ended up looking like this:
+
+- `.gitignore`
+- `mytemplate/`
+  - `analysis.Rmd`
+  - `queries/`
+    - `getdat1.sql`
+    - `getdat2.sql`
+
+To get around this behavior (updating `create_dir` in the template yaml does not change this behavior) I had to use the `rmarkdown::draft` function in the R console instead of using the RStudio gui to use the template. So instead of clicking through dropdowns I'd send the following in the console:
 
 ```
 rmarkdown::draft(
@@ -94,6 +106,8 @@ rmarkdown::draft(
 )
 ```
 
-and then I create a snippet called "begin" that is simply the above code, that way whenever I want to create a new project I can just type `begin` and get started. 
+and now the directory structure is preserved.
 
-This might be easier to explain through a video, maybe I'll do that...
+I created a snippet called "begin" that is simply the above code, that way whenever I want to create a new project I can just type `begin` and get started. 
+
+Maybe a video explanation would be clearer...

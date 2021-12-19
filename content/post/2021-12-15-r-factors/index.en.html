@@ -17,7 +17,6 @@ image:
 projects: []
 editor_options: 
   chunk_output_type: console
-draft: true
 ---
 
 <script src="{{< blogdown/postref >}}index.en_files/header-attrs/header-attrs.js"></script>
@@ -63,27 +62,48 @@ VALS &lt;- tribble(
 <hr />
 <div id="bonus-r-markdown-template" class="section level1">
 <h1>Bonus R markdown template</h1>
-<p>Most of my R projects have a similar structure. There is usually 1 main notebook as well as a queries folder that contains queries I use to get all the data I need. I usually end up with a folder structure like this:
-- <code>analysis.Rmd</code>
-- <code>queries/</code>
-- <code>getdat1.sql</code>
-- <code>getdat2.sql</code></p>
-<p>I <strong>do</strong> have an rmarkdown template that I use for all my notebooks, but I used to do this really annoying copy and paste dance every time I wanted to pull data from sql databases.</p>
+<p>My R projects at work usually have 1 main R Markdown notebook and then a <code>queries/</code> folder that contains queries I commonly use. I usually end up with a folder structure something like this:</p>
+<ul>
+<li><code>.gitignore</code></li>
+<li><code>readme.md</code></li>
+<li><code>analysis.Rmd</code></li>
+<li><code>queries/</code>
+<ul>
+<li><code>getdat1.sql</code></li>
+<li><code>getdat2.sql</code></li>
+</ul></li>
+</ul>
+<p>Now, I <em>do</em> have an R Markdown template that I use for all my notebooks, but for my sql queries I would do this really annoying copy and paste routine every time I wanted to use a sql query.</p>
 <ol style="list-style-type: decimal">
-<li>Do some work, realize I need to pull data on <code>x</code></li>
-<li>Copy the query that gets <code>x</code> from a sql folder on my machine to my project folder.</li>
+<li>Create the <code>analysis.Rmd</code> document using an R Markdown template that I created.</li>
+<li>Do some work, then realize I need to pull data on <code>x</code>.</li>
+<li>Copy the query that gets <code>x</code> from a centralized sql folder on my machine to my project folder.</li>
 <li>Do some more work, then realize I need to pull data on <code>y</code>.</li>
-<li>Copy the query that gets <code>y</code> from a sql folder on my machine to my project folder.</li>
-<li>Go back to #1 and repeat.</li>
+<li>Copy the query that gets <code>y</code> from a centralized sql folder on my machine to my project folder.</li>
+<li>Go back to #2 and repeat.</li>
+<li>Finish the project lol</li>
 </ol>
-<p>One thing I ran in to was that in order to have the folder structure reproduced in the same manner was that I actually needed to create the markdown document programmatically instead of my usual process of
-1. File -&gt; New file -&gt; R Markdown… -&gt; From Template</p>
-<p><a href="https://bookdown.org/yihui/rmarkdown/document-templates.html">This chapter of R Markdown: The Definitive Guide</a> goes into a little bit of detail about how to set up a template in the first place.</p>
+<p><a href="https://bookdown.org/yihui/rmarkdown/document-templates.html">This chapter of R Markdown: The Definitive Guide</a> goes into detail about how to set up a template in the first place and how to incorporate supporting files (my <code>queries/</code> folder).</p>
+<p>Adding the supporting files to my template was painless, but whenever I would create a new rmarkdown document from that template it would put all the newly generated files into a subfolder which was really annoying. My projects ended up looking like this:</p>
+<ul>
+<li><code>.gitignore</code></li>
+<li><code>mytemplate/</code>
+<ul>
+<li><code>analysis.Rmd</code></li>
+<li><code>queries/</code>
+<ul>
+<li><code>getdat1.sql</code></li>
+<li><code>getdat2.sql</code></li>
+</ul></li>
+</ul></li>
+</ul>
+<p>To get around this behavior (updating <code>create_dir</code> in the template yaml does not change this behavior) I had to use the <code>rmarkdown::draft</code> function in the R console instead of using the RStudio gui to use the template. So instead of clicking through dropdowns I’d send the following in the console:</p>
 <pre><code>rmarkdown::draft(
   &quot;tocreate.Rmd&quot;, 
   template = &quot;name_of_tmplt&quot;, 
   package = &quot;name_of_pkg&quot;
 )</code></pre>
-<p>and then I create a snippet called “begin” that is simply the above code, that way whenever I want to create a new project I can just type <code>begin</code> and get started.</p>
-<p>This might be easier to explain through a video, maybe I’ll do that…</p>
+<p>and now the directory structure is preserved.</p>
+<p>I created a snippet called “begin” that is simply the above code, that way whenever I want to create a new project I can just type <code>begin</code> and get started.</p>
+<p>Maybe a video explanation would be clearer…</p>
 </div>
