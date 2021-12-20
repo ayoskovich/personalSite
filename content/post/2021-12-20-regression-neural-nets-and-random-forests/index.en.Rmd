@@ -1,0 +1,93 @@
+---
+title: Regression, Neural Nets, and Random Forests
+author: R package build
+date: '2021-12-20'
+slug: []
+categories: []
+tags: []
+subtitle: ''
+summary: 'Implementing them in R.'
+authors: []
+lastmod: '2021-12-20T17:02:48-05:00'
+featured: no
+image:
+  caption: ''
+  focal_point: ''
+  preview_only: no
+projects: []
+editor_options: 
+  chunk_output_type: console
+draft: true
+---
+
+```{r}
+library(tidymodels)
+
+# Class (PS: Poorly segmented, WS: Well segmented)
+data(cells)
+```
+
+
+## Baseline (64%)
+```{r}
+library(janitor)
+cells %>%
+  tabyl(class)
+```
+
+## Logistic Regression the old school way
+```{r}
+library(pROC)
+library(glue)
+
+cells <- cells %>%
+  mutate_at(c('class'), factor)
+
+mymod <- glm(
+  class ~ area_ch_1+area_ch_1+skew_inten_ch_3+skew_inten_ch_1+fiber_length_ch_1, 
+  family='binomial', 
+  data=cells
+)
+
+mymod %>% summary()
+
+preds <- predict(mymod, newdata = cells, type='response')
+
+aug_cells <- cells %>%
+  bind_cols(list(the_preds = preds))
+  
+analysis <- roc(aug_cells$class, aug_cells$the_preds)
+
+e <- cbind(
+  analysis$thresholds,
+  analysis$sensitivities+analysis$specificities
+)
+opt_t <- subset(
+  e, 
+  e[,2]==max(e[,2])
+)[,1]
+
+plot(
+  1-analysis$specificities,analysis$sensitivities,type="l",
+  ylab="Sensitiviy",
+  xlab="1-Specificity",
+  col="black",
+  lwd=2,
+  main = glue("ROC Curve (Optimal Thresh: {round(opt_t, 4)})")
+)
+
+abline(a=0,b=1)
+abline(v = opt_t) #add optimal t to ROC curve
+```
+
+Final accuracy
+```{r}
+aug_cells %>%
+  mutate(final = if_else(the_preds >= opt_t, 'WS', 'PS')) %>%
+  summarise(mean(final == class))
+
+aug_cells %>%
+  mutate(final = if_else(the_preds >= opt_t, 'WS', 'PS')) %>%
+  tabyl(class, final) %>%
+  adorn_percentages(denominator = 'all')
+```
