@@ -36,6 +36,8 @@ cells %>%
 ```
 
 ## Logistic Regression the old school way
+- Sensitivity: true positive rate
+- Specificity: true negative rate
 ```{r}
 library(pROC)
 library(glue)
@@ -58,6 +60,7 @@ aug_cells <- cells %>%
   
 analysis <- roc(aug_cells$class, aug_cells$the_preds)
 
+# Maximize the sum of sensitivity and specificity
 e <- cbind(
   analysis$thresholds,
   analysis$sensitivities+analysis$specificities
@@ -80,7 +83,7 @@ abline(a=0,b=1)
 abline(v = opt_t) #add optimal t to ROC curve
 ```
 
-Final accuracy
+### Final accuracy (76.5%)
 ```{r}
 aug_cells %>%
   mutate(final = if_else(the_preds >= opt_t, 'WS', 'PS')) %>%
@@ -91,3 +94,41 @@ aug_cells %>%
   tabyl(class, final) %>%
   adorn_percentages(denominator = 'all')
 ```
+
+# Again with tidymodels
+```{r}
+# Recipe
+myrec <- cells %>% 
+  select(
+    -case
+  ) %>% 
+  recipe(class ~ .)
+
+# Model
+mymod <- parsnip::logistic_reg() %>%
+  set_engine('glm')
+  
+# Fit the model using the recipe
+myfit <- workflow() %>%
+  add_recipe(myrec) %>%
+  add_model(mymod) %>%
+  fit(cells)
+
+# Predict and append the predictions using the fitted model
+new_preds <- predict(
+  myfit,
+  new_data = cells
+) %>% 
+  bind_cols(cells)
+```
+
+## Assess model performance (82%)
+```{r}
+new_preds %>%
+  tabyl(class, .pred_class) %>%
+  adorn_percentages(denominator = 'all')
+
+new_preds %>%
+  summarise(mean(.pred_class == class))
+```
+
