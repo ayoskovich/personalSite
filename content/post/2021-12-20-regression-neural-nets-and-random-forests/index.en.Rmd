@@ -104,9 +104,11 @@ myrec <- cells %>%
   ) %>% 
   recipe(class ~ .)
 
-# Model
-mymod <- parsnip::logistic_reg() %>%
-  set_engine('glm')
+# Model (THIS IS WHERE PARSNIP IS REALLY GREAT)
+# mymod <- parsnip::logistic_reg() %>%
+#   set_engine('glm')
+# mymod <- parsnip::rand_forest(mode='classification') %>%
+#   set_engine('ranger')
   
 # Fit the model using the recipe
 myfit <- workflow() %>%
