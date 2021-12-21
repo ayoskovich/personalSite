@@ -156,7 +156,7 @@ a_nn <- parsnip::mlp() %>%
   set_mode('classification') %>%
   set_engine('nnet')
 
-generate <- function(recy, mody, train_dat, test_dat){
+generate <- function(mylab, recy, mody, train_dat, test_dat){
   workflow() %>%
     add_recipe(recy) %>%
     add_model(mody) %>%
@@ -168,12 +168,34 @@ generate <- function(recy, mody, train_dat, test_dat){
     metrics(
       truth='class', 
       estimate=.pred_class
-    )
+    ) %>%
+    mutate(meta_lab = mylab)
 }
 
-bind_rows(
-  generate(myrec, a_log, cells, cells),
-  generate(myrec, a_for, cells, cells),
-  generate(myrec, a_nn, cells, cells)
+final_results <- bind_rows(
+  generate('simple logistic', myrec, a_log, cells, cells),
+  generate('random forest', myrec, a_for, cells, cells),
+  generate('neural net', myrec, a_nn, cells, cells)
 )
+```
+
+# Visualize final results
+```{r}
+final_results %>%
+  ggplot(aes(meta_lab, .estimate, fill=.metric))+
+  geom_col(position = 'dodge') +
+  scale_y_continuous(
+    limits=c(0, 1), breaks=seq(0, 1, .5),
+    labels=scales::percent_format(accuracy=2),
+    expand = expansion(add=c(0, .1))
+  )+
+  scale_fill_brewer(palette='Set2')+
+  ggthemes::theme_clean() +
+  labs(
+    x='Model', y='Accuracy',
+    title='Model Accuracies'
+  )+
+  theme(
+    axis.ticks.x = element_blank()
+  )
 ```
