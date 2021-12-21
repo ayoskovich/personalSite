@@ -28,14 +28,14 @@ data(cells)
 ```
 
 
-## Baseline (64%)
+# Baseline (64%)
 ```{r}
 library(janitor)
 cells %>%
   tabyl(class)
 ```
 
-## Logistic Regression the old school way
+# Logistic Regression the old school way (76.5%)
 - Sensitivity: true positive rate
 - Specificity: true negative rate
 ```{r}
@@ -83,7 +83,6 @@ abline(a=0,b=1)
 abline(v = opt_t) #add optimal t to ROC curve
 ```
 
-### Final accuracy (76.5%)
 ```{r}
 aug_cells %>%
   mutate(final = if_else(the_preds >= opt_t, 'WS', 'PS')) %>%
@@ -144,7 +143,7 @@ new_preds %>%
   summarise(accur = mean(.pred_class == class))
 ```
 
-# Simplifying parsnip
+# Simplifying via parsnip
 ```{r}
 # Model (THIS IS WHERE PARSNIP IS REALLY GREAT)
 a_log <- parsnip::logistic_reg() %>%
@@ -184,8 +183,15 @@ final_results <- bind_rows(
 final_results %>%
   ggplot(aes(meta_lab, .estimate, fill=.metric))+
   geom_col(position = 'dodge') +
+  geom_text(
+    aes(
+      y=.estimate+.02,
+      label=percent(.estimate, accuracy=.1)
+    ), 
+    position=position_dodge(width=1)
+  )+
   scale_y_continuous(
-    limits=c(0, 1), breaks=seq(0, 1, .5),
+    limits=c(0, 1.05), breaks=seq(0, 1, .5),
     labels=scales::percent_format(accuracy=2),
     expand = expansion(add=c(0, .1))
   )+
