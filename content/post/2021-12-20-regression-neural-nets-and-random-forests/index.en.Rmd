@@ -106,10 +106,14 @@ myrec <- cells %>%
 
 # Model (THIS IS WHERE PARSNIP IS REALLY GREAT)
 # mymod <- parsnip::logistic_reg() %>%
-#   set_engine('glm')
-# mymod <- parsnip::rand_forest(mode='classification') %>%
-#   set_engine('ranger')
-  
+#    set_engine('glm')
+mymod <- parsnip::rand_forest() %>%
+  set_mode('classification') %>%
+  set_engine('ranger')
+#mymod <- parsnip::mlp() %>%
+#  set_mode('classification') %>%
+#  set_engine('nnet')
+
 # Fit the model using the recipe
 myfit <- workflow() %>%
   add_recipe(myrec) %>%
@@ -117,20 +121,59 @@ myfit <- workflow() %>%
   fit(cells)
 
 # Predict and append the predictions using the fitted model
-new_preds <- predict(
-  myfit,
-  new_data = cells
-) %>% 
+new_preds <- myfit %>%
+  predict(
+    new_data = cells
+  ) %>%
   bind_cols(cells)
 ```
 
 ## Assess model performance (82%)
 ```{r}
+# Let parsnip decide
+new_preds %>%
+  metrics(truth = class, estimate = .pred_class)
+
+# Confusion matrix
 new_preds %>%
   tabyl(class, .pred_class) %>%
   adorn_percentages(denominator = 'all')
 
+# Accuracy
 new_preds %>%
-  summarise(mean(.pred_class == class))
+  summarise(accur = mean(.pred_class == class))
 ```
 
+# Simplifying parsnip
+```{r}
+# Model (THIS IS WHERE PARSNIP IS REALLY GREAT)
+a_log <- parsnip::logistic_reg() %>%
+   set_engine('glm')
+a_for <- parsnip::rand_forest() %>%
+  set_mode('classification') %>%
+  set_engine('ranger')
+a_nn <- parsnip::mlp() %>%
+  set_mode('classification') %>%
+  set_engine('nnet')
+
+generate <- function(recy, mody, train_dat, test_dat){
+  workflow() %>%
+    add_recipe(recy) %>%
+    add_model(mody) %>%
+    fit(train_dat) %>%
+    predict(
+      new_data = test_dat
+    ) %>%
+    bind_cols(test_dat) %>%
+    metrics(
+      truth='class', 
+      estimate=.pred_class
+    )
+}
+
+bind_rows(
+  generate(myrec, a_log, cells, cells),
+  generate(myrec, a_for, cells, cells),
+  generate(myrec, a_nn, cells, cells)
+)
+```
