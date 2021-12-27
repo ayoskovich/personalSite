@@ -171,10 +171,14 @@ generate <- function(mylab, recy, mody, train_dat, test_dat){
     mutate(meta_lab = mylab)
 }
 
+cell_split <- initial_split(cells, prop=.75)
+cell_train <- training(cell_split)
+cell_test <- testing(cell_split)
+  
 final_results <- bind_rows(
-  generate('simple logistic', myrec, a_log, cells, cells),
-  generate('random forest', myrec, a_for, cells, cells),
-  generate('neural net', myrec, a_nn, cells, cells)
+  generate('simple logistic', myrec, a_log, cell_train, cell_test),
+  generate('random forest', myrec, a_for, cell_train, cell_test),
+  generate('neural net', myrec, a_nn, cell_train, cell_test)
 )
 ```
 
@@ -190,6 +194,7 @@ final_results %>%
     ), 
     position=position_dodge(width=1)
   )+
+  geom_hline(aes(yintercept=.64), size=1.5)+
   scale_y_continuous(
     limits=c(0, 1.05), breaks=seq(0, 1, .5),
     labels=scales::percent_format(accuracy=2),
