@@ -2,15 +2,18 @@
 title: Kitchen Calculation Riff
 date: 2021-12-27
 summary: "In an jupyter notebook"
+draft: true
 ---
 
 
 ```python
 import pandas as pd
-pd.DataFrame({
-    'a':[1, 2, 3, 4]
-})
+
+%run ./helpers.py
 ```
+
+    foo
+    
 
 
 
@@ -65,5 +68,5 @@ pd.DataFrame({
 ```
 
     [NbConvertApp] Converting notebook index.ipynb to markdown
-    [NbConvertApp] Writing 919 bytes to index.md
+    [NbConvertApp] Writing 972 bytes to index.md
     
