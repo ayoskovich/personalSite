@@ -1,0 +1,42 @@
+---
+title: Piping into anonymous functions (R)
+author: ''
+date: '2022-02-05'
+slug: []
+categories: []
+tags: []
+subtitle: ''
+summary: 'I am undecided as to whether this is a good idea'
+authors: []
+lastmod: '2022-02-05T22:55:04-05:00'
+featured: no
+image:
+  caption: ''
+  focal_point: ''
+  preview_only: no
+projects: []
+editor_options: 
+  chunk_output_type: console
+---
+
+I recently discovered that it's possible to pipe a dataframe into an anonymous function like the following:
+
+```{r message=FALSE, warning=FALSE, include=TRUE}
+library(tidyverse)
+
+tibble(val=c('a', 'a', 'b')) %>% 
+  (
+    function(x){
+      z <- '15'
+      
+      x %>%
+        tail(2) %>% 
+        mutate(foo = z)
+    }
+  ) %>% 
+  knitr::kable()
+```
+
+I've found this to be helpful when I need to create some sort of intermediate dataframe during the processing but don't want to clutter the environment with a bunch of things named `cleaned` / `cleaned2` / `final_cleaned`.
+
+The one drawback is that it's kind of hard to debug, but I'm not sure if that outweighs how much cleaner it is environment-wise.

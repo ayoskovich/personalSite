@@ -1,0 +1,58 @@
+---
+title: Piping into anonymous functions (R)
+author: ''
+date: '2022-02-05'
+slug: []
+categories: []
+tags: []
+subtitle: ''
+summary: 'I am undecided as to whether this is a good idea'
+authors: []
+lastmod: '2022-02-05T22:55:04-05:00'
+featured: no
+image:
+  caption: ''
+  focal_point: ''
+  preview_only: no
+projects: []
+editor_options: 
+  chunk_output_type: console
+---
+
+<script src="{{< blogdown/postref >}}index.en_files/header-attrs/header-attrs.js"></script>
+
+
+<p>I recently discovered that it’s possible to pipe a dataframe into an anonymous function like the following:</p>
+<pre class="r"><code>library(tidyverse)
+
+tibble(val=c(&#39;a&#39;, &#39;a&#39;, &#39;b&#39;)) %&gt;% 
+  (
+    function(x){
+      z &lt;- &#39;15&#39;
+      
+      x %&gt;%
+        tail(2) %&gt;% 
+        mutate(foo = z)
+    }
+  ) %&gt;% 
+  knitr::kable()</code></pre>
+<table>
+<thead>
+<tr class="header">
+<th align="left">val</th>
+<th align="left">foo</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">a</td>
+<td align="left">15</td>
+</tr>
+<tr class="even">
+<td align="left">b</td>
+<td align="left">15</td>
+</tr>
+</tbody>
+</table>
+<p>I’ve found this to be helpful when I need to create some sort of intermediate dataframe during the processing but don’t want to clutter the environment with a bunch of things named <code>cleaned</code> / <code>cleaned2</code> / <code>final_cleaned</code>.</p>
+<p>The one drawback is that it’s kind of hard to debug, but I’m not sure if that outweighs how much cleaner it is environment-wise.</p>
