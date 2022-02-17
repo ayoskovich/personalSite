@@ -102,7 +102,7 @@ I'll assume that the equipment will completely eliminate any time related to cou
 
 _....Math incoming...._
 
-At $25 / hour, (25/60) * 4 = $1.66. I'd save $1.66 each use. After inputting these values into my handy, custom built calculator <a href="http://www.amisaving.com" target="_blank">amisaving</a>, I'd start saving money after 150 uses, which is a little less than half of a year. 
+At $25 / hour, (25/60) * 4 = $1.66. I'd save $1.66 each use. After inputting these values into my handy, custom built calculator <a href="https://amisaving.herokuapp.com/myapp" target="_blank">amisaving</a>, I'd start saving money after 150 uses, which is a little less than half of a year. 
 
 
 So yeah, I think for my wallet AND my sanity it would be a good idea to invest in some technology to bring me out of the stone age.
@@ -114,7 +114,7 @@ So yeah, I think for my wallet AND my sanity it would be a good idea to invest i
 
 ### Notes
 
-Here are the values I entered into the <a href="" target="_blank">online cost saving calculator</a>:
+Here are the values I entered into the <a href="https://amisaving.herokuapp.com/myapp" target="_blank">online cost saving calculator</a>:
 
 | field                           | value |
 |----------------------------------|-------|
