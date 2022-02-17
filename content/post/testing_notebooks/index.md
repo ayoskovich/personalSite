@@ -3,7 +3,7 @@ title: Note to myself, from Jupyter
 date: 2022-02-16
 summary: 'and others interested in writing posts in jupyter notebooks'
 ---
-I have written one of these posts using a jupyter notebook before, but it's been a while. When I went to write a new post in a notebook, I realized that I left myself absolutely no documentation about how render the `.ipynb` file once I was done. So, in the spirit of helping my future self and any other interested party, here's how I do it.
+I have written one of these posts using a jupyter notebook before, but it's been a while. When I went to publish this, I realized that I left myself absolutely no documentation about how render the `.ipynb` file once I was done. So, in the spirit of helping my future self and any other interested party, here's how I do it.
 
 ---
 
@@ -25,7 +25,7 @@ Add whatever python content you want, and convert the notebook to markdown using
 
 That command (without the !) can be executed from the terminal instead of the notebook if you don't want readers to see it at the end.
 
-Once the `index.md` file is created, `blogdown::serve_site()` should render the `index.md` file to your blogdown site.
+Once the `index.md` file is created, `blogdown::serve_site()` should render the notebook to your blogdown site.
 
 <br><br><br>
 
