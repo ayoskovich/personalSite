@@ -6,6 +6,21 @@
 
 {{ .Content }}
 
+<div style="border:1px solid black; padding:15px">
+  <h2 style="display: inline">My name is Anthony</h2> and I like to use data to solve problems with <code>R</code> and <code>Python</code>.
+  <p>Some things I've built / created are: </p>
+  <ul>
+    <li>An interactive dashboard to visualize the time I spend focusing every day.</li>
+    <li>Logging and analyzing my internet speed.</li>
+    <li>Gathering data to see whether it would be worth it to buy an electric coffee grinder.</li>
+    <li>Deploying a Python script to a Raspberry Pi that logs the price of Bitcoin every 40 seconds.</li>
+  </ul>
+</div>
+
+<hr>
+
+<h2>Blog</h2>
+
 <ul>
   {{ $pages := .Pages }}
   {{ if .IsHome }}{{ $pages = .Site.RegularPages }}{{ end }}

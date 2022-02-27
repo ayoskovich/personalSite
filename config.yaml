@@ -13,14 +13,14 @@ permalinks:
 
 menu:
   main:
-    - name: Blog
+    - name: Home
       url: ""
       weight: 1
-    - name: About Me
-      url: "about/"
-      weight: 2
     - name: Tags
       url: "tags/"
+      weight: 2
+    - name: Resume
+      url: "https://ayoskovich.github.io/resume/"
       weight: 3
     - name: RSS
       url: "index.xml"
