@@ -4,7 +4,9 @@ author: ''
 date: '2021-07-20'
 slug: []
 categories: []
-tags: []
+tags: 
+  - r
+  - automation
 subtitle: ''
 summary: 'Why spend 10 minutes doing something manually when you could spend 1 hour automating it?'
 authors: []

@@ -4,7 +4,8 @@ author: ''
 date: '2020-03-26'
 slug: how-statistics-has-ruined-my-ability-to-have-opinions
 categories: []
-tags: []
+tags: 
+  - ramble
 subtitle: ''
 summary: 'A reflection on an unintended consequence of studying statistics.'
 authors: []

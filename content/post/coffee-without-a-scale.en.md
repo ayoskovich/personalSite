@@ -4,7 +4,8 @@ author: ''
 date: '2020-08-27'
 slug: coffee-without-a-scale
 categories: []
-tags: []
+tags: 
+  - ramble
 subtitle: ''
 summary: 'How much does a coffee bean weigh?'
 authors: []

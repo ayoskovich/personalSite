@@ -4,7 +4,8 @@ author: ''
 date: '2020-07-09'
 slug: rss-feeds-and-the-ftc
 categories: []
-tags: []
+tags: 
+  - ramble
 subtitle: ''
 summary: 'Discovering a new (old) technology.'
 authors: []

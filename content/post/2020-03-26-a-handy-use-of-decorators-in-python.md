@@ -4,7 +4,8 @@ author: ''
 date: '2020-03-04'
 slug: a-handy-use-of-decorators-in-python
 categories: []
-tags: []
+tags: 
+  - python
 subtitle: ''
 summary: 'Need a function that takes a function as its argument and returns a function? Look no further.'
 authors: []

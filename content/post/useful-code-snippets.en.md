@@ -4,7 +4,8 @@ author: ''
 date: '2020-09-10'
 slug: useful-code-snippets
 categories: []
-tags: []
+tags: 
+  - ramble
 subtitle: ''
 summary: 'Compiling all my random one liners.'
 authors: []

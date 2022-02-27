@@ -4,7 +4,10 @@ author: ''
 date: '2022-02-22'
 slug: time_track
 categories: []
-tags: []
+tags: 
+  - r
+  - docker
+  - azure
 subtitle: ''
 summary: 'Tracking my time'
 url_code: "https://timetrackerr.azurewebsites.net/"

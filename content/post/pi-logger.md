@@ -4,7 +4,9 @@ author: ''
 date: '2021-01-08'
 slug: pi-logger
 categories: []
-tags: []
+tags: 
+  - python
+  - automation
 subtitle: ''
 summary: 'Automating data collection'
 authors: []

@@ -4,7 +4,8 @@ author: ''
 date: '2021-01-04'
 slug: bitcoin
 categories: []
-tags: []
+tags: 
+  - python
 subtitle: ''
 summary: 'Project done and random bitcoin memes'
 authors: []

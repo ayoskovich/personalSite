@@ -4,7 +4,8 @@ author: ''
 date: '2020-10-08'
 slug: bokeh-deployment-update
 categories: []
-tags: []
+tags: 
+  - ramble
 subtitle: ''
 summary: 'My most recent project is close to completion.'
 authors: []

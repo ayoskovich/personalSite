@@ -4,6 +4,8 @@ author: R package build
 date: '2022-02-21'
 tags: 
   - docker
+  - r
+  - azure
 summary: 'Leveling up my deployment skills'
 ---
 

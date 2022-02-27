@@ -4,7 +4,8 @@ author: ''
 date: '2020-05-26'
 slug: learning-learning-learning
 categories: []
-tags: []
+tags: 
+  - ramble
 subtitle: ''
 summary: 'Reflecting on my first project on this website.'
 authors: []

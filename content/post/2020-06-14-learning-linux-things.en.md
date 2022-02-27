@@ -4,7 +4,8 @@ author: ''
 date: '2020-06-14'
 slug: learning-linux-things
 categories: []
-tags: []
+tags: 
+  - linux
 subtitle: ''
 summary: 'Using the command line is harder but not really.'
 authors: []
