@@ -6,6 +6,7 @@
 
 {{ .Content }}
 
+{{ if .IsHome}}
 <div style="border:1px solid black; padding:15px">
   <div style="overflow: auto;">
     <img 
@@ -30,6 +31,7 @@
 <hr>
 
 <h2>Blog</h2>
+{{end}}
 
 <ul>
   {{ $pages := .Pages }}
