@@ -2,19 +2,9 @@
 title: 'Rshiny Apps On Azure With Docker'
 author: R package build
 date: '2022-02-21'
-slug: []
-categories: []
-tags: []
-subtitle: ''
+tags: 
+  - docker
 summary: 'Leveling up my deployment skills'
-authors: []
-lastmod: '2022-02-21T20:11:07-05:00'
-featured: no
-image:
-  caption: ''
-  focal_point: ''
-  preview_only: no
-projects: []
 ---
 
 One of my goals for this year is to get more experience deploying and packaging up analyses / projects I complete. I have a fairly good handle on sharing code through `github`, but I wouldn't really consider that deployment. My main targets are technologies like `Docker` and `Azure`.
