@@ -1,0 +1,48 @@
+{{ partial "header.html" . }}
+
+{{if not .IsHome }}
+<h1>{{ .Title | markdownify }}</h1>
+{{ end }}
+
+{{ .Content }}
+
+{{ if .IsHome}}
+
+<div style="border:1px solid black; padding:10px">
+  <div style="display: flex; align-items:center; justify-content: space-around;">
+      <img src="img/avatar.jpg" style="width: 40%; display:table-cell">
+      <div>
+        <h2>My name is Anthony</h2> and I like to use data to solve problems.
+      </div>
+  </div>
+  
+  <div style="color: rgb(109, 108, 108)">
+    <p>Some of the tools I have experience with are: </p>
+    <ul>
+      <li>R: dplyr, tidyr, ggplot2, shiny, leaflet, janitor</li>
+      <li>Python: pandas, NumPy, scikit-learn, statsmodels</li>
+      <li>SAS, SQL, Tableau</li>
+      <li>Azure, Docker, GitHub, Heroku, Netlify</li>
+      <li>git, cron, vim, tmux</li>
+    </ul>
+    <p style="margin:0px"> A list of some things I'd roughly classify as "projects" can be found <a href="tags/project/">here</a>.</p>
+  </div>
+</div>
+
+<hr>
+
+<h2>Blog</h2>
+{{end}}
+
+<ul>
+  {{ $pages := .Pages }}
+  {{ if .IsHome }}{{ $pages = .Site.RegularPages }}{{ end }}
+  {{ range (where $pages "Section" "!=" "") }}
+  <li>
+    <span class="date">{{ .Date.Format "2006/01/02" }}</span>
+    <a href="{{ .RelPermalink }}">{{ .Title | markdownify }}</a>
+  </li>
+  {{ end }}
+</ul>
+
+{{ partial "footer.html" . }}

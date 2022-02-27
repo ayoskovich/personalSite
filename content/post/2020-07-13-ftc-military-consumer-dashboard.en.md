@@ -4,7 +4,8 @@ author: ''
 date: '2020-07-13'
 slug: ftc-military-consumer-dashboard
 categories: []
-tags: []
+tags: 
+  - ramble
 subtitle: 'The Federal Trade Commission just created a [Tableau dashboard](https://public.tableau.com/profile/federal.trade.commission#!/vizhome/MilitaryReports/Infographic) that summarizes claims from military consumers.'
 summary: 'Check out the dashboard [here](https://public.tableau.com/profile/federal.trade.commission#!/vizhome/MilitaryReports/Infographic).'
 authors: []

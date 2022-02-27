@@ -4,7 +4,9 @@ author: ''
 date: '2021-07-17'
 slug: []
 categories: []
-tags: []
+tags: 
+  - r
+  - ggplot
 subtitle: ''
 summary: 'For my reference and your viewing pleasure'
 authors: []

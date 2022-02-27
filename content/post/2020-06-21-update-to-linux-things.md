@@ -4,7 +4,8 @@ author: ''
 date: '2020-06-21'
 slug: update-to-linux-things
 categories: []
-tags: []
+tags: 
+  - linux
 subtitle: ''
 summary: 'The little differences between Mac OS and Linux Lite'
 authors: []

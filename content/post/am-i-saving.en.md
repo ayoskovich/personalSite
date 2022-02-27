@@ -4,7 +4,9 @@ author: ''
 date: '2020-09-30'
 slug: am-i-saving
 categories: []
-tags: []
+tags: 
+  - project
+  - python
 subtitle: ''
 summary: 'And other consumer thoughts'
 authors: []

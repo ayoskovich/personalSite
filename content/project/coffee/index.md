@@ -4,7 +4,8 @@ author: ''
 date: '2021-01-09'
 slug: coffee
 categories: []
-tags: []
+tags: 
+  - project
 subtitle: ''
 summary: 'How long does my morning coffee take?'
 url_code: "https://github.com/ayoskovich/coffee-log"

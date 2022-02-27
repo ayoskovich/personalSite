@@ -4,7 +4,8 @@ author: ''
 date: '2020-03-07'
 slug: hugo-version-problems
 categories: []
-tags: []
+tags: 
+  - netlify
 subtitle: 'and a quick fix.'
 summary: 'Failing netlify builds? Make sure to check the HUGO_VERSION environment variable.'
 authors: []

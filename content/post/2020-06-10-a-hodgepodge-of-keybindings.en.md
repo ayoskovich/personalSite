@@ -4,7 +4,8 @@ author: ''
 date: '2020-06-10'
 slug: a-hodgepodge-of-keybindings
 categories: []
-tags: []
+tags: 
+  - vim
 subtitle: ''
 summary: 'Documenting my favorite keybindings and shortcuts'
 authors: []

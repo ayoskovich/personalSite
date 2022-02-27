@@ -4,7 +4,9 @@ author: ''
 date: '2021-12-15'
 slug: []
 categories: []
-tags: []
+tags: 
+  - r
+  - ggplot
 subtitle: ''
 summary: 'Ordering factors using `fct_inorder` and a step forward in personal productivity using `rmarkdown::draft`.'
 authors: []

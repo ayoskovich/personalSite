@@ -4,7 +4,9 @@ author: ''
 date: '2021-11-28'
 slug: []
 categories: []
-tags: []
+tags: 
+  - r
+  - geocoding
 subtitle: ''
 summary: 'with `leaflet` and `tidygeocoder`'
 authors: []

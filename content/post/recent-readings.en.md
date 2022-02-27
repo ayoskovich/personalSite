@@ -4,7 +4,8 @@ author: ''
 date: '2020-09-08'
 slug: recent-readings
 categories: []
-tags: []
+tags: 
+  - ramble
 subtitle: ''
 summary: "Reflecting on the books I've been reading."
 authors: []

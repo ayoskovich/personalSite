@@ -4,7 +4,9 @@ author: ''
 date: '2021-07-27'
 slug: []
 categories: []
-tags: []
+tags: 
+  - r
+  - ggplot
 subtitle: ''
 summary: 'A quick way to add a total category to a plot'
 authors: []

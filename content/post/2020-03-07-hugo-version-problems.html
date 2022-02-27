@@ -4,7 +4,8 @@ author: ''
 date: '2020-03-07'
 slug: hugo-version-problems
 categories: []
-tags: []
+tags: 
+  - netlify
 subtitle: 'and a quick fix.'
 summary: 'Failing netlify builds? Make sure to check the HUGO_VERSION environment variable.'
 authors: []
@@ -17,6 +18,7 @@ image:
 projects: []
 ---
 
+<script src="/rmarkdown-libs/header-attrs/header-attrs.js"></script>
 
 
 <p>In order to build this site, I use blogdown and then I deploy it with Netlify. The nice thing about netlify is that I can have the site as a repo on GitHub, and every time I push changes, the site will update. However, the other day one of my site builds kept failing. This was due to the Hugo version being different on my local machine than the one that is on Netlify.</p>

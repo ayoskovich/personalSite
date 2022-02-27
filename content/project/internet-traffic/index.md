@@ -4,6 +4,8 @@ external_link: ""
 image:
   caption: 
   focal_point: Smart
+tags:
+  - project
 slides: example
 summary: Is there a best time to be on the internet?
 title: Analyzing Internet Speed (part 1)

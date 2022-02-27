@@ -4,7 +4,8 @@ author: R package build
 date: '2021-09-18'
 slug: []
 categories: []
-tags: []
+tags: 
+  - r
 subtitle: ''
 summary: 'Using `flextable`, `janitor`, `waldo`, and `forcats`'
 authors: []

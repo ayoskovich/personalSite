@@ -4,7 +4,8 @@ author: ''
 date: '2020-06-29'
 slug: new-photo-site
 categories: []
-tags: []
+tags:
+  - photos
 subtitle: ''
 summary: 'Im creating a dedicated site for my pictures, see [here](https://yoskophotos.xyz/).'
 authors: []

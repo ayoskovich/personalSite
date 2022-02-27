@@ -4,7 +4,8 @@ author: ''
 date: '2020-08-18'
 slug: vim-tips
 categories: []
-tags: []
+tags: 
+  - vim
 subtitle: 'No time for an introduction when vim tips are involved'
 summary: 'Correcting misspelled words and inserting special characters in the worlds most powerful text editor'
 authors: []

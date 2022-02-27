@@ -4,7 +4,9 @@ author: ''
 date: '2020-04-09'
 slug: creating-code-free-jupyter-notebook-exports
 categories: []
-tags: []
+tags: 
+  - jupyter
+  - python
 subtitle: ''
 summary: 'A quick way to exclude code from jupyter notebooks'
 authors: []
