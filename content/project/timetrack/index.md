@@ -8,6 +8,7 @@ tags:
   - r
   - docker
   - azure
+  - project
 subtitle: ''
 summary: 'Tracking my time'
 url_code: "https://timetrackerr.azurewebsites.net/"
