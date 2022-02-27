@@ -7,10 +7,10 @@ body {
 
 /* header and footer areas */
 .menu { padding: 0; }
-.menu li { display: inline-block; }
+.menu li { display: inline-block}
 .article-meta, .menu a {
   text-decoration: none;
-  background: #eee;
+  background: rgb(255, 255, 255);
   padding: 5px;
   border-radius: 5px;
 }
