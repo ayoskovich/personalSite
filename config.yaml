@@ -16,7 +16,7 @@ menu:
     - name: Blog
       url: ""
       weight: 1
-    - name: About
+    - name: About Me
       url: "about/"
       weight: 2
     - name: Tags
