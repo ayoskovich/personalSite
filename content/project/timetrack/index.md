@@ -9,7 +9,6 @@ tags:
   - azure
   - project
 summary: 'Tracking my time'
-draft: true
 ---
 
 <div style="text-align: center">
