@@ -1,6 +1,5 @@
 ---
 title: 'Rshiny Apps On Azure With Docker'
-author: R package build
 date: '2022-02-21'
 tags: 
   - docker
