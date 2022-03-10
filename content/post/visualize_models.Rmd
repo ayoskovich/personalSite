@@ -1,0 +1,27 @@
+---
+title: "Customizing labels in ggplotly"
+author: ''
+date: '2022-03-10'
+tags: 
+  - R
+draft: true
+editor_options: 
+  chunk_output_type: console
+---
+
+I've been using plotly in order to visualize the results of regression models lately and one thing I've needed to do is to customize the actual text that appears when you hover over something.
+
+```{r}
+library(tidyverse)
+library(plotly)
+library(glue)
+
+myplot <- cars %>%
+  as_tibble() %>%
+  mutate(custom_label = glue("The speed is : <i>{speed}</i>")) %>%
+  ggplot(aes(speed, dist))+
+  geom_point(aes(text = custom_label))
+  
+ggplotly(myplot, tooltip = c('custom_label'))
+```
+
