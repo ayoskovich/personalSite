@@ -1,28 +1,93 @@
 ---
 title: "Customizing labels in ggplotly"
 author: ''
-date: '2022-03-10'
+date: '2022-03-16'
 tags: 
   - R
-draft: true
 editor_options: 
   chunk_output_type: console
 ---
 
-I've been using plotly in order to visualize the results of regression models lately and one thing I've needed to do is to customize the actual text that appears when you hover over something.
+`Plotly` makes customizing tooltips easy and is great for quickly visualizing two dimensional models. The example below adds some useful information like R-squared, RMSE, and sample sizes to a tooltip on a ggplot.
+
+<i>The actual code block below this one got a tad unwieldy so here's a tl;dr version of how I do it.</i>
+
+```r
+myplot <- data %>% 
+  # Create the label
+  mutate(mylabel = glue("The x value is: {x}")) %>% 
+  ggplot(aes(x,y))+
+  # Set the desired label as the text aesthetic
+  geom_point(aes(text=mylabel))
+
+ggplotly(myplot, tooltip=c('mylabel'))
+```
+
+***
 
 ```{r, warning=F, message=F}
 library(tidyverse)
 library(plotly)
 library(glue)
 
-myplot <- cars %>%
-  as_tibble() %>%
-  mutate(custom_label = glue("The speed is : <i>{speed}</i>")) %>%
-  ggplot(aes(speed, dist))+
-  # Will receive warning here, ignore it
-  geom_point(aes(text = custom_label))
-  
-ggplotly(myplot, tooltip = c('custom_label'))
-```
+set.seed(15)
 
+gendat <- function(n, m, grp, e_mean=0, e_sd=1){
+  # Helper function to create fake data
+  tibble(
+    x=rnorm(n=n),
+    y=x*m
+  ) %>% 
+    rowwise() %>% 
+    mutate(
+      y=y+rnorm(1, mean=e_mean, sd=e_sd),
+      grp=grp
+    )
+}
+
+myplot <- gendat(30, 2, 'a', 1, .3) %>% 
+  bind_rows(gendat(100, 3, 'b', 0, 3)) %>% 
+  bind_rows(gendat(100, -1, 'c')) %>% 
+  group_by(grp) %>% 
+  nest() %>% 
+  mutate(
+    mod = map(data, function(x){ lm(y ~ x, data=x)}),
+    fits = map(mod, broom::glance),
+    resids = map2(data, mod, modelr::add_residuals),
+    rmse = map_dbl(resids, function(x){sqrt(mean(x$resid**2, na.rm=T))}),
+  ) %>% 
+  unnest(fits) %>% 
+  mutate(
+    r.squared = round(r.squared, 2),
+    rmse = round(rmse, 2)
+  ) %>% 
+  
+  # ----------------------
+  # Label creation inbound!
+  # ----------------------
+  mutate(mylabel = glue(
+    "Group: <b>{grp}</b>\nN: <b>{nobs}</b>\nRsq: <b>{r.squared}</b>\nRMSE: <b>{rmse}</b>"
+    )
+  ) %>% 
+  unnest(data) %>% 
+  ggplot(aes(x,y, color=grp))+
+  geom_point(alpha=.5)+
+  geom_smooth(
+    # Just like the tldr example
+    aes(text=mylabel),
+    method='lm', show.legend=F,
+    se=F
+  )+
+  labs(x='', y='')+
+  theme_bw()+
+  theme(
+    axis.ticks = element_blank(),
+    axis.text = element_blank(),
+    legend.position = 'none'
+  )
+  
+ggplotly(
+  myplot,
+  tooltip = c('mylabel')
+)
+```
